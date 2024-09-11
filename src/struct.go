@@ -10,6 +10,6 @@ type Player struct {
 }
 
 type Inventory struct {
-	name     string
+	name     string		
 	quantity int
 }

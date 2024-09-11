@@ -17,3 +17,12 @@ func InitPlayer() {
 	}
 	fmt.Println(player1)
 }
+
+func (p *Player) Display(){
+	fmt.Println(p.name)
+	fmt.Println(p.class)
+	fmt.Println(p.level)
+	fmt.Println(p.hpmax)
+	fmt.Println(p.hp)
+	fmt.Println(p.inventory)
+}

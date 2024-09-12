@@ -27,7 +27,7 @@ func (p *Player) InventoryDisplay() {
 		p.MenuInventaire()
 	}
 	fmt.Println("                                                        ")
-	fmt.Println("--------------------------------------------------------")
+	fmt.Println("________________________________________________________")
 	fmt.Println("--------------------------------------------------------")
 }
 func (p *Player) MenuInventaire() {

@@ -2,17 +2,18 @@ package Projet_Red
 
 import "fmt"
 
-func InitPlayer() {
+func InitPlayer(a string, b string) {
 	item01 := Inventory{"Potion", 3}
+	item02 := Inventory{"Potion1", 3}
 
 	player1 := Player{
-		name:  "bob",
-		class: "guerrier",
+		name:  a,
+		class: b,
 		level: 1,
 		hpmax: 100,
 		hp:    40,
 		inventory: []Inventory{
-			item01,
+			item01, item02,
 		},
 	}
     player1.Display()

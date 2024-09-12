@@ -3,7 +3,7 @@ package Projet_Red
 import "fmt"
 
 //Menu Principal
-func MainMenu() {
+func (p *Player) MainMenu() {
 	var input string
 	fmt.Println("---------------------------------")
 	fmt.Println("--- Menu Principal ---")
@@ -19,10 +19,10 @@ func MainMenu() {
 	case "1":
 		fmt.Println("----------------")
 		//Display()
-		MainMenu()
+		p.MainMenu()
 	case "2":
 		fmt.Println("----------------")
-		//Inventory()
+		p.InventoryDisplay()
 	case "3":
 		fmt.Println("----------------")
 		//Market()
@@ -38,6 +38,6 @@ func MainMenu() {
 	default: 
 	    fmt.Println("----------------")
 		fmt.Println("Commande inconnue, réessayez.")
-		MainMenu()
+		p.MainMenu()
 	}
 }

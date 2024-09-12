@@ -3,6 +3,7 @@ package main
 import Projet_Red "Projet_Red/src"
 
 func main() {
-	Projet_Red.InitPlayer()
-	Projet_Red.MainMenu()
+	var p Projet_Red.Player
+	Projet_Red.InitPlayer("Bob", "Guerrier")
+	p.MainMenu()
 }

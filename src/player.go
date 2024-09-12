@@ -16,7 +16,6 @@ func (p *Player) InitPlayer(a string, b string) {
 			item01, item02,
 		},
 	}
-
 }
 
 func (p *Player) Display() {

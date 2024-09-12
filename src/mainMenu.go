@@ -35,5 +35,9 @@ func MainMenu() {
 	case "0":
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
 		//Exit
+	default: 
+	    fmt.Println("----------------")
+		fmt.Println("Commande inconnue, réessayez.")
+		MainMenu()
 	}
 }

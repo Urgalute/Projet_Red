@@ -3,6 +3,8 @@ package Projet_Red
 import "fmt"
 
 func (p *Player) InitPlayer(a string, b string) {
+	item01 := Inventory{"Potion", 3}
+	item02 := Inventory{"Potion1", 3}
 
 	*p = Player{
 		name:  a,
@@ -11,7 +13,7 @@ func (p *Player) InitPlayer(a string, b string) {
 		hpmax: 100,
 		hp:    40,
 		inventory: []Inventory{
-			
+			item01, item02,
 		},
 	}
 

@@ -18,14 +18,14 @@ func (p *Player) MainMenu() {
 	switch input {
 	case "1":
 		fmt.Println("----------------")
-		//Display()
+		p.Display()
 		p.MainMenu()
 	case "2":
 		fmt.Println("----------------")
 		p.InventoryDisplay()
 	case "3":
 		fmt.Println("----------------")
-		//Market()
+		p.Market()
 	case "4":
 		fmt.Println("----------------")
 		//Forge()
@@ -35,8 +35,8 @@ func (p *Player) MainMenu() {
 	case "0":
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
 		//Exit
-	default: 
-	    fmt.Println("----------------")
+	default:
+		fmt.Println("----------------")
 		fmt.Println("Commande inconnue, réessayez.")
 		p.MainMenu()
 	}

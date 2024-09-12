@@ -8,7 +8,7 @@ func (p *Player) MainMenu() {
 	fmt.Println("---------------------------------")
 	fmt.Println("--- Menu Principal ---")
 	fmt.Println("1: 	Information personnage")
-	fmt.Println("2:		Inventaire")
+	fmt.Println("2: 	Inventaire")
 	fmt.Println("3: 	Marchand")
 	fmt.Println("4: 	Forgeron")
 	fmt.Println("5: 	Combat")

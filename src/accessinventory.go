@@ -54,6 +54,8 @@ func (p *Player) MenuInventaire() {
 			fmt.Println("Vous avez bu une potion de santé")
 			fmt.Println("                  ")
 			p.InventoryDisplay()
+		default :
+			p.InventoryDisplay()
 		}
 	}
 }

@@ -14,9 +14,11 @@ func (p *Player) Market() {
 	switch input {
 	case "1":
 		fmt.Println("Vous avez achetez une potion de vie !")
+		p.AddItem("Potion de vie" ,1 , "(+50pv)")
 		p.Market()
 	case "2":
 		fmt.Println("Vous avez achetez une potion de poison !")
+		p.AddItem("Potion de poison" ,1 ,"(-10pv/s pour 3s)")
 		p.Market()
 	case "0":
 		p.MainMenu()

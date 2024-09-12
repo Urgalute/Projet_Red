@@ -22,7 +22,9 @@ func (p *Player) InventoryDisplay() {
 		p.MainMenu()
 	} else {
 		for i, objet := range p.inventory {
-			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
+			for i <= 9 {
+				fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
+			}
 		}
 	}
 	fmt.Println("--------------------------------------------------------")

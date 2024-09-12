@@ -24,23 +24,30 @@ func (p *Player) InventoryDisplay() {
 		for i, objet := range p.inventory {
 			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
 		}
-		p.MenuInventaire()
 	}
 	fmt.Println("                                                        ")
 	fmt.Println("________________________________________________________")
 	fmt.Println("--------------------------------------------------------")
+	p.MenuInventaire()
 }
 func (p *Player) MenuInventaire() {
 	var input int
 	var selectedItem Inventory
 	var items []Inventory = p.inventory
+	fmt.Println("                  ")
 	fmt.Scanln(&input)
+	fmt.Println("                  ")
 	selectedItem = items[input-1]
 	switch selectedItem.name {
 	case "Potion de poison":
-		fmt.Println("glouglou le poison")
+		p.Poison()
+		fmt.Println("Vous avez bu une potion de poison.")
+		fmt.Println("                  ")
+		p.InventoryDisplay()
 	case "Potion de santé":
 		p.TakePot()
-		fmt.Println("glouglou la santé")
+		fmt.Println("Vous avez bu une potion de santé")
+		fmt.Println("                  ")
+		p.InventoryDisplay()
 	}
 }

@@ -13,10 +13,9 @@ func (p *Player) InitPlayer(a string, b string) {
 		hpmax: 100,
 		hp:    40,
 		inventory: []Inventory{
-			item02, item01,
+			item01, item02,
 		},
 	}
-
 }
 
 func (p *Player) Display() {

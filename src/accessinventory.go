@@ -17,16 +17,22 @@ func (p *Player) InventoryDisplay() {
 		time.Sleep(3 * time.Second)
 		p.MainMenu()
 	} else {
-			for i, objet := range p.inventory {
-				fmt.Println( i+1, "- ", objet.name, "x", objet.quantity)
-			}
+		for i, objet := range p.inventory {
+			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	")
 		}
+		p.MenuInventaire()
 	}
+}
 func (p *Player) MenuInventaire() {
-	var input string
-
+	var input int
+	var selectedItem Inventory
+	var items []Inventory = p.inventory
 	fmt.Scanln(&input)
-	switch input {
-	case "1":
+	selectedItem = items[input-1]
+	switch selectedItem.name {
+	case "Potion de poison":
+		fmt.Println("glouglou le poison")
+	case "Potion de santé":
+		fmt.Println("glouglou la santé")
 	}
 }

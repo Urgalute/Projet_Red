@@ -16,7 +16,6 @@ func (p *Player) AddItem(name string, quantity int, description string) {
 	for _, item := range p.inventory {
 		if item.name == name {
 			item.quantity += quantity
-			return
 		} else {
 			p.inventory = append(p.inventory, Inventory{name, quantity, description})
 		}

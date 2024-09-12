@@ -14,15 +14,17 @@ func (p *Player) Poison() {
 	fmt.Println("2 - 	Non, ça ira.")
 	fmt.Println("                  ")
 	fmt.Scanln(&input)
+	fmt.Println("                  ")
 	if input == "1"{
 	for i := 0 ; i < 3 ; i++{
 		p.hp -= 10
+		fmt.Println("                  ")
 		fmt.Println("PV : " , p.hp,"/", p.hpmax)
+		fmt.Println("                  ")
 		time.Sleep(1 * time.Second)
 		if p.hp <= 0 {
 			fmt.Println("                  ")
-			fmt.Println("Vous venez de mourir des dégâts de poison")
-			// Fonction vous êtes mort
+			p.Mort()
 		}
 	}
 	fmt.Println("                  ")

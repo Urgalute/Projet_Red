@@ -26,7 +26,6 @@ func (p *Player) MainMenu() {
 	case "3":
 		fmt.Println("----------------")
 		p.Market()
-		p.MainMenu()
 	case "4":
 		fmt.Println("----------------")
 		//Forge()

@@ -21,6 +21,7 @@ func (p *Player) InventoryDisplay() {
 		time.Sleep(2 * time.Second)
 		p.MainMenu()
 	} else {
+
 		for i, objet := range p.inventory {
 			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
 		}
@@ -53,6 +54,8 @@ func (p *Player) MenuInventaire() {
 			p.TakePot()
 			fmt.Println("Vous avez bu une potion de santé")
 			fmt.Println("                  ")
+			p.InventoryDisplay()
+		default:
 			p.InventoryDisplay()
 		}
 	}

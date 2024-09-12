@@ -21,11 +21,9 @@ func (p *Player) InventoryDisplay() {
 		time.Sleep(2 * time.Second)
 		p.MainMenu()
 	} else {
-		invmax := 10
-		if len(p.inventory) <= invmax {
-			for i, objet := range p.inventory {
-				fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
-			}
+
+		for i, objet := range p.inventory {
+			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
 		}
 	}
 	fmt.Println("--------------------------------------------------------")

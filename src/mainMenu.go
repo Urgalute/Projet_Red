@@ -25,7 +25,8 @@ func (p *Player) MainMenu() {
 		p.InventoryDisplay()
 	case "3":
 		fmt.Println("----------------")
-		//Market()
+		p.TakePot()
+		p.MainMenu()
 	case "4":
 		fmt.Println("----------------")
 		//Forge()

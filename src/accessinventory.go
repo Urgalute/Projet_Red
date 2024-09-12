@@ -12,7 +12,7 @@ func (p *Player) InventoryDisplay() {
 		p.MainMenu()
 	} else {
 		for _, objet := range p.inventory {
-			fmt.Println("-", objet)
+			fmt.Println("- " , objet.name ,"x" , objet.quantity )
 		}
 	}
 }

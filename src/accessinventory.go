@@ -39,9 +39,11 @@ func (p *Player) MenuInventaire() {
 	switch selectedItem.name {
 	case "Potion de poison":
 		p.Poison()
-		fmt.Println("glouglou le poison")
+		fmt.Println("Vous avez bu une potion de poison.")
+		fmt.Println("                  ")
 	case "Potion de santé":
 		p.TakePot()
-		fmt.Println("glouglou la santé")
+		fmt.Println("Vous avez bu une potion de santé")
+		fmt.Println("                  ")
 	}
 }

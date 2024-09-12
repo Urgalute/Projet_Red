@@ -21,6 +21,7 @@ func (p *Player) Market() {
 	case "0":
 		p.MainMenu()
 	default:
+		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
 		p.Market()
 	}
 

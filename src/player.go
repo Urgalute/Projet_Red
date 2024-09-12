@@ -15,14 +15,14 @@ func InitPlayer() {
 			item01,
 		},
 	}
-	fmt.Println(player1)
+    player1.Display()
 }
 
-func (p *Player) Display(){
-	fmt.Println(p.name)
-	fmt.Println(p.class)
-	fmt.Println(p.level)
-	fmt.Println(p.hpmax)
-	fmt.Println(p.hp)
-	fmt.Println(p.inventory)
+func (p *Player)Display(){
+	fmt.Println("Votre nom :", p.name)
+	fmt.Println("Votre classe :", p.class)
+	fmt.Println("Votre niveau :", p.level)
+	fmt.Println("Vos points de vie maximum :", p.hpmax)
+	fmt.Println("Points de vie actuel :", p.hp)
+	fmt.Println("Votre inventaire :", p.inventory)	
 }

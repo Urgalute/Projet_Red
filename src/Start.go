@@ -30,7 +30,7 @@ func (p *Player) StartMenu() {
 	case "1":
 		p.PersoInit()
 	case "2":
-
+		p.MainMenu()
 	case "3":
 		fmt.Println(" ")
 		fmt.Println("Au revoir !")

@@ -2,15 +2,15 @@ package Projet_Red
 
 import "fmt"
 
-func (p *Player) InitPlayer(a string, b string) {
+func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) {
 	item01 := Inventory{"Potion de santé", 1, "(+50pv)"}
 	item02 := Inventory{"Potion de poison", 1, "(-10pv/s pour 3s)"}
 	*p = Player{
-		name:  a,
-		class: b,
+		name:  nom,
+		class: classe,
 		level: 1,
-		hpmax: 100,
-		hp:    40,
+		hpmax: pvmax,
+		hp:    pvactuel,
 		inventory: []Inventory{
 			item01, item02,
 		},

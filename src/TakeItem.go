@@ -60,6 +60,7 @@ func (p *Player) Poison() {
 	fmt.Println("                  ")
 	fmt.Scanln(&input)
 	if input == "1" {
+		p.RemoveItem("Potion de poison", 1)
 		for i := 0; i < 3; i++ {
 			p.hp -= 10
 			fmt.Println("                  ")

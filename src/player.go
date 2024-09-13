@@ -5,7 +5,6 @@ import "fmt"
 func (p *Player) InitPlayer(a string, b string) {
 	item01 := Inventory{"Potion de santé", 1, "(+50pv)"}
 	item02 := Inventory{"Potion de poison", 1, "(-10pv/s pour 3s)"}
-
 	*p = Player{
 		name:  a,
 		class: b,
@@ -15,6 +14,7 @@ func (p *Player) InitPlayer(a string, b string) {
 		inventory: []Inventory{
 			item01, item02,
 		},
+		skill: []string{"Coup de poing"},
 	}
 }
 

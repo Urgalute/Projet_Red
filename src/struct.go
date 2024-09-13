@@ -7,6 +7,7 @@ type Player struct {
 	hpmax     int
 	hp        int
 	inventory []Inventory
+	skill []string
 }
 
 type Inventory struct {

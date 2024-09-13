@@ -3,6 +3,7 @@ package Projet_Red
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/eiannone/keyboard"
 )
@@ -17,10 +18,10 @@ func (p *Player) StartMenu() {
 
 	// Liste des options
 	menu := []string{
-		"			Nouvelle Partie			",
-		"				Options				",
-		"				Quitter				",
-		"				Crédits				",
+		"	Nouvelle Partie			",
+		"	Options				",
+		"	Quitter				",
+		"	Crédits				",
 	}
 
 	selectedIndex := 0 // L'index de l'élément sélectionné
@@ -40,7 +41,7 @@ func (p *Player) StartMenu() {
 		fmt.Println(" ")
 		for i, option := range menu {
 			if i == selectedIndex {
-				fmt.Printf("-> %s\n", option) // Afficher une flèche pour l'élément sélectionné
+				fmt.Printf("---> %s\n", option) // Afficher une flèche pour l'élément sélectionné
 			} else {
 				fmt.Printf("   %s\n", option)
 			}
@@ -67,17 +68,20 @@ func (p *Player) StartMenu() {
 
 		// Valider la sélection avec la touche "Entrée"
 		if key == keyboard.KeyEnter {
-			fmt.Printf("Vous avez sélectionné : %s\n", menu[selectedIndex])
 			switch selectedIndex {
 			case 0:
 				p.MainMenu()
 			case 1:
 
 			case 2:
+				fmt.Println(" ")
+				fmt.Println("Au revoir !")
+				fmt.Println(" ")
+				os.Exit(0)
+			case 3: 
 
-			case 3:
-
-			default : fmt.Println("Comment avez-vous fait pour lire ça ???")
+			default :
+				fmt.Println("Comment avez-vous fait pour lire ça ???")
 			p.StartMenu()
 
 			}

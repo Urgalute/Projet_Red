@@ -14,6 +14,7 @@ func (p *Player) InitPlayer(a string, b string) {
 		inventory: []Inventory{
 			item01, item02,
 		},
+		skill: []string{"Coup de poing"},
 	}
 }
 

@@ -15,13 +15,15 @@ func (p *Player) RemoveItem(name string, quantity int) {
 }
 
 func (p *Player) AddItem(name string, quantity int, description string) {
-	for _, item := range p.inventory {
-		fmt.Println("var" ,item.name, name)
-		if item.name == name {
-			item.quantity += quantity
-			fmt.Println("qty" ,item.quantity, quantity)
+	for i, item := range p.inventory {
+		fmt.Println("Name: ", name, "item.Name: ", item.name, " quantity: ", quantity, "Item: ", item, "p.inventory[0].name", p.inventory[i].name)
+		if name == p.inventory[i].name {
+			fmt.Println("if")
+			p.inventory[i].quantity += quantity
+			break
 		} else {
 			p.inventory = append(p.inventory, Inventory{name, quantity, description})
+			fmt.Println("append")
 		}
 	}
 }

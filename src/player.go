@@ -24,4 +24,5 @@ func (p *Player) Display() {
 	fmt.Println("Votre niveau :", p.level)
 	fmt.Println("Vos points de vie maximum :", p.hpmax)
 	fmt.Println("Points de vie actuel :", p.hp)
+	fmt.Println("Vos attaques :", p.skill)
 }

@@ -15,6 +15,7 @@ func (p *Player) Market() {
 	if n == 1 {
 		fmt.Println("\033[31m4: 	Potion de vie GRATUITE !! (1 fois seulement)\033[0m")
 	}
+	fmt.Println("5: 	Livre de Sort : Boule de Feu ")
 	fmt.Println("0: 	Retour")
 	fmt.Print("Votre choix : ")
 	fmt.Scanln(&input)
@@ -51,6 +52,12 @@ func (p *Player) Market() {
 			} else if n > 1 {
 				fmt.Println(" ")
 			}
+		p.Market()
+	case "5":
+		fmt.Println("             ")
+		fmt.Println("Vous avez achetez un Livre de sort : Boule de Feu !")
+		fmt.Println("             ")
+		p.AddItem("Livre de sort : Boule de feu", 1, "(+18 de dégats)")
 		p.Market()
 	case "0":
 		p.MainMenu()

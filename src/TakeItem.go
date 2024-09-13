@@ -36,9 +36,9 @@ func (p *Player) TakePot() {
 				fmt.Println("--------------------------------")
 				p.hp += 50
 				fmt.Println("PV : ", p.hp, "/", p.hpmax)
-				for i, item := range p.inventory {
+				for _, item := range p.inventory {
 					if item.name == "Potion de santé" && item.quantity > 0 {
-						p.inventory[i].quantity--
+						p.RemoveItem("Potion de santé", 1)
 					}
 				}
 			}
@@ -60,6 +60,7 @@ func (p *Player) Poison() {
 	fmt.Println("                  ")
 	fmt.Scanln(&input)
 	if input == "1" {
+		p.RemoveItem("Potion de poison", 1)
 		for i := 0; i < 3; i++ {
 			p.hp -= 10
 			fmt.Println("                  ")

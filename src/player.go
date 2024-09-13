@@ -5,7 +5,7 @@ import "fmt"
 func (p *Player) InitPlayer(a string, b string) {
 	item01 := Inventory{"Potion de santé", 1, "(+50pv)"}
 	item02 := Inventory{"Potion de poison", 1, "(-10pv/s pour 3s)"}
-
+	item03 := Inventory{"Potion de mana", 1, "(+35 mana)"}
 	*p = Player{
 		name:  a,
 		class: b,

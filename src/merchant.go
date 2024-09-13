@@ -8,12 +8,12 @@ func (p *Player) Market() {
 	var input string
 	fmt.Println("1: 	Potion de \033[31mvie\033[0m")
 	fmt.Println("2: 	Potion de \033[32mpoison\033[0m")
-	fmt.Println("2: 	Potion de \033[34mmana\033[0m")
+	fmt.Println("3: 	Potion de \033[34mmana\033[0m")
 	if n < 1 {
-		fmt.Println("3: 	Potion de vie GRATUITE !! (1 fois seulement)")
+		fmt.Println("4: 	Potion de vie GRATUITE !! (1 fois seulement)")
 	}
 	if n == 1 {
-		fmt.Println("\033[31m3: 	Potion de vie GRATUITE !! (1 fois seulement)\033[0m")
+		fmt.Println("\033[31m4: 	Potion de vie GRATUITE !! (1 fois seulement)\033[0m")
 	}
 	fmt.Println("0: 	Retour")
 	fmt.Print("Votre choix : ")

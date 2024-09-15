@@ -22,6 +22,7 @@ func (p *Player) Mort() {
 	} else if input == "2" {
 		fmt.Println("Merci d'avoir jouer tout de même !")
 		fmt.Println("                  ")
+		p.StartMenu()
 	} else {
 		fmt.Println("                  ")
 		fmt.Println("Avez-vous bien lu vos choix possibles ??")

@@ -6,8 +6,9 @@ type Player struct {
 	level     int
 	hpmax     int
 	hp        int
+	money     int
 	inventory []Inventory
-	skill []string
+	skill     []string
 }
 
 type Inventory struct {

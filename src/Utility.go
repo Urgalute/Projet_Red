@@ -16,6 +16,7 @@ func (p *Player) RemoveItem(name string, quantity int) {
 	}
 }
 
+//Ajouter un item à l'inventaire, rentrer un nom, une qty et une description
 func (p *Player) AddItem(name string, quantity int, description string) {
 	if p.CheckItem(name) {
 		for i := 0; i < len(p.inventory); i++ {
@@ -29,6 +30,7 @@ func (p *Player) AddItem(name string, quantity int, description string) {
 	}
 }
 
+//Check si un objet est présent dans l'inventaire du joueur
 func (p *Player) CheckItem(name string) bool {
 	for _, item := range p.inventory {
 		if item.name == name {
@@ -36,4 +38,14 @@ func (p *Player) CheckItem(name string) bool {
 		}
 	}
 	return false
+}
+
+func (p *Player) CheckQtyItem(name string) int {
+	count := 0
+	for _, item := range p.inventory {
+        if item.name == name {
+			count += item.quantity
+        }
+    }
+    return count
 }

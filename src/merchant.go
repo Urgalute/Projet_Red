@@ -14,7 +14,7 @@ func (p *Player) Market() bool {
 	fmt.Println("Voici votre nombre de pièces d'or : ", p.money)
 	fmt.Println("             ")
 	fmt.Println("1: 	Potion de \033[31mvie\033[0m || \033[33m3po\033[0m")
-	fmt.Println("2: 	Potion de \033[32mpoison\033[0m || \0333£[33m6po\033[0m")
+	fmt.Println("2: 	Potion de \033[32mpoison\033[0m || \033[33m6po\033[0m")
 	fmt.Println("3: 	Potion de \033[34mmana\033[0m || \033[33m10po\033[0m")
 	if n < 1 {
 		fmt.Println("4: 	Potion de \033[31mvie\033[0m GRATUITE !! (1 fois seulement)")

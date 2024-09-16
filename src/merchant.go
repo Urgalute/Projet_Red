@@ -27,6 +27,7 @@ func (p *Player) Market() bool {
 	fmt.Println("7: 	Peau de troll 	 || \033[33m7po\033[0m")
 	fmt.Println("8: 	Cuir de sanglier || \033[33m3po\033[0m")
 	fmt.Println("9: 	Plume de corbeau || \033[33m1po\033[0m")
+	fmt.Println("10:	Augmentation d'inventaire || \033[33m30po\033[0m")	
 	fmt.Println("0: 	Retour")
 	fmt.Print("Votre choix : ")
 	fmt.Scanln(&input)
@@ -92,26 +93,26 @@ func (p *Player) Market() bool {
 	case "4":
 		fmt.Println("Place dans votre inventaire : ")
 		if !p.CheckInventory() {
-		if n < 1 {
-			fmt.Println("             ")
-			fmt.Println("Vous obtenez votre potion de santé gratuite !")
-			fmt.Println("             ")
-			p.AddItem("Potion de santé", 1, "(+50pv)")
-			fmt.Println("             ")
-			fmt.Println("Votre inventaire s'agrandit")
-			p.CheckInventory()
-			fmt.Println("             ")
-			n++
-		} else if n == 1 {
-			fmt.Println("             ")
-			fmt.Println("\033[31mVous avez déjà eu votre potion gratuite !\033[0m")
-			fmt.Println("             ")
-		} else if n > 1 {
-			fmt.Println(" ")
+			if n < 1 {
+				fmt.Println("             ")
+				fmt.Println("Vous obtenez votre potion de santé gratuite !")
+				fmt.Println("             ")
+				p.AddItem("Potion de santé", 1, "(+50pv)")
+				fmt.Println("             ")
+				fmt.Println("Votre inventaire s'agrandit")
+				p.CheckInventory()
+				fmt.Println("             ")
+				n++
+			} else if n == 1 {
+				fmt.Println("             ")
+				fmt.Println("\033[31mVous avez déjà eu votre potion gratuite !\033[0m")
+				fmt.Println("             ")
+			} else if n > 1 {
+				fmt.Println(" ")
 			} else {
 				fmt.Println("Vous n'avez plus de place dans votre inventaire ")
+			}
 		}
-	}
 		p.Market()
 	case "5":
 		fmt.Println("Place dans votre inventaire : ")
@@ -213,6 +214,25 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez plus de place dans votre inventaire ")
 			p.Market()
 		}
+	case "10":
+		fmt.Println("Place dans votre inventaire : ")
+		if !p.CheckInventory() {
+			fmt.Println("Vous avez assez de place dans votre inventaire !")
+			p.money -= 30
+			fmt.Println("             ")
+			fmt.Println("Vous avez achetez une Augmentation d'inventaire !")
+			fmt.Println("             ")
+			p.AddItem("Augmentation d'inventaire", 1, "(+10 de taille d'inventaire)")
+			fmt.Println("             ")
+			fmt.Println("Votre inventaire s'agrandit")
+			p.CheckInventory()
+			fmt.Println("             ")
+			fmt.Println("Vous avez maintenant", p.money, "Pièces d'or")
+			fmt.Println("             ")
+			p.Market()
+			} else {
+			fmt.Println("Vous n'avez plus de place dans votre inventaire ") }
+			p.Market()
 	case "0":
 		p.MainMenu()
 	default:
@@ -220,4 +240,15 @@ func (p *Player) Market() bool {
 		p.Market()
 	}
 	return true
+}
+
+// Augmente l'inventaire de 10 objets supplémentaires
+func (p *Player) UpgradeInventorySlot() {
+	if p.inventorymax >= 40 {
+		fmt.Println("Vous ne pouvez plus augmenter votre Inventaire ! ")
+	} else {
+		p.inventorymax += 10
+		fmt.Println("Bien joué vous avez augmenter votre Inventaire de 10 places supplémentaires !")
+		p.RemoveItem("Augmentation d'inventaire", 1)
+	}
 }

@@ -11,7 +11,8 @@ func (p *Player) MainMenu() {
 	fmt.Println("2: 	Inventaire")
 	fmt.Println("3: 	Marchand")
 	fmt.Println("4: 	Forgeron")
-	fmt.Println("5: 	Combat")
+	fmt.Println("5: 	Equipements")
+	fmt.Println("6: 	Combat")
 	fmt.Println("0: 	Quitter")
 	fmt.Print("Votre choix : ")
 	fmt.Scanln(&input)
@@ -31,6 +32,9 @@ func (p *Player) MainMenu() {
 		fmt.Println("----------------")
 		//Forge()
 	case "5":
+		p.GearSlot()
+		//Equipements()
+	case "6":
 		fmt.Println("----------------")
 		//Combat()
 	case "0":

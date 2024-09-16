@@ -17,6 +17,7 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		hpmax: pvmax,
 		hp:    pvactuel,
 		money: 100,
+		inventorymax: 10,
 		inventory: []Inventory{
 			item01, item02, item03, item04, item05, item06, item07,
 		},

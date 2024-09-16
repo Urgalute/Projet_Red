@@ -40,6 +40,7 @@ func (p *Player) CheckItem(name string) bool {
 	return false
 }
 
+// Check et return la qty d'un objet présent dans l'inventaire
 func (p *Player) CheckQtyItem(name string) int {
 	count := 0
 	for _, item := range p.inventory {

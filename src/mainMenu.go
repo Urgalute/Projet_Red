@@ -26,6 +26,7 @@ func (p *Player) MainMenu() {
 		p.InventoryDisplay()
 	case "3":
 		fmt.Println("----------------")
+		fmt.Println("Bienvenue chez le Marchand ! ")
 		p.Market()
 	case "4":
 		fmt.Println("----------------")

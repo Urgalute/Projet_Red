@@ -3,6 +3,7 @@ package Projet_Red
 import "fmt"
 
 func (p *Player) GearSlot() {
+<<<<<<< HEAD
 		if p.CheckItem("Casque en acier") && !p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir") {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
@@ -125,3 +126,71 @@ func (p *Player) GearSlot() {
 		return
 	}
 }
+=======
+	fmt.Println(" ")
+	fmt.Println("|===============|   |===============|   |===============|")
+	fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
+	fmt.Println("|===============|   |===============|   |===============|")
+	fmt.Println(`|    _______    |   |   ___/_\___   |   |     _   _     |`)
+	fmt.Println("|   |  ___  |   |   |  |         |  |   |    | | | |    |")
+	fmt.Println(`|   | /   \ |   |   |  ||\     /||  |   |  __| | | |__  |`)
+	fmt.Println("|   |_|   |_|   |   |  || |-o-| ||  |   | |____| |____| |")
+	fmt.Println("|_______________|   |_______________|   |_______________|")
+	fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
+	fmt.Println("|===============|   |===============|   |===============|")
+	fmt.Println(" ")
+	if p.CheckItem("Casque en acier") && !p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir")  {
+		fmt.Println(" ")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println(`|    _______    |   |               |   |               |`)
+		fmt.Println("|   |  ___  |   |   |               |   |               |")
+		fmt.Println(`|   | /   \ |   |   |               |   |               |`)
+		fmt.Println("|   |_|   |_|   |   |               |   |               |")
+		fmt.Println("|_______________|   |_______________|   |_______________|")
+		fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println(" ")
+	}else if !p.CheckItem("Casque en acier") && p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir")  {
+		fmt.Println(" ")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println(`|               |   |   ___/_\___   |   |               |`)
+		fmt.Println("|               |   |  |         |  |   |               |")
+		fmt.Println(`|               |   |  ||\     /||  |   |               |`)
+		fmt.Println("|               |   |  || |-o-| ||  |   |               |")
+		fmt.Println("|_______________|   |_______________|   |_______________|")
+		fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println(" ")
+	}else if !p.CheckItem("Casque en acier") && !p.CheckItem("Robe magique") && p.CheckItem("Bottes en cuir") {
+		fmt.Println(" ")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println(`|               |   |               |   |     _   _     |`)
+		fmt.Println("|               |   |               |   |    | | | |    |")
+		fmt.Println(`|               |   |               |   |  __| | | |__  |`)
+		fmt.Println("|               |   |               |   | |____| |____| |")
+		fmt.Println("|_______________|   |_______________|   |_______________|")
+		fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
+		fmt.Println("|===============|   |===============|   |===============|")
+		fmt.Println(" ")
+	}else if p.CheckItem("Casque en acier") && p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir") {
+		fmt.Println(" ")
+	fmt.Println("|===============|   |===============|   |===============|")
+	fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
+	fmt.Println("|===============|   |===============|   |===============|")
+	fmt.Println(`|    _______    |   |   ___/_\___   |   |     _   _     |`)
+	fmt.Println("|   |  ___  |   |   |  |         |  |   |    | | | |    |")
+	fmt.Println(`|   | /   \ |   |   |  ||\     /||  |   |  __| | | |__  |`)
+	fmt.Println("|   |_|   |_|   |   |  || |-o-| ||  |   | |____| |____| |")
+	fmt.Println("|_______________|   |_______________|   |_______________|")
+	fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
+	fmt.Println("|===============|   |===============|   |===============|")
+	fmt.Println(" ")
+	}else if p.CheckItem("Casque en acier") && p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir")
+	}
+>>>>>>> 78ef85a6cb9a6f4bf9b705147e0cc822cef08107

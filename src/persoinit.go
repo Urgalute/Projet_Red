@@ -1,7 +1,9 @@
 package Projet_Red
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 	"time"
 )
@@ -9,26 +11,32 @@ import (
 func (p *Player) PersoInit() {
 	fmt.Println("  ")
 	fmt.Println("Bonjour ... Joueur ?? Ou peut être préférez vous que l'on vous appelle autrement ?")
-	var inputnom string
-	fmt.Scanln(&inputnom)
+	reader := bufio.NewReader(os.Stdin)
+	inputnom, _ := reader.ReadString('\n')
+	inputnom = strings.ReplaceAll(inputnom, " ", "")
 	inputnom = strings.TrimSpace(inputnom)
-	if strings.Contains(inputnom, " ") {
-		fmt.Println("Les espaces ne sont pas autorisés dans le prénom ! Réécrivez le sans espaces !")
+	if inputnom == "" {
+		fmt.Println("Le nom ne peut pas être vide.")
 		p.PersoInit()
+		return
 	}
 	fmt.Println("  ")
+	var resultnom string
 	prenom := []rune(inputnom)
 	for i, r := range prenom {
-		if r < 'A' || (r > 'Z' && r < 'a') || r > 'z' {
-			fmt.Println("Attention, un caractère interdit s'est glissé dans votre prénom ! Réécrivez le sans !")
+		if (r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z') {
+			if r <= 'Z' && r >= 'A' {
+				prenom[i] = r - ('A' - 'a')
+			}
+			resultnom += string(r)
+		} else {
+			fmt.Println("L'un de vos caractères n'est pas pris en charge.")
 			p.PersoInit()
-
-		}
-		if r <= 'Z' && r >= 'A' {
-			prenom[i] = r - ('A' - 'a')
+			return
 		}
 	}
 	prenom[0] -= 32
+	fmt.Println("Votre pseudo : ", resultnom)
 	fmt.Println("  ")
 	fmt.Println("Donc, vous vous appelez", string(prenom), ", sympa comme prénom")
 	fmt.Println("  ")
@@ -68,6 +76,7 @@ func (p *Player) PersoInit() {
 		fmt.Println("Commande inconnue, réessayez.")
 		fmt.Println("  ")
 		p.PersoInit()
+		return
 	}
 	time.Sleep(1 * time.Second)
 	fmt.Println("  ")

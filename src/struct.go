@@ -1,14 +1,16 @@
 package Projet_Red
 
 type Player struct {
-	name      string
-	class     string
-	level     int
-	hpmax     int
-	hp        int
-	money     int
-	inventory []Inventory
-	skill     []string
+	name       string
+	class      string
+	level      int
+	hpmax      int
+	hp         int
+	money      int
+	inventorymax int 
+	inventory  []Inventory
+	skill      []string
+	//equipement []Equipement
 }
 
 type Inventory struct {
@@ -16,3 +18,9 @@ type Inventory struct {
 	quantity    int
 	description string
 }
+
+/*type Equipement struct {
+	name        string
+	quantity    int
+	description string
+}*/

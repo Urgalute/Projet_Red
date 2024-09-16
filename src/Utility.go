@@ -49,3 +49,12 @@ func (p *Player) CheckQtyItem(name string) int {
     }
     return count
 }
+
+func (p *Player) CheckGear(name string) bool {
+	for _, item := range p.equipement {
+		if item.name == name {
+			return true
+		}
+	}
+	return false
+}

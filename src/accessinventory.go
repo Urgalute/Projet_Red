@@ -57,6 +57,20 @@ func (p *Player) MenuInventaire() {
 		case "Livre de sort : Boule de feu":
 			p.Spell()
 			p.InventoryDisplay()
+		case "Casque en acier":
+			p.EquipGear("Casque en acier", 1, "+15pvmax")
+			p.InventoryDisplay()
+			return
+		case "Robe magique":
+			if !p.CheckGear("Robe magique") {
+			p.EquipGear("Robe magique", 1, "+25pvmax")
+			}
+			p.InventoryDisplay()
+			return
+		case "Bottes en cuir":
+			p.EquipGear("Bottes en cuir", 1, "+10pvmax")
+			p.InventoryDisplay()
+			return
 		default:
 			p.InventoryDisplay()
 		}

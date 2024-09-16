@@ -15,7 +15,7 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		money: 100,
 		inventory: []Inventory{gear01, gear02, gear03},
 		skill: []string{"Coup de poing"},
-		equipement: []Equipement{},
+		//equipement: []Equipement{},
 	}
 }
 

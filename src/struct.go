@@ -9,7 +9,7 @@ type Player struct {
 	money      int
 	inventory  []Inventory
 	skill      []string
-	equipement []Equipement
+	//equipement []Equipement
 }
 
 type Inventory struct {
@@ -18,8 +18,8 @@ type Inventory struct {
 	description string
 }
 
-type Equipement struct {
+/*type Equipement struct {
 	name        string
 	quantity    int
 	description string
-}
+}*/

@@ -3,13 +3,9 @@ package Projet_Red
 import "fmt"
 
 func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) {
-	item01 := Inventory{"Potion de santé", 1, "(+50pv)"}
-	item02 := Inventory{"Potion de poison", 1, "(-10pv/s pour 3s)"}
-	item03 := Inventory{"Potion de mana", 1, "(+25mana)"}
-	item04 := Inventory{"Fourrure de loup", 1, "(C'est doux)"}
-	item05 := Inventory{"Peau de troll", 1, "(C'est légérement poisseux, de la bave probablement)"}
-	item06 := Inventory{"Cuir de sanglier", 1, "(Aussi robuste qu'un nain !)"}
-	item07 := Inventory{"Plume de corbeau", 1, "(Le chatouilleur 2000 ultime)"}
+	gear01 := Inventory{"Casque en acier", 1, "+15pvmax || 5po"}
+	gear02 := Inventory{"Robe magique", 1, "+25pvmax || 5po"}
+	gear03 := Inventory{"Bottes en cuir", 1, "+10pvmax || 5po"}
 	*p = Player{
 		name:  nom,
 		class: classe,
@@ -17,11 +13,9 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		hpmax: pvmax,
 		hp:    pvactuel,
 		money: 100,
-		inventory: []Inventory{
-			item01, item02, item03, item04, item05, item06, item07,
-		},
+		inventory: []Inventory{gear01, gear02, gear03},
 		skill: []string{"Coup de poing"},
-		
+		equipement: []Equipement{},
 	}
 }
 

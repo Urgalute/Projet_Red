@@ -67,5 +67,5 @@ func (p *Player) GearSlot() {
 	fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
 	fmt.Println("|===============|   |===============|   |===============|")
 	fmt.Println(" ")
-	}else if p.CheckItem("Casque en acier") && p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir")
+	}else if p.CheckItem("Casque en acier") && p.CheckItem("Robe magique") && !p.CheckItem("Bottes en cuir") 
 	}

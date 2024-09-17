@@ -307,6 +307,6 @@ func displayCredits(credits string) {
 		default:
 			fmt.Println(White + line + Reset)
 		}
-		time.Sleep(220 * time.Millisecond)
+		time.Sleep(190 * time.Millisecond)
 	}
 }

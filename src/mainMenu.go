@@ -1,8 +1,11 @@
 package Projet_Red
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-//Menu Principal
+// Menu Principal
 func (p *Player) MainMenu() {
 	var input string
 	fmt.Println("---------------------------------")
@@ -46,7 +49,7 @@ func (p *Player) MainMenu() {
 	case "0":
 		fmt.Println("----------------")
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
-		//Exit
+		os.Exit(0)
 	default:
 		fmt.Println("----------------")
 		fmt.Println("Commande inconnue, réessayez.")

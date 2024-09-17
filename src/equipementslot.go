@@ -3,7 +3,11 @@ package Projet_Red
 import "fmt"
 
 func (p *Player) GearSlot() {
-		if p.EquipGear("Casque en acier", 1, "+15pvmax") && !p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && !p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+	casqueEquipe := p.EquipGear("Casque en acier", 1, "+15pvmax")
+	robeEquipe := p.EquipGear("Robe magique", 1, "+25pvmax || 30po")
+	bottesEquipe := p.EquipGear("Bottes en cuir", 1, "+10pvmax")
+
+		if casqueEquipe && !robeEquipe && !bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -16,7 +20,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|Casque en acier|   |               |   |               |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if !p.EquipGear("Casque en acier", 1, "+15pvmax") && p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && !p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if !casqueEquipe && robeEquipe && !bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -29,7 +33,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|               |   | Robe magique  |   |               |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if !p.EquipGear("Casque en acier", 1, "+15pvmax") && !p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if !casqueEquipe && !robeEquipe && bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -42,7 +46,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|               |   |               |   |Bottes en cuir |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if p.EquipGear("Casque en acier", 1, "+15pvmax") && p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && !p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if casqueEquipe && robeEquipe && !bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -55,7 +59,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|Casque en acier|   | Robe magique  |   |               |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if !p.EquipGear("Casque en acier", 1, "+15pvmax") && p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if !casqueEquipe && robeEquipe && bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -68,7 +72,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|               |   | Robe magique  |   |Bottes en cuir |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if p.EquipGear("Casque en acier", 1, "+15pvmax") && !p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if casqueEquipe && !robeEquipe && bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -81,7 +85,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|Casque en acier|   |               |   |Bottes en cuir |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if p.EquipGear("Casque en acier", 1, "+15pvmax") && p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if casqueEquipe && robeEquipe && bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")
@@ -94,7 +98,7 @@ func (p *Player) GearSlot() {
 			fmt.Println("|Casque en acier|   | Robe magique  |   |Bottes en cuir |")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println(" ")
-		} else if !p.EquipGear("Casque en acier", 1, "+15pvmax") && !p.EquipGear("Robe magique", 1, "+25pvmax || 30po") && !p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+		} else if !casqueEquipe && !robeEquipe && !bottesEquipe {
 			fmt.Println(" ")
 			fmt.Println("|===============|   |===============|   |===============|")
 			fmt.Println("|    Casque     |   |    Torse      |   |     Pieds     |")

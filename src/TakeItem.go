@@ -84,22 +84,21 @@ func (p *Player) Poison() {
 }
 
 func (p *Player) EquipGear(name string, quantity int, description string) bool {
-	if p.CheckGear(name) {
-		for i := 0; i < len(p.equipement); i++ {
-			if p.equipement[i].name == name {
-				fmt.Println("Vous avez deja un item équipé !")
-				return true
-			}
-		}
-	} else if !p.CheckGear(name) {
-		p.equipement = append(p.equipement, Equipement{name, quantity, description})
-		if name == "Casque en acier" {
-			p.hpmax += 15
-		}else if name == "Robe magique" {
-			p.hpmax += 25
-		}else if name == "Bottes en cuir" {
-			p.hpmax += 10
-		}
-	}
-	return false
+	for i := 0; i < len(p.equipement); i++ {
+        if p.equipement[i].name == name {
+            return true
+        }
+    }
+    p.equipement = append(p.equipement, Equipement{name, quantity, description})
+    switch name {
+    case "Casque en acier":
+        p.hpmax += 15
+    case "Robe magique":
+        p.hpmax += 25
+    case "Bottes en cuir":
+        p.hpmax += 10
+    default:
+        fmt.Println("Aucun effet spécifique pour cet équipement.")
+    }
+    return false
 }

@@ -23,11 +23,3 @@ func (p *Player) AchatEquipements() {
 
 	}
 }
-
-/*func (p *Player) Equiper() {
-case "Casque en acier": 
-
-case "Robe magique":
-
-case "Bottes en cuir":
-}*/

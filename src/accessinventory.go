@@ -20,6 +20,7 @@ func (p *Player) InventoryDisplay() {
 		fmt.Println("Retour au menu principal")
 		time.Sleep(2 * time.Second)
 		p.MainMenu()
+		return
 	} else {
 		for i, objet := range p.inventory {
 			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
@@ -40,7 +41,7 @@ func (p *Player) MenuInventaire() {
 	if input == 0 {
 		p.MainMenu()
 		fmt.Println("                  ")
-	} else {
+	} else if input < len(p.inventory)+1 {
 		fmt.Println("                  ")
 		selectedItem = items[input-1]
 		switch selectedItem.name {
@@ -59,21 +60,24 @@ func (p *Player) MenuInventaire() {
 			p.InventoryDisplay()
 		case "Casque en acier":
 			p.EquipGear("Casque en acier", 1, "+15pvmax")
+			p.RemoveItem("Casque en acier", 1)
 			p.InventoryDisplay()
-			return
-		case "Robe magique":
-			if !p.CheckGear("Robe magique") {
+		case "Robe magique":		
 			p.EquipGear("Robe magique", 1, "+25pvmax")
-			}
+			p.RemoveItem("Robe magique", 1)
 			p.InventoryDisplay()
-			return
 		case "Bottes en cuir":
 			p.EquipGear("Bottes en cuir", 1, "+10pvmax")
+			p.RemoveItem("Bottes en cuir", 1)
 			p.InventoryDisplay()
-			return
 		default:
 			p.InventoryDisplay()
+				return
 		}
+	}else {
+		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
+		p.InventoryDisplay()
+		return
 	}
 }
 

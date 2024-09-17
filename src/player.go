@@ -35,3 +35,7 @@ func (p *Player) Display() {
 	fmt.Println("Vous avez :", p.money, "pièces d'or.")
 	fmt.Println("Vos équipements :", p.equipement)
 }
+
+func (p *Player) Experience() {
+	
+}

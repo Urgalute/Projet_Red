@@ -30,7 +30,13 @@ func (p *Player) Entrainement() {
 			fmt.Println("Initiative de", p.name, ":", playerinit, " !")
 			fmt.Println("Initiative du gobelin :", gobinit, " !")
 			if playerinit > gobinit {
-				p.CharTurn()
+				if playerinit >= 18 {
+					p.CharTurnCrit()
+
+				} else {
+					p.CharTurn()
+				}
+
 			} else if playerinit < gobinit {
 				fmt.Println(" ")
 				fmt.Println("Le gobelin attaque !")

@@ -9,6 +9,8 @@ type Player struct {
 	xp    int
 	xpmax int
 	money        int
+	mana         int
+	manamax      int
 	inventorymax int
 	inventory    []Inventory
 	skill        []string

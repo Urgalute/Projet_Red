@@ -13,6 +13,7 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		level:        1,
 		hpmax:        pvmax,
 		hp:           pvactuel,
+		manamax:      100,
 		money:        100,
 		inventorymax: 10,
 		inventory:    []Inventory{gear01, gear02, gear03},

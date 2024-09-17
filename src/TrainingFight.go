@@ -21,42 +21,34 @@ func (p *Player) Entrainement() {
 		return
 	case "2":
 		for tour := 1; (p.mhp != 0 && p.hp > 0) || (p.mhp > 0 && p.hp != 0); tour++ {
-			playerinit := p.InitiativeP()+3
+			playerinit := p.InitiativeP() + 3
 			time.Sleep(1 * time.Second)
-			gobinit := p.InitiativeM()+1
+			gobinit := p.InitiativeM() + 1
 			fmt.Println("Initiative de", p.name, ":", playerinit, " !")
 			fmt.Println("Initiative du gobelin :", gobinit, " !")
 			if playerinit > gobinit {
-				fmt.Println(p.name, " attaque !")
-				time.Sleep(500 * time.Millisecond)
-				if playerinit >= 18 {
-					fmt.Println("Attaque critique ! Vous infligez 20 dégats au gobelin")
-					p.mhp -= 20
-				}else {
-					fmt.Println("Vous infligez 10 dégats au gobelin")
-					p.mhp -= 10	
-				}
+				p.CharTurn()
 			} else if playerinit < gobinit {
 				fmt.Println("Le gobelin attaque !")
 				time.Sleep(500 * time.Millisecond)
 				if gobinit >= 18 {
 					if tour%3 == 0 {
 						fmt.Println("Attaque lourde critique ! Vous subissez 20 points de dégats !")
-						p.hp -= 4*p.mdamage
-					}else {
+						p.hp -= 4 * p.mdamage
+					} else {
 						fmt.Println("Vous subissez un coup critique de 10 points de dégats !")
-						p.hp -= 2*p.mdamage
-					}		
-				}else {
+						p.hp -= 2 * p.mdamage
+					}
+				} else {
 					if tour%3 == 0 {
 						fmt.Println("Attaque lourde ! Vous subissez 10 points de dégats !")
-						p.hp -= 2*p.mdamage
-					}else {
+						p.hp -= 2 * p.mdamage
+					} else {
 						fmt.Println("Vous subissez 5 points de dégats !")
 						p.hp -= p.mdamage
-					}		
+					}
 				}
-				
+
 			}
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("Tour :", tour)

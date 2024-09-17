@@ -46,21 +46,21 @@ func (p *Player) Entrainement() {
 					if tour%3 == 0 {
 						fmt.Println(" ")
 						fmt.Println("Attaque lourde critique ! Vous subissez 20 points de dégats !")
-						p.hp -= 4 * p.mdamage
+						p.hp -= 4 * p.mdammage
 					} else {
 						fmt.Println(" ")
 						fmt.Println("Vous subissez un coup critique de 10 points de dégats !")
-						p.hp -= 2 * p.mdamage
+						p.hp -= 2 * p.mdammage
 					}
 				} else {
 					if tour%3 == 0 {
 						fmt.Println(" ")
 						fmt.Println("Attaque lourde ! Vous subissez 10 points de dégats !")
-						p.hp -= 2 * p.mdamage
+						p.hp -= 2 * p.mdammage
 					} else {
 						fmt.Println(" ")
 						fmt.Println("Vous subissez 5 points de dégats !")
-						p.hp -= p.mdamage
+						p.hp -= p.mdammage
 					}
 				}
 

@@ -51,6 +51,7 @@ func (p *Player) CheckQtyItem(name string) int {
     return count
 }
 
+// Check si un objet est équipé par le joueur
 func (p *Player) CheckGear(name string) bool {
 	for _, item := range p.equipement {
 		if item.name == name {

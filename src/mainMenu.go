@@ -21,29 +21,36 @@ func (p *Player) MainMenu() {
 		fmt.Println("----------------")
 		p.Display()
 		p.MainMenu()
+		return
 	case "2":
 		fmt.Println("----------------")
 		p.InventoryDisplay()
+		return
 	case "3":
 		fmt.Println("----------------")
 		fmt.Println("Bienvenue chez le Marchand ! ")
 		p.Market()
+		return
 	case "4":
 		fmt.Println("----------------")
 		p.BlackSmithMenu()
+		return
 	case "5":
+		fmt.Println("----------------")
 		p.GearSlot()
-		//Equipements()
+		return
 	case "6":
 		fmt.Println("----------------")
 		p.Entrainement()
-		//Combat()
+		return
 	case "0":
+		fmt.Println("----------------")
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
 		//Exit
 	default:
 		fmt.Println("----------------")
 		fmt.Println("Commande inconnue, réessayez.")
 		p.MainMenu()
+		return
 	}
 }

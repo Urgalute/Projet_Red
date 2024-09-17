@@ -16,9 +16,10 @@ func (p *Player) InventoryDisplay() {
 	fmt.Println("                                                         ")
 	if len(p.inventory) == 0 {
 		fmt.Println("Votre inventaire est vide !")
-		time.Sleep(2 * time.Second)
+		time.Sleep(1 * time.Second)
+		fmt.Println("  ")
 		fmt.Println("Retour au menu principal")
-		time.Sleep(2 * time.Second)
+		time.Sleep(1 * time.Second)
 		p.MainMenu()
 		return
 	} else {
@@ -43,6 +44,7 @@ func (p *Player) MenuInventaire() {
 	if input == 0 {
 		p.MainMenu()
 		fmt.Println("                  ")
+		return
 	} else if input < len(p.inventory)+1 {
 		fmt.Println("                  ")
 		selectedItem = items[input-1]
@@ -52,26 +54,32 @@ func (p *Player) MenuInventaire() {
 			fmt.Println("Vous avez bu une potion de poison.")
 			fmt.Println("                  ")
 			p.InventoryDisplay()
+			return
 		case "Potion de santé":
 			p.TakePot()
 			fmt.Println("Vous avez bu une potion de santé")
 			fmt.Println("                  ")
 			p.InventoryDisplay()
+			return
 		case "Livre de sort : Boule de feu":
 			p.Spell()
 			p.InventoryDisplay()
+			return
 		case "Casque en acier":
 			p.EquipGear("Casque en acier", 1, "+15pvmax")
 			p.RemoveItem("Casque en acier", 1)
 			p.InventoryDisplay()
+			return
 		case "Robe magique":		
 			p.EquipGear("Robe magique", 1, "+25pvmax")
 			p.RemoveItem("Robe magique", 1)
 			p.InventoryDisplay()
+			return
 		case "Bottes en cuir":
 			p.EquipGear("Bottes en cuir", 1, "+10pvmax")
 			p.RemoveItem("Bottes en cuir", 1)
 			p.InventoryDisplay()
+			return
 		default:
 			p.InventoryDisplay()
 				return

@@ -54,7 +54,9 @@ func (p *Player) Entrainement() {
 			fmt.Println("Tour :", tour)
 			time.Sleep(500 * time.Millisecond)
 		}
+		return
 	case "0":
 		p.MainMenu()
+		return
 	}
 }

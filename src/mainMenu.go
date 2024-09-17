@@ -30,7 +30,7 @@ func (p *Player) MainMenu() {
 		p.Market()
 	case "4":
 		fmt.Println("----------------")
-		//Forge()
+		p.BlackSmithMenu()
 	case "5":
 		p.GearSlot()
 		//Equipements()

@@ -20,9 +20,11 @@ func (p *Player) Entrainement() {
 		p.Entrainement()
 		return
 	case "2":
-		for tour := 1; (p.mhp != 0 && p.hp > 0) || (p.mhp > 0 && p.hp != 0); tour++ {
+		for tour := 1; p.mhp > 0 && p.hp > 0; tour++ {
+			time.Sleep(500 * time.Millisecond)
+			fmt.Println("Tour :", tour)
+			time.Sleep(500 * time.Millisecond)
 			playerinit := p.InitiativeP() + 3
-			time.Sleep(1 * time.Second)
 			gobinit := p.InitiativeM() + 1
 			fmt.Println("Initiative de", p.name, ":", playerinit, " !")
 			fmt.Println("Initiative du gobelin :", gobinit, " !")
@@ -50,9 +52,16 @@ func (p *Player) Entrainement() {
 				}
 
 			}
-			time.Sleep(500 * time.Millisecond)
-			fmt.Println("Tour :", tour)
-			time.Sleep(500 * time.Millisecond)
+		}
+		if p.mhp <= 0 {
+			fmt.Println("Vous avez tué le gobelin, on peut désormais vous décerner le titre de Goblin Slayer !")
+			p.MainMenu()
+			return
+
+		} else if p.hp <= 0 {
+			fmt.Println("Le gobelin vous a démoli ... Vous avez gagné le titre : le Faible")
+			p.Mort()
+			return
 		}
 		return
 	case "0":

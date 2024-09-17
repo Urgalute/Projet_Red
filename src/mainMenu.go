@@ -36,7 +36,7 @@ func (p *Player) MainMenu() {
 		//Equipements()
 	case "6":
 		fmt.Println("----------------")
-		//Combat()
+		p.CharTurn()
 	case "0":
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
 		//Exit

@@ -46,7 +46,7 @@ func (p *Player) TakePot() {
 		}
 	}
 	fmt.Println("--------------------------------")
-	fmt.Println("Vous n'avez pasa de potion de santé dans votre inventaire")
+	fmt.Println("Vous n'avez pas de potion de santé dans votre inventaire")
 	fmt.Println("--------------------------------")
 }
 
@@ -81,6 +81,53 @@ func (p *Player) Poison() {
 		fmt.Println("                  ")
 		p.Poison()
 	}
+}
+
+func (p *Player) Mana(){
+	var input string
+	for _, object := range p.inventory {
+		if object.name == "Potion de mana" {
+			if p.mana > p.manamax-20 {
+				fmt.Println("--------------------------------")
+				fmt.Println("Il vous manque moins de 20 points de mana", p.mana, "/", p.manamax, ", êtes-vous sûr de vouloir utiliser une potion de mana ?")
+				fmt.Println("1: 	Oui")
+				fmt.Println("2: 	Retour")
+				fmt.Print("Votre choix : ")
+				fmt.Scanln(&input)
+				switch input {
+				case "1":
+					fmt.Println("--------------------------------")
+					p.mana = p.manamax
+					fmt.Println("Mana : ", p.mana, "/", p.manamax)
+					for _, item := range p.inventory {
+						if item.name == "Potion de mana" && item.quantity > 0 {
+							//p.inventory[i].quantity--
+							p.RemoveItem("Potion de mana", 1)
+						}
+					}
+				case "2":
+					return
+				default:
+					p.Mana()
+				}
+			} else {
+				fmt.Println("--------------------------------")
+				p.mana += 25
+				fmt.Println("Mana : ", p.mana, "/", p.manamax)
+				for _, item := range p.inventory {
+					if item.name == "Potion de mana" && item.quantity > 0 {
+						p.RemoveItem("Potion de mana", 1)
+					}
+				}
+			}
+			return
+		}
+	}
+	fmt.Println("--------------------------------")
+	fmt.Println("Vous n'avez pas de potion de mana dans votre inventaire")
+	fmt.Println("--------------------------------")
+
+
 }
 
 func (p *Player) EquipGear(name string, quantity int, description string) bool {

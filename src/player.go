@@ -6,18 +6,23 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 	gear01 := Inventory{"Casque en acier", 1, "+15pvmax"}
 	gear02 := Inventory{"Robe magique", 1, "+25pvmax"}
 	gear03 := Inventory{"Bottes en cuir", 1, "+10pvmax"}
+
 	*p = Player{
-		name:  nom,
-		class: classe,
-		level: 1,
-		hpmax: pvmax,
-		hp:    pvactuel,
-		money: 100,
+		name:         nom,
+		class:        classe,
+		level:        1,
+		hpmax:        pvmax,
+		hp:           pvactuel,
+		manamax:      100,
+		money:        100,
 		inventorymax: 10,
-		manamax: 100,
-		inventory: []Inventory{gear01, gear02, gear03},
-		skill: []string{"Coup de poing"},
-		equipement: []Equipement{},
+		inventory:    []Inventory{gear01, gear02, gear03},
+		skill:        []string{"Coup de poing"},
+		equipement:   []Equipement{},
+		mname:        "Gobelin vicieux",
+		mhpmax:       25,
+		mhp:          25,
+		mdamage:      5,
 	}
 }
 

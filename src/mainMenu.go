@@ -30,13 +30,15 @@ func (p *Player) MainMenu() {
 		p.Market()
 	case "4":
 		fmt.Println("----------------")
-		//Forge()
+		p.BlackSmithMenu()
 	case "5":
 		p.GearSlot()
 		//Equipements()
 	case "6":
 		fmt.Println("----------------")
 		p.CharTurn()
+		p.Entrainement()
+		//Combat()
 	case "0":
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
 		//Exit

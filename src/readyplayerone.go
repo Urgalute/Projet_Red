@@ -100,7 +100,7 @@ func (p *Player) UseInventory() {
 
 func (p * Player) AttackBasic() {
 	damage := 5
-	//gobelin.hp -= damage
-	//fmt.Println("Vous utilisez Attaque basique et inflige 5 dégâts à Gobelin", p.name, damage, monster.name)
-	//fmt.Println("Gobelin PV restants :...", monster.name, monster.hp)
+	p.mhp -= damage
+	fmt.Println("Vous utilisez Attaque basique et inflige 5 dégâts à Gobelin", p.name, damage, p.mname)
+	fmt.Println("Gobelin PV restants :...", p.mname, p.mhp)
 }

@@ -25,27 +25,34 @@ func (p *Player) Entrainement() {
 			fmt.Println("Tour :", tour)
 			time.Sleep(500 * time.Millisecond)
 			playerinit := p.InitiativeP() + 3
+			time.Sleep(200 * time.Millisecond)
 			gobinit := p.InitiativeM() + 1
 			fmt.Println("Initiative de", p.name, ":", playerinit, " !")
 			fmt.Println("Initiative du gobelin :", gobinit, " !")
 			if playerinit > gobinit {
 				p.CharTurn()
 			} else if playerinit < gobinit {
+				fmt.Println(" ")
 				fmt.Println("Le gobelin attaque !")
+				fmt.Println(" ")
 				time.Sleep(500 * time.Millisecond)
 				if gobinit >= 18 {
 					if tour%3 == 0 {
+						fmt.Println(" ")
 						fmt.Println("Attaque lourde critique ! Vous subissez 20 points de dégats !")
 						p.hp -= 4 * p.mdamage
 					} else {
+						fmt.Println(" ")
 						fmt.Println("Vous subissez un coup critique de 10 points de dégats !")
 						p.hp -= 2 * p.mdamage
 					}
 				} else {
 					if tour%3 == 0 {
+						fmt.Println(" ")
 						fmt.Println("Attaque lourde ! Vous subissez 10 points de dégats !")
 						p.hp -= 2 * p.mdamage
 					} else {
+						fmt.Println(" ")
 						fmt.Println("Vous subissez 5 points de dégats !")
 						p.hp -= p.mdamage
 					}
@@ -54,6 +61,7 @@ func (p *Player) Entrainement() {
 			}
 		}
 		if p.mhp <= 0 {
+			fmt.Println(" ")
 			fmt.Println("Vous avez tué le gobelin, on peut désormais vous décerner le titre de Goblin Slayer !")
 			p.mhp = p.mhpmax
 			p.MainMenu()
@@ -61,6 +69,7 @@ func (p *Player) Entrainement() {
 			return
 
 		} else if p.hp <= 0 {
+			fmt.Println(" ")
 			fmt.Println("Le gobelin vous a démoli ... Vous avez gagné le titre : le Faible")
 			p.Mort()
 			return

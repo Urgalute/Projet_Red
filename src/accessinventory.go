@@ -22,6 +22,8 @@ func (p *Player) InventoryDisplay() {
 		p.MainMenu()
 		return
 	} else {
+		fmt.Println("Place dans votre inventaire : ", p.CheckQuantityInventory(), "/", p.inventorymax)
+		fmt.Println("                  ")
 		for i, objet := range p.inventory {
 			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
 		}
@@ -81,7 +83,7 @@ func (p *Player) MenuInventaire() {
 	}
 }
 
-// y faut verifier que la quantité dans l'inventaire sois inférieur a 10 pour mettre des objets sinon je doit signaler que l'inventaire est plein !
+// Y faut verifier que la quantité dans l'inventaire sois inférieur a 10 pour mettre des objets sinon je doit signaler que l'inventaire est plein !
 func (p *Player) CheckInventory() bool {
 	count := 0
 	for _, items := range p.inventory {
@@ -95,7 +97,7 @@ func (p *Player) CheckInventory() bool {
 }
 
 func (p *Player) CheckQuantityInventory() int {
-	count := 0 
+	count := 0
 	for _, items := range p.inventory {
 		count = count + items.quantity
 	}

@@ -55,7 +55,9 @@ func (p *Player) Entrainement() {
 		}
 		if p.mhp <= 0 {
 			fmt.Println("Vous avez tué le gobelin, on peut désormais vous décerner le titre de Goblin Slayer !")
+			p.mhp = p.mhpmax
 			p.MainMenu()
+
 			return
 
 		} else if p.hp <= 0 {

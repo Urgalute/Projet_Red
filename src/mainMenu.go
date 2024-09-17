@@ -36,7 +36,6 @@ func (p *Player) MainMenu() {
 		//Equipements()
 	case "6":
 		fmt.Println("----------------")
-		p.CharTurn()
 		p.Entrainement()
 		//Combat()
 	case "0":

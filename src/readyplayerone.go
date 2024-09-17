@@ -17,15 +17,15 @@ func (p *Player) CharTurn() {
 	switch input {
 	case "1":
 		fmt.Println("Attaquer")
+		p.AttackBasic()
 	case "2":
 		fmt.Println("Sort")
+		p.AttackSpell()
 	case "3":
 		fmt.Println("Inventaire")
 		p.FightInventory()
-		p.CharTurn()
 	default:
 		fmt.Println("Choix invalide, veuillez réessayer.")
-		p.CharTurn()
 	}
 }
 
@@ -80,7 +80,7 @@ func (p *Player) UseInventory() {
 			fmt.Println("Vous avez bu une potion de santé")
 			fmt.Println("                  ")
 			p.FightInventory()
-		case "Potion de mana" :
+		case "Potion de mana":
 			p.Mana()
 			fmt.Println("Vous avez bu une potion de mana")
 			fmt.Println("                  ")
@@ -98,9 +98,47 @@ func (p *Player) UseInventory() {
 	}
 }
 
-func (p * Player) AttackBasic() {
+func (p *Player) AttackBasic() {
 	damage := 5
 	p.mhp -= damage
-	fmt.Println("Vous utilisez Attaque basique et inflige 5 dégâts à Gobelin", p.name, damage, p.mname)
-	fmt.Println("Gobelin PV restants :...", p.mname, p.mhp)
+	fmt.Println("Vous utilisez Attaque basique et inflige", damage, "dégâts à ", p.mname,)
+	fmt.Println(p.mname, p.mhp, "restants :",)
+}
+
+func (p *Player) AttackSpell() {
+	fmt.Println("1. Coup de poing")
+	if p.CheckSpell("Boule de feu") {
+		fmt.Println("2. Boule de feu")
+	}
+	var input string
+	fmt.Scanln(&input)
+	switch input {
+	case "1":
+		fmt.Println("Coup de poing")
+		damage := 8
+		p.mhp -= damage
+		fmt.Println("Vous utilisez Coup de poing et inflige", damage ,"dégâts à", p.mname,)
+		fmt.Println(p.mname, p.mhp, "restants :",)
+	case "2":
+		if p.CheckSpell("Boule de feu") {
+		fmt.Println("Boule de feu")
+		if p.mana >= 25 {
+			p.mana -= 25
+		}
+		damage := 18
+		p.mhp -= damage
+		fmt.Println("Vous utilisez Boule de feu et inflige", damage, "dégâts à ", p.mname,)
+		fmt.Println(p.mname, p.mhp, "restants :", )
+	} else { 
+		fmt.Println("Vous n'avez pas cette compétence veuillez en choisir celle que vous avez !")
+		p.AttackSpell()
+	}
+	case "0":
+		p.CharTurn()
+	default:
+		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
+		p.CharTurn()
+	}
+
+
 }

@@ -36,6 +36,7 @@ func (p *Player) MainMenu() {
 		//Equipements()
 	case "6":
 		fmt.Println("----------------")
+		p.Entrainement()
 		//Combat()
 	case "0":
 		fmt.Println("Merci d'avoir utilisé notre jeu!")

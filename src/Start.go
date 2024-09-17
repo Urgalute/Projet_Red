@@ -29,8 +29,10 @@ func (p *Player) StartMenu() {
 	switch input {
 	case "1":
 		p.PersoInit()
+		return
 	case "2":
 		p.MainMenu()
+		return
 	case "3":
 		fmt.Println(" ")
 		fmt.Println("Au revoir !")
@@ -41,6 +43,6 @@ func (p *Player) StartMenu() {
 	default:
 		fmt.Println("Les options proposées sont 1, 2, 3 et 4 ...")
 		p.StartMenu()
-
+		return
 	}
 }

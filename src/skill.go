@@ -31,7 +31,7 @@ func (p *Player) LearnSpell(name string){
 	fmt.Println("Vous avez appris le sort Boule de feu !")
 	p.RemoveItem("Livre de sort : Boule de feu", 1)
 	} else {
-	fmt.Println("Vous savez déjà cette compétence")		
+	fmt.Println("Vous connaissez déjà cette compétence")		
 	}
 
 }

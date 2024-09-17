@@ -6,7 +6,7 @@ import (
 
 var n int
 
-func (p *Player) Market() bool {
+func (p *Player) Market() {
 	var input string
 	fmt.Println("             ")
 	fmt.Println("Place dans votre inventaire : ", p.CheckQuantityInventory(), "/", p.inventorymax)
@@ -52,6 +52,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
+		return
 	case "2":
 		if p.Moneyy(6) {
 			if !p.CheckInventory() {
@@ -72,7 +73,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
-
+		return
 	case "3":
 		if p.Moneyy(10) {
 			if !p.CheckInventory() {
@@ -93,7 +94,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
-
+return
 	case "4":
 		if !p.CheckInventory() {
 			if n < 1 {
@@ -117,6 +118,7 @@ func (p *Player) Market() bool {
 			}
 		}
 		p.Market()
+		return
 	case "5":
 		if p.Moneyy(25) {
 			if !p.CheckInventory() {
@@ -137,7 +139,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
-
+return
 	case "6":
 		if p.Moneyy(4) {
 			if !p.CheckInventory() {
@@ -158,7 +160,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
-
+return
 	case "7":
 		if p.Moneyy(7) {
 			if !p.CheckInventory() {
@@ -179,6 +181,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
+		return
 	case "8":
 		if p.Moneyy(3) {
 			if !p.CheckInventory() {
@@ -199,6 +202,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
+		return
 	case "9":
 		if p.Moneyy(1) {
 			if !p.CheckInventory() {
@@ -219,7 +223,7 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
-
+		return
 	case "10":
 		if p.Moneyy(30) {
 			if !p.CheckInventory() {
@@ -240,13 +244,15 @@ func (p *Player) Market() bool {
 			fmt.Println("Vous n'avez pas assez d'or")
 		}
 		p.Market()
+		return
 	case "0":
 		p.MainMenu()
+		return
 	default:
 		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
 		p.Market()
+		return
 	}
-	return true
 }
 
 // Augmente l'inventaire de 10 objets supplémentaires
@@ -259,7 +265,8 @@ func (p *Player) UpgradeInventorySlot() {
 		p.RemoveItem("Augmentation d'inventaire", 1)
 	}
 }
-// Limite d'achat 
+
+// Limite d'achat
 func (p *Player) Moneyy(cost int) bool {
 	if p.money < cost {
 		return false

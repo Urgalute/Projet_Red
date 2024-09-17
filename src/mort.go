@@ -19,14 +19,17 @@ func (p *Player) Mort() {
 		fmt.Println("                  ")
 		fmt.Println("                  ")
 		p.MainMenu()
+		return
 	} else if input == "2" {
 		fmt.Println("Merci d'avoir jouer tout de même !")
 		fmt.Println("                  ")
 		p.StartMenu()
+		return
 	} else {
 		fmt.Println("                  ")
 		fmt.Println("Avez-vous bien lu vos choix possibles ??")
 		fmt.Println("                  ")
 		p.Mort()
+		return
 	}
 }

@@ -69,17 +69,20 @@ func (p *Player) Poison() {
 			if p.hp <= 0 {
 				fmt.Println("                  ")
 				p.Mort()
+				return
 			}
 		}
 		fmt.Println("                  ")
 		p.InventoryDisplay()
 	} else if input == "2" {
 		p.InventoryDisplay()
+		return
 	} else {
 		fmt.Println("                  ")
 		fmt.Println("Avez-vous bien lu vos choix possibles ??")
 		fmt.Println("                  ")
 		p.Poison()
+		return
 	}
 }
 

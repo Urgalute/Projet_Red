@@ -14,6 +14,9 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		hpmax:        pvmax,
 		hp:           pvactuel,
 		manamax:      100,
+		dammage:      5,
+		xp:           0,
+		xpmax:        20,
 		money:        100,
 		inventorymax: 10,
 		inventory:    []Inventory{gear01, gear02, gear03},
@@ -22,7 +25,9 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		mname:        "Gobelin vicieux",
 		mhpmax:       25,
 		mhp:          25,
-		mdamage:      5,
+		mdammage:      5,
+		mxp:          5,
+		mlevel:       1,
 	}
 }
 
@@ -41,27 +46,36 @@ func (p *Player) Experience() {
 	if p.level == 6 {
 		fmt.Println("Vous avez atteint le niveau maximum")
 	} else {
-		p.xp += p.mxp 
-		fmt.Println("Vous gagnez", p.mxp,"points d'expériences")
-	switch p.xp{
-		case 20: p.level = 2 ; p.xpmax = 40 
-		fmt.Println("Félicitations !! Vous passez au niveau", p.level,". Vos statistique augmentent, mais celles de vos ennemies aussi !")
-		case 40: p.level = 3 ; p.xpmax = 60
-		fmt.Println("Félicitations !! Vous passez au niveau", p.level,". Vos statistique augmentent, mais celles de vos ennemies aussi !")
-		case 60: p.level = 4 ; p.xpmax = 80
-		fmt.Println("Félicitations !! Vous passez au niveau", p.level,". Vos statistique augmentent, mais celles de vos ennemies aussi !")
-		case 80: p.level = 5 ; p.xpmax = 100
-		fmt.Println("Félicitations !! Vous passez au niveau", p.level,". Vos statistique augmentent, mais celles de vos ennemies aussi !")
-		case 100: p.level = 6
-		fmt.Println("Félicitations !! Vous passez au niveau", p.level,"(Niveau maximum). Vos statistique augmentent, mais celles de vos ennemies aussi !")
-		}	
-	switch p.level{
-		case 1: p.dammage = 5 ; Gobelin.xp = 5 ; Gobelin.maxlife = 40 ; Gobelin.dammage = 3 ; Gobelin.level = 1
-		case 2: p.dammage = 8 ; Gobelin.xp = 10 ; Gobelin.maxlife = 50 ; Gobelin.dammage = 5 ; p.maxlife += 5 ; p.maxmana += 10 ; Gobelin.level = 2
-		case 3: p.dammage = 11 ; Gobelin.xp = 15 ; Gobelin.maxlife = 60 ; Gobelin.dammage = 7 ; p.maxlife += 5 ; p.maxmana += 10  ; Gobelin.level = 3; Gobelin.loot["Pièces d'or"] = 13
-		case 4: p.dammage = 14 ; Gobelin.xp = 20 ; Gobelin.maxlife = 70 ; Gobelin.dammage = 9 ; p.maxlife += 5 ; p.maxmana +=10  ; Gobelin.level = 4
-		case 5: p.dammage = 17 ; Gobelin.xp = 25 ; Gobelin.maxlife = 80 ; Gobelin.dammage = 11 ; p.maxlife += 5 ; p.maxmana += 10 ; Gobelin.level = 5
-		case 6: p.dammage = 20 ; Gobelin.maxlife = 90 ; Gobelin.dammage = 13 ; p.maxlife += 5 ; p.maxmana += 10 ; Gobelin.level = 6 ; Gobelin.loot["Pièces d'or"] = 20
+		p.xp += p.mxp
+		fmt.Println("Vous gagnez", p.mxp, "points d'expériences")
+		switch p.xp {
+		case 20:
+			p.level = 2
+			p.xpmax = 40
+			fmt.Println("Félicitations !! Vous passez au niveau", p.level, ". Vos statistique augmentent, mais celles de vos ennemies aussi !")
+		case 40:
+			p.level = 3
+			p.xpmax = 60
+			fmt.Println("Félicitations !! Vous passez au niveau", p.level, ". Vos statistique augmentent, mais celles de vos ennemies aussi !")
+		case 60:
+			p.level = 4
+			p.xpmax = 80
+			fmt.Println("Félicitations !! Vous passez au niveau", p.level, ". Vos statistique augmentent, mais celles de vos ennemies aussi !")
+		case 80:
+			p.level = 5
+			p.xpmax = 100
+			fmt.Println("Félicitations !! Vous passez au niveau", p.level, ". Vos statistique augmentent, mais celles de vos ennemies aussi !")
+		case 100:
+			p.level = 6
+			fmt.Println("Félicitations !! Vous passez au niveau", p.level, "(Niveau maximum). Vos statistique augmentent, mais celles de vos ennemies aussi !")
 		}
+		switch p.level{
+			case 1: p.dammage = 5 ; p.mxp = 5 ; p.mhpmax = 40 ; p.mdammage = 5 ; p.mlevel = 1
+			case 2: p.dammage = 8 ; p.mxp = 10 ; p.mhpmax = 50 ; p.mdammage = 8 ; p.hpmax += 5 ; p.manamax += 10 ; p.mlevel = 2
+			case 3: p.dammage = 11 ; p.mxp = 15 ; p.mhpmax = 60 ; p.mdammage = 11 ; p.hpmax += 5 ; p.manamax += 10  ; p.mlevel = 3;
+			case 4: p.dammage = 14 ; p.mxp = 20 ; p.mhpmax = 70 ; p.mdammage = 14 ; p.hpmax += 5 ; p.manamax +=10  ; p.mlevel = 4
+			case 5: p.dammage = 17 ; p.mxp = 25 ; p.mhpmax = 80 ; p.mdammage = 17 ; p.hpmax += 5 ; p.manamax += 10 ; p.mlevel = 5
+			case 6: p.dammage = 20 ; p.mhpmax = 90 ; p.mdammage = 20 ; p.hpmax += 5 ; p.manamax += 10 ; p.mlevel = 6 ;
+			}
 	}
 }

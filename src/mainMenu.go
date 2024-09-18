@@ -21,36 +21,45 @@ func (p *Player) MainMenu() {
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
+		ClearTerminal()
 		fmt.Println("----------------")
 		p.Display()
 		p.MainMenu()
 		return
 	case "2":
+		ClearTerminal()
 		fmt.Println("----------------")
 		p.InventoryDisplay()
 		return
 	case "3":
+		ClearTerminal()
 		fmt.Println("----------------")
 		fmt.Println("Bienvenue chez le Marchand ! ")
 		p.Market()
 		return
 	case "4":
+		ClearTerminal()
 		fmt.Println("----------------")
 		p.BlackSmithMenu()
+		p.MainMenu()
 		return
 	case "5":
+		ClearTerminal()
 		fmt.Println("----------------")
 		p.GearSlot()
 		return
 	case "6":
+		ClearTerminal()
 		fmt.Println("----------------")
 		p.Entrainement()
 		return
 	case "0":
+		ClearTerminal()
 		fmt.Println("----------------")
 		fmt.Println("Merci d'avoir utilisé notre jeu!")
 		os.Exit(0)
 	default:
+		ClearTerminal()
 		fmt.Println("----------------")
 		fmt.Println("Commande inconnue, réessayez.")
 		p.MainMenu()

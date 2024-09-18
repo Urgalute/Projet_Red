@@ -34,12 +34,9 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 func (p *Player) Display() {
 	fmt.Println("Votre nom :", p.name)
 	fmt.Println("Votre classe :", p.class)
-	fmt.Println("Votre niveau :", p.level)
-	fmt.Println("Vos points de vie maximum :", p.hpmax)
-	fmt.Println("Points de vie actuel :", p.hp)
+	fmt.Println("Votre niveau :", p.level, "(", p.xp)")
+	fmt.Println("Vos points de vie: ", p.hp, "/", p.hpmax)
 	fmt.Println("Vos attaques :", p.skill)
-	fmt.Println("Vous avez :", p.money, "pièces d'or.")
-	fmt.Println("Vos équipements :", p.equipement)
 }
 
 func (p *Player) Experience() {

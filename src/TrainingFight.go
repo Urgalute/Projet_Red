@@ -75,7 +75,8 @@ func (p *Player) Entrainement() {
 			fmt.Println("Vous avez tué le gobelin, on peut désormais vous décerner le titre de Goblin Slayer !")
 			p.Experience()
 			p.mhp = p.mhpmax
-			killgob += 1
+			killgob ++
+			p.Titre()
 			p.MainMenu()
 
 			return
@@ -83,7 +84,8 @@ func (p *Player) Entrainement() {
 		} else if p.hp <= 0 {
 			fmt.Println(" ")
 			fmt.Println("Le gobelin vous a démoli ... Vous avez gagné le titre : le Faible")
-			deathgob = 0
+			deathgob ++
+			p.Titre()
 			p.Mort()
 			return
 		}

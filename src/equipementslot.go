@@ -3,9 +3,9 @@ package Projet_Red
 import "fmt"
 
 func (p *Player) GearSlot() {
-	casqueEquipe := p.EquipGear("Casque en acier", 1, "+15pvmax")
-	robeEquipe := p.EquipGear("Robe magique", 1, "+25pvmax || 30po")
-	bottesEquipe := p.EquipGear("Bottes en cuir", 1, "+10pvmax")
+	casqueEquipe := p.CheckGear("Casque en acier")
+	robeEquipe := p.CheckGear("Robe magique")
+	bottesEquipe := p.CheckGear("Bottes en cuir")
 
 		if casqueEquipe && !robeEquipe && !bottesEquipe {
 			fmt.Println(" ")

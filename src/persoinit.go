@@ -36,7 +36,6 @@ func (p *Player) PersoInit() {
 		}
 	}
 	prenom[0] -= 32
-	fmt.Println("Votre pseudo : ", resultnom)
 	fmt.Println("  ")
 	fmt.Println("Donc, vous vous appelez", string(prenom), ", sympa comme prénom")
 	fmt.Println("  ")

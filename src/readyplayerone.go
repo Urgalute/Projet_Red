@@ -200,9 +200,8 @@ func (p *Player) UseInventory() {
 
 
 func (p *Player) AttackBasic() {
-	damage := 5
-	p.mhp -= damage
-	fmt.Println("Vous utilisez Attaque basique et infligez", damage, "dégâts à ", p.mname)
+	p.mhp -= p.dammage
+	fmt.Println("Vous utilisez Attaque basique et infligez", p.dammage, "dégâts à ", p.mname)
 	fmt.Println(p.mname, p.mhp, "restants :")	
 }
 
@@ -216,7 +215,7 @@ func (p *Player) AttackSpell() {
 	switch input {
 	case "1":
 		fmt.Println("Coup de poing")
-		damage := 8
+		damage := 10
 		p.mhp -= damage
 		fmt.Println("Vous utilisez Coup de poing et infligez", damage, "dégâts à", p.mname)
 		fmt.Println(p.mname, p.mhp, "restants :")
@@ -226,7 +225,7 @@ func (p *Player) AttackSpell() {
 			if p.mana >= 25 {
 				p.mana -= 25
 			}
-			damage := 18
+			damage := p.dammage + 5
 			p.mhp -= damage
 			fmt.Println("Vous utilisez Boule de feu et infligez", damage, "dégâts à ", p.mname)
 			fmt.Println(p.mname, p.mhp, "restants :")
@@ -244,8 +243,8 @@ func (p *Player) AttackSpell() {
 
 func (p *Player) AttackCrit() {
 	damage := 5
-	p.mhp -= damage*2
-	fmt.Println("Vous utilisez Attaque critique et infligez", damage*2, "dégâts à ", p.mname)
+	p.mhp -= p.dammage*2
+	fmt.Println("Vous utilisez Attaque critique et infligez", p.dammage*2, "dégâts à ", p.mname)
 	fmt.Println(p.mname, p.mhp, "restants :")
 }
 
@@ -259,7 +258,7 @@ func (p *Player) AttackSpellCrit() {
 	switch input {
 	case "1":
 		fmt.Println("Coup de poing")
-		damage := 8
+		damage := 
 		p.mhp -= damage*2
 		fmt.Println("Vous utilisez Coup de poing critique et infligez", damage*2, "dégâts à", p.mname)
 		fmt.Println(p.mname, p.mhp, "restants :")
@@ -269,7 +268,7 @@ func (p *Player) AttackSpellCrit() {
 			if p.mana >= 25 {
 				p.mana -= 25
 			}
-			damage := 18
+			damage := p.dammage+5
 			p.mhp -= damage*2
 			fmt.Println("Vous utilisez Boule de feu critique et infligez", damage*2, "dégâts à ", p.mname)
 			fmt.Println(p.mname, p.mhp, "restants :")

@@ -50,20 +50,28 @@ func (p *Player) Entrainement() {
 						fmt.Println(" ")
 						fmt.Println("Attaque lourde critique ! Vous subissez 20 points de dégats !")
 						p.hp -= 4 * p.mdammage
+						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(" ")
 					} else {
 						fmt.Println(" ")
 						fmt.Println("Vous subissez un coup critique de 10 points de dégats !")
 						p.hp -= 2 * p.mdammage
+						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(" ")
 					}
 				} else {
 					if tour%3 == 0 {
 						fmt.Println(" ")
 						fmt.Println("Attaque lourde ! Vous subissez 10 points de dégats !")
 						p.hp -= 2 * p.mdammage
+						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(" ")
 					} else {
 						fmt.Println(" ")
 						fmt.Println("Vous subissez 5 points de dégats !")
 						p.hp -= p.mdammage
+						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(" ")
 					}
 				}
 

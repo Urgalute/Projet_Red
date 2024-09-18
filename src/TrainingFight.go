@@ -24,7 +24,8 @@ func (p *Player) Entrainement() {
 		for tour := 1; p.mhp > 0 && p.hp > 0; tour++ {
 			fmt.Println(" ")
 			time.Sleep(500 * time.Millisecond)
-			fmt.Println("\033[96mTour\033[0m :", tour)
+			fmt.Println("\033[4m__________________________\033[0m")
+			fmt.Println("\033[30m\033[107m\033[4m        Tour :", tour,"         \033[0m")
 			time.Sleep(500 * time.Millisecond)
 			playerinit := p.InitiativeP() + 3
 			time.Sleep(200 * time.Millisecond)

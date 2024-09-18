@@ -277,12 +277,13 @@ func (p *Player) AttackCrit() {
 func (p *Player) AttackSpellCrit() {
 	fmt.Println("1. \033[33mCoup de poing\033[0m")
 	if p.CheckSpell("Boule de feu") {
-		fmt.Println("2. \033[91mBoule de feu\033[0m")
+		fmt.Println("2. Boule de feu")
 	}
 	var input string
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
+		fmt.Println("\033[33mCoup de poing\033[0m")
 		damage := 10
 		p.mhp -= damage * 2
 		fmt.Println(" ")

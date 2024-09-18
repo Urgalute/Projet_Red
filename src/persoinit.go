@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+//Création de personnage
 func (p *Player) PersoInit() {
 	fmt.Println("  ")
 	fmt.Println("Bonjour ... Joueur ?? Ou peut être préférez vous que l'on vous appelle autrement ?")
@@ -48,7 +49,6 @@ func (p *Player) PersoInit() {
 	fmt.Println("3 -  Mage : PVmax = 80")
 	fmt.Println("  ")
 	var inputclasse string
-	var hp int
 	var hpmax int
 	fmt.Scanln(&inputclasse)
 	fmt.Println("  ")
@@ -58,19 +58,16 @@ func (p *Player) PersoInit() {
 		fmt.Println("  ")
 		inputclasse = "Guerrier"
 		hpmax = 120
-		hp = hpmax / 2
 	case "2":
 		fmt.Println("Être sournois est une seconde nature pour vous.")
 		fmt.Println("  ")
 		inputclasse = "Voleur"
 		hpmax = 100
-		hp = hpmax / 2
 	case "3":
 		fmt.Println("Fini les tours de passe passe avec des cartes.")
 		fmt.Println("  ")
 		inputclasse = "Mage"
 		hpmax = 80
-		hp = hpmax / 2
 	default:
 		fmt.Println("Commande inconnue, réessayez.")
 		fmt.Println("  ")
@@ -82,6 +79,6 @@ func (p *Player) PersoInit() {
 	fmt.Println("Je pense avoir tout les renseignements qu'il me faut, bon jeu !")
 	fmt.Println("  ")
 	time.Sleep(1 * time.Second)
-	p.InitPlayer(string(prenom), inputclasse, hpmax, hp)
+	p.InitPlayer(string(prenom), inputclasse, hpmax)
 	p.MainMenu()
 }

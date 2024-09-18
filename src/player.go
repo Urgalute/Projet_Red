@@ -13,6 +13,7 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) 
 		level:        1,
 		hpmax:        pvmax,
 		hp:           pvactuel,
+		mana:		  75,
 		manamax:      100,
 		dammage:      5,
 		xp:           0,

@@ -40,6 +40,7 @@ func (p *Player) Display() {
 	fmt.Println("Vos attaques :", p.skill)
 	fmt.Println("Vous avez :", p.money, "pièces d'or.")
 	fmt.Println("Vos équipements :", p.equipement)
+	fmt.Println(" ")
 }
 
 func (p *Player) Experience() {

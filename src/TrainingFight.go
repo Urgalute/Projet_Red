@@ -21,14 +21,17 @@ func (p *Player) Entrainement() {
 		return
 	case "2":
 		for tour := 1; p.mhp > 0 && p.hp > 0; tour++ {
+			fmt.Println(" ")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("Tour :", tour)
 			time.Sleep(500 * time.Millisecond)
 			playerinit := p.InitiativeP() + 3
 			time.Sleep(200 * time.Millisecond)
 			gobinit := p.InitiativeM() + 1
+			fmt.Println(" ")
 			fmt.Println("Initiative de", p.name, ":", playerinit, " !")
 			fmt.Println("Initiative du gobelin :", gobinit, " !")
+			fmt.Println(" ")
 			if playerinit > gobinit {
 				if playerinit >= 18 {
 					p.CharTurnCrit()

@@ -7,7 +7,8 @@ import (
 
 func (p *Player) CharTurn() {
 	var input string
-	fmt.Println("Menu:")
+	fmt.Println("A vous d'attaquer !")
+	fmt.Println(" ")
 	fmt.Println("1. Attaquer")
 	fmt.Println("2. Sort")
 	fmt.Println("3. Inventaire")
@@ -31,7 +32,8 @@ func (p *Player) CharTurn() {
 
 func (p *Player) CharTurnCrit() {
 	var input string
-	fmt.Println("Menu:")
+	fmt.Println("A vous d'attaquer !")
+	fmt.Println(" ")
 	fmt.Println("1. Attaque Critique")
 	fmt.Println("2. Sort Critique")
 	fmt.Println("3. Inventaire")
@@ -272,7 +274,7 @@ func (p *Player) AttackSpellCrit() {
 			fmt.Println("Vous utilisez Boule de feu critique et infligez", damage*2, "dégâts à ", p.mname)
 			fmt.Println(p.mname, p.mhp, "restants :")
 		} else {
-			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir celle que vous avez !")
+			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir une que vous possédez !")
 			p.AttackSpellCrit()
 		}
 	case "0":

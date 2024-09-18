@@ -7,6 +7,7 @@ import (
 
 func (p *Player) CharTurn() {
 	var input string
+	fmt.Println(" ")
 	fmt.Println("A vous d'attaquer !")
 	fmt.Println(" ")
 	fmt.Println("1. Attaquer")
@@ -32,7 +33,10 @@ func (p *Player) CharTurn() {
 		fmt.Println(" ")
 		p.FightInventory()
 	default:
+		fmt.Println(" ")
 		fmt.Println("Choix invalide, veuillez réessayer.")
+		fmt.Println(" ")
+		p.CharTurn()
 	}
 }
 
@@ -64,6 +68,7 @@ func (p *Player) CharTurnCrit() {
 		p.FightInventoryCrit()
 	default:
 		fmt.Println("Choix invalide, veuillez réessayer.")
+		p.CharTurn()
 	}
 }
 
@@ -216,6 +221,8 @@ func (p *Player) AttackBasic() {
 	p.mhp -= damage
 	fmt.Println(" ")
 	fmt.Println("Vous utilisez Attaque basique et infligez", damage, "dégâts à ", p.mname)
+	fmt.Println(" ")
+
 	fmt.Println(p.mname, p.mhp, " PV restants ")	
 }
 
@@ -302,10 +309,10 @@ func (p *Player) AttackSpellCrit() {
 			p.AttackSpellCrit()
 		}
 	case "0":
-		p.CharTurn()
+		p.CharTurnCrit()
 	default:
 		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
-		p.CharTurn()
+		p.CharTurnCrit()
 	}
 
 }

@@ -22,6 +22,8 @@ func (p *Player) StartMenu() {
 	fmt.Println("                           ")
 	fmt.Println("    3. Quitter                      ")
 	fmt.Println("                           ")
+	fmt.Println("                           ")
+	fmt.Println("                           ")
 	fmt.Println("    4. Crédits                     ")
 	fmt.Println("                       	    \033[0m")
 	var input string

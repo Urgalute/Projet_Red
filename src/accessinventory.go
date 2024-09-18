@@ -24,6 +24,7 @@ func (p *Player) InventoryDisplay() {
 		return
 	} else {
 		fmt.Println("Place dans votre inventaire : ", p.CheckQuantityInventory(), "/", p.inventorymax)
+		fmt.Println("Vos Pièces d'or: ", p.money)
 		fmt.Println("                  ")
 		for i, objet := range p.inventory {
 			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
@@ -50,41 +51,54 @@ func (p *Player) MenuInventaire() {
 		selectedItem = items[input-1]
 		switch selectedItem.name {
 		case "Potion de poison":
+			ClearTerminal()
 			p.Poison()
-			fmt.Println("Vous avez bu une potion de poison.")
 			fmt.Println("                  ")
 			p.InventoryDisplay()
 			return
 		case "Potion de santé":
+			ClearTerminal()
 			p.TakePot()
-			fmt.Println("Vous avez bu une potion de santé")
 			fmt.Println("                  ")
 			p.InventoryDisplay()
 			return
+		case "Potion de mana":
+			ClearTerminal()
+			p.Mana()
+			fmt.Println("                  ")
+			p.InventoryDisplay()
 		case "Livre de sort : Boule de feu":
+			ClearTerminal()
 			p.Spell()
 			p.InventoryDisplay()
 			return
 		case "Casque en acier":
+			ClearTerminal()
 			p.EquipGear("Casque en acier", 1, "+15pvmax")
 			p.RemoveItem("Casque en acier", 1)
 			p.InventoryDisplay()
 			return
-		case "Robe magique":		
+		case "Robe magique":
+			ClearTerminal()		
 			p.EquipGear("Robe magique", 1, "+25pvmax")
 			p.RemoveItem("Robe magique", 1)
 			p.InventoryDisplay()
 			return
 		case "Bottes en cuir":
+			ClearTerminal()
 			p.EquipGear("Bottes en cuir", 1, "+10pvmax")
 			p.RemoveItem("Bottes en cuir", 1)
 			p.InventoryDisplay()
 			return
+		case "Augmentation d'inventaire":
+			p.UpgradeInventorySlot()
+			p.InventoryDisplay()
 		default:
 			p.InventoryDisplay()
-				return
+			return
 		}
 	}else {
+		ClearTerminal()
 		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
 		p.InventoryDisplay()
 		return
@@ -100,10 +114,10 @@ func (p *Player) CheckInventory() bool {
 			return true
 		}
 	}
-	fmt.Println(count, "/", p.inventorymax)
 	return false
 }
 
+//Check et renvoie le nombre d'item dans l'inventaire
 func (p *Player) CheckQuantityInventory() int {
 	count := 0
 	for _, items := range p.inventory {

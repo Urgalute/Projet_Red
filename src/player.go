@@ -2,47 +2,49 @@ package Projet_Red
 
 import "fmt"
 
-func (p *Player) InitPlayer(nom string, classe string, pvmax int, pvactuel int) {
-	gear01 := Inventory{"Casque en acier", 1, "+15pvmax"}
-	gear02 := Inventory{"Robe magique", 1, "+25pvmax"}
-	gear03 := Inventory{"Bottes en cuir", 1, "+10pvmax"}
 
+//Initialisation du personnage et d'un monstre
+func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
+	item01 := Inventory{"Potion de santé", 1, "(+50pv)"}
 	*p = Player{
 		name:         nom,
 		class:        classe,
 		level:        1,
 		hpmax:        pvmax,
-		hp:           pvactuel,
+		hp:           pvmax/2,
+		mana:		  75,
 		manamax:      100,
 		dammage:      5,
 		xp:           0,
 		xpmax:        10,
 		money:        100,
 		inventorymax: 10,
-		inventory:    []Inventory{gear01, gear02, gear03},
+		inventory:    []Inventory{item01},
 		skill:        []string{"Coup de poing"},
 		equipement:   []Equipement{},
 		mname:        "Gobelin vicieux",
-		mhpmax:       25,
-		mhp:          25,
+		mhpmax:       40,
+		mhp:          40,
 		mdammage:     5,
 		mxp:          5,
 		mlevel:       1,
 	}
 }
 
+//Affichage des informations du personnage
 func (p *Player) Display() {
 	fmt.Println("Votre nom :", p.name)
 	fmt.Println("Votre classe :", p.class)
-	fmt.Println("Votre niveau :", p.level)
-	fmt.Println("Vos points de vie maximum :", p.hpmax)
-	fmt.Println("Points de vie actuel :", p.hp)
-	fmt.Println("Vos attaques :", p.skill)
-	fmt.Println("Vous avez :", p.money, "pièces d'or.")
-	fmt.Println("Vos équipements :", p.equipement)
-	fmt.Println(" ")
+	fmt.Printf("Votre niveau : %d (%d/%d)\n", p.level, p.xp, p.xpmax)
+	fmt.Println("Vos points de vie: ", p.hp, "/", p.hpmax)
+	fmt.Println("Vos points de mana: ", p.mana, "/", p.manamax)
+	fmt.Println("Vos attaques :")
+	for _, skill := range p.skill {
+        fmt.Println("-", skill)
+    }
 }
 
+//Ajout d'exp en fonction du level du monstre et changement de stat en fonction
 func (p *Player) Experience() {
 	if p.level == 6 {
 		fmt.Println("Vous avez atteint le niveau maximum")

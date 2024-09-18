@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+//Potion de santé
 func (p *Player) TakePot() {
 	var input string
 	for _, object := range p.inventory {
@@ -21,12 +22,8 @@ func (p *Player) TakePot() {
 					fmt.Println("--------------------------------")
 					p.hp = p.hpmax
 					fmt.Println("PV : ", p.hp, "/", p.hpmax)
-					for _, item := range p.inventory {
-						if item.name == "Potion de santé" && item.quantity > 0 {
-							//p.inventory[i].quantity--
+							fmt.Println("Vous avez bu une potion de santé")
 							p.RemoveItem("Potion de santé", 1)
-						}
-					}
 				case "2":
 					return
 				default:
@@ -50,6 +47,7 @@ func (p *Player) TakePot() {
 	fmt.Println("--------------------------------")
 }
 
+//Potion de poison
 func (p *Player) Poison() {
 	var input string
 	fmt.Println("                  ")
@@ -60,7 +58,9 @@ func (p *Player) Poison() {
 	fmt.Println("                  ")
 	fmt.Scanln(&input)
 	if input == "1" {
+		ClearTerminal()
 		p.RemoveItem("Potion de poison", 1)
+		fmt.Println("Vous avez bu une potion de poison.")
 		for i := 0; i < 3; i++ {
 			p.hp -= 10
 			fmt.Println("                  ")
@@ -86,9 +86,11 @@ func (p *Player) Poison() {
 	}
 }
 
+//Potion de mana
 func (p *Player) Mana(){
 	var input string
 	for _, object := range p.inventory {
+		
 		if object.name == "Potion de mana" {
 			if p.mana > p.manamax-20 {
 				fmt.Println("--------------------------------")
@@ -104,7 +106,6 @@ func (p *Player) Mana(){
 					fmt.Println("Mana : ", p.mana, "/", p.manamax)
 					for _, item := range p.inventory {
 						if item.name == "Potion de mana" && item.quantity > 0 {
-							//p.inventory[i].quantity--
 							p.RemoveItem("Potion de mana", 1)
 						}
 					}
@@ -117,12 +118,8 @@ func (p *Player) Mana(){
 				fmt.Println("--------------------------------")
 				p.mana += 25
 				fmt.Println("Mana : ", p.mana, "/", p.manamax)
-				for _, item := range p.inventory {
-					if item.name == "Potion de mana" && item.quantity > 0 {
 						p.RemoveItem("Potion de mana", 1)
 					}
-				}
-			}
 			return
 		}
 	}
@@ -133,6 +130,7 @@ func (p *Player) Mana(){
 
 }
 
+//Equipement d'équipement
 func (p *Player) EquipGear(name string, quantity int, description string) bool {
 	for i := 0; i < len(p.equipement); i++ {
         if p.equipement[i].name == name {

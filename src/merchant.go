@@ -39,6 +39,7 @@ func (p *Player) Market() {
 				fmt.Println("Vous avez achetez une potion de santé !")
 				fmt.Println("             ")
 				p.AddItem("Potion de santé", 1, "(+50pv)")
+				p.money -= 3
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -60,6 +61,7 @@ func (p *Player) Market() {
 				fmt.Println("Vous avez achetez une potion de poison !")
 				fmt.Println("             ")
 				p.AddItem("Potion de poison", 1, "(-10pv/s pour 3s)")
+				p.money -= 6
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -81,6 +83,7 @@ func (p *Player) Market() {
 				fmt.Println("Vous avez achetez une potion de mana !")
 				fmt.Println("             ")
 				p.AddItem("Potion de mana", 1, "(+25mana)")
+				p.money -= 10
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -126,6 +129,7 @@ return
 				fmt.Println("Vous avez achetez un Livre de sort : Boule de Feu !")
 				fmt.Println("             ")
 				p.AddItem("Livre de sort : Boule de feu", 1, "(+18 de dégats)")
+				p.money -= 25
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -147,6 +151,7 @@ return
 				fmt.Println("Vous avez achetez une fourrue de loup !")
 				fmt.Println("             ")
 				p.AddItem("Fourrure de loup", 1, "(C'est doux)")
+				p.money -= 4
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -168,6 +173,7 @@ return
 				fmt.Println("Vous avez achetez une peau de troll !")
 				fmt.Println("             ")
 				p.AddItem("Peau de troll", 1, "(C'est légérement poisseux, de la bave probablement)")
+				p.money -= 7
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -189,6 +195,7 @@ return
 				fmt.Println("Vous avez achetez du cuir de sanglier !")
 				fmt.Println("             ")
 				p.AddItem("Cuir de sanglier", 1, "(Aussi robuste qu'un nain !)")
+				p.money -= 3
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -210,6 +217,7 @@ return
 				fmt.Println("Vous avez achetez une plume de corbeau !")
 				fmt.Println("             ")
 				p.AddItem("Plume de corbeau", 1, "(Le chatouilleur 2000 ultime)")
+				p.money -= 1
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -231,6 +239,7 @@ return
 				fmt.Println("Vous avez achetez une Augmentation d'inventaire !")
 				fmt.Println("             ")
 				p.AddItem("Augmentation d'inventaire", 1, "(+10 de taille d'inventaire)")
+				p.money -= 30
 				fmt.Println("             ")
 				p.CheckInventory()
 				fmt.Println("             ")
@@ -271,6 +280,5 @@ func (p *Player) Moneyy(cost int) bool {
 	if p.money < cost {
 		return false
 	}
-	p.money -= cost
 	return true
 }

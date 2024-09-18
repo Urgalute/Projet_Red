@@ -17,13 +17,19 @@ func (p *Player) CharTurn() {
 
 	switch input {
 	case "1":
+		fmt.Println(" ")
 		fmt.Println("Attaquer")
+		fmt.Println(" ")
 		p.AttackBasic()
 	case "2":
+		fmt.Println(" ")
 		fmt.Println("Sort")
+		fmt.Println(" ")
 		p.AttackSpell()
 	case "3":
+		fmt.Println(" ")
 		fmt.Println("Inventaire")
+		fmt.Println(" ")
 		p.FightInventory()
 	default:
 		fmt.Println("Choix invalide, veuillez réessayer.")
@@ -42,13 +48,19 @@ func (p *Player) CharTurnCrit() {
 
 	switch input {
 	case "1":
+		fmt.Println(" ")
 		fmt.Println("Attaque critique")
+		fmt.Println(" ")
 		p.AttackCrit()
 	case "2":
+		fmt.Println(" ")
 		fmt.Println("Sort")
+		fmt.Println(" ")
 		p.AttackSpellCrit()
 	case "3":
+		fmt.Println(" ")
 		fmt.Println("Inventaire")
+		fmt.Println(" ")
 		p.FightInventoryCrit()
 	default:
 		fmt.Println("Choix invalide, veuillez réessayer.")
@@ -202,8 +214,9 @@ func (p *Player) UseInventory() {
 func (p *Player) AttackBasic() {
 	damage := 5
 	p.mhp -= damage
+	fmt.Println(" ")
 	fmt.Println("Vous utilisez Attaque basique et infligez", damage, "dégâts à ", p.mname)
-	fmt.Println(p.mname, p.mhp, "restants :")	
+	fmt.Println(p.mname, p.mhp, " PV restants ")	
 }
 
 func (p *Player) AttackSpell() {
@@ -218,8 +231,10 @@ func (p *Player) AttackSpell() {
 		fmt.Println("Coup de poing")
 		damage := 8
 		p.mhp -= damage
+		fmt.Println(" ")
 		fmt.Println("Vous utilisez Coup de poing et infligez", damage, "dégâts à", p.mname)
-		fmt.Println(p.mname, p.mhp, "restants :")
+		fmt.Println(" ")
+		fmt.Println(p.mname, p.mhp, "PV restants ")
 	case "2":
 		if p.CheckSpell("Boule de feu") {
 			fmt.Println("Boule de feu")
@@ -228,10 +243,13 @@ func (p *Player) AttackSpell() {
 			}
 			damage := 18
 			p.mhp -= damage
+			fmt.Println(" ")
 			fmt.Println("Vous utilisez Boule de feu et infligez", damage, "dégâts à ", p.mname)
-			fmt.Println(p.mname, p.mhp, "restants :")
+			fmt.Println(" ")
+			fmt.Println(p.mname, p.mhp, "PV restants ")
 		} else {
 			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir celle que vous avez !")
+			fmt.Println(" ")
 			p.AttackSpellCrit()
 		}
 	case "0":
@@ -245,8 +263,10 @@ func (p *Player) AttackSpell() {
 func (p *Player) AttackCrit() {
 	damage := 5
 	p.mhp -= damage*2
+	fmt.Println(" ")
 	fmt.Println("Vous utilisez Attaque critique et infligez", damage*2, "dégâts à ", p.mname)
-	fmt.Println(p.mname, p.mhp, "restants :")
+	fmt.Println(" ")
+	fmt.Println(p.mname, p.mhp, "PV restants ")
 }
 
 func (p *Player) AttackSpellCrit() {
@@ -261,8 +281,10 @@ func (p *Player) AttackSpellCrit() {
 		fmt.Println("Coup de poing")
 		damage := 8
 		p.mhp -= damage*2
+		fmt.Println(" ")
 		fmt.Println("Vous utilisez Coup de poing critique et infligez", damage*2, "dégâts à", p.mname)
-		fmt.Println(p.mname, p.mhp, "restants :")
+		fmt.Println(" ")
+		fmt.Println(p.mname, p.mhp, "PV restants ")
 	case "2":
 		if p.CheckSpell("Boule de feu") {
 			fmt.Println("Boule de feu")
@@ -271,8 +293,10 @@ func (p *Player) AttackSpellCrit() {
 			}
 			damage := 18
 			p.mhp -= damage*2
+			fmt.Println(" ")
 			fmt.Println("Vous utilisez Boule de feu critique et infligez", damage*2, "dégâts à ", p.mname)
-			fmt.Println(p.mname, p.mhp, "restants :")
+			fmt.Println(" ")
+			fmt.Println(p.mname, p.mhp, "PV restants ")
 		} else {
 			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir une que vous possédez !")
 			p.AttackSpellCrit()

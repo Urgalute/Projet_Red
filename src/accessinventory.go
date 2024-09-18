@@ -79,7 +79,10 @@ func (p *Player) MenuInventaire() {
 			p.InventoryDisplay()
 			return
 		case "Robe magique":
+<<<<<<< HEAD
 			ClearTerminal()		
+=======
+>>>>>>> d2e0c684c63fb4d49aa4a686dc09f2ae0f0a6d86
 			p.EquipGear("Robe magique", 1, "+25pvmax")
 			p.RemoveItem("Robe magique", 1)
 			p.InventoryDisplay()
@@ -90,9 +93,12 @@ func (p *Player) MenuInventaire() {
 			p.RemoveItem("Bottes en cuir", 1)
 			p.InventoryDisplay()
 			return
+		case "Augmentation d'inventaire":
+			p.UpgradeInventorySlot()
+			p.InventoryDisplay()
 		default:
 			p.InventoryDisplay()
-				return
+			return
 		}
 	}else {
 		ClearTerminal()

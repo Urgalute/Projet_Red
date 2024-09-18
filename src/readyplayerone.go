@@ -142,19 +142,19 @@ func (p *Player) UseInventoryCrit() {
 		fmt.Println("                  ")
 		selectedItem = items[input-1]
 		switch selectedItem.name {
-		case "Potion de poison":
+		case "Potion de \033[32mpoison\033[0m":
 			p.Poison()
-			fmt.Println("Vous avez bu une potion de poison.")
+			fmt.Println("Vous avez bu une potion de \033[32mpoison\033[0m")
 			fmt.Println("                  ")
 			p.FightInventoryCrit()
-		case "Potion de santé":
+		case "Potion de \033[31msanté\033[0m":
 			p.TakePot()
-			fmt.Println("Vous avez bu une potion de santé")
+			fmt.Println("Vous avez bu une potion de \033[31msanté\033[0m")
 			fmt.Println("                  ")
 			p.FightInventoryCrit()
-		case "Potion de mana":
+		case "Potion de \033[94mmana\033[0m":
 			p.Mana()
-			fmt.Println("Vous avez bu une potion de mana")
+			fmt.Println("Vous avez bu une potion de\033[34mmana\033[0m")
 			fmt.Println("                  ")
 			p.FightInventoryCrit()
 		default:
@@ -183,21 +183,18 @@ func (p *Player) UseInventory() {
 		fmt.Println("                  ")
 		selectedItem = items[input-1]
 		switch selectedItem.name {
-		case "Potion de poison":
+		case "Potion de \033[32mpoison\033[0m":
 			p.Poison()
-			fmt.Println("Vous avez bu une potion de poison.")
+			fmt.Println("Vous avez bu une potion de \033[32mpoison\033[0m")
 			fmt.Println("                  ")
-			p.FightInventory()
-		case "Potion de santé":
+		case "Potion de \033[31msanté\033[0m":
 			p.TakePot()
-			fmt.Println("Vous avez bu une potion de santé")
+			fmt.Println("Vous avez bu une potion de \033[31msanté\033[0m")
 			fmt.Println("                  ")
-			p.FightInventory()
-		case "Potion de mana":
+		case "Potion de \033[34mmana\033[0m":
 			p.Mana()
-			fmt.Println("Vous avez bu une potion de mana")
+			fmt.Println("Vous avez bu une potion de \033[34mmana\033[0m")
 			fmt.Println("                  ")
-			p.FightInventory()
 		default:
 			fmt.Println("Vous ne pouvez pas effectuer cette action en plein combat ! ")
 			fmt.Println("                  ")
@@ -215,53 +212,54 @@ func (p *Player) AttackBasic() {
 	damage := p.dammage
 	p.mhp -= damage
 	fmt.Println(" ")
-	fmt.Println("Vous utilisez Attaque basique et infligez", damage, "dégâts à ", p.mname)
+	fmt.Println("Vous utilisez \033[93mAttaque basique\033[0m et infligez", damage, "dégâts à ", p.mname)
 	fmt.Println(" ")
 
-	fmt.Println(p.mname, p.mhp, " PV restants ")
+	fmt.Println(p.mname, p.mhp, "\033[92mPV\033[0m restants ")
 }
 
 func (p *Player) AttackSpell() {
-	fmt.Println("1. Coup de poing")
+	fmt.Println("1. \033[33mCoup de poing\033[0m")
 	if p.CheckSpell("Boule de feu") {
-		fmt.Println("2. Boule de feu")
+		fmt.Println("2. \033[91mBoule de feu\033[0m")
 	}
 	var input string
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
-		fmt.Println("Coup de poing")
 		damage := 10
 		p.mhp -= damage
 		fmt.Println(" ")
-		fmt.Println("Vous utilisez Coup de poing et infligez", damage, "dégâts à", p.mname)
+		fmt.Println("Vous utilisez \033[33mCoup de poing\033[0m et infligez", damage, "dégâts à", p.mname)
 		fmt.Println(" ")
-		fmt.Println(p.mname, p.mhp, "PV restants ")
+		fmt.Println(p.mname, p.mhp, "\033[92mPV\033[0m restants ")
 	case "2":
 		if p.CheckSpell("Boule de feu") {
-			fmt.Println("Boule de feu")
 			if p.mana >= 25 {
 				p.mana -= 25
 				damage := 18 
 				p.mhp -= damage
 				fmt.Println(" ")
-				fmt.Println(p.name, p.mana, "Mana restants ")
+				fmt.Println(p.name, p.mana, "\033[94mmana\033[0m restants ")
 				fmt.Println(" ")
-				fmt.Println("Vous utilisez Boule de feu et infligez", damage, "dégâts à ", p.mname)
+				fmt.Println("Vous utilisez \033[91mBoule de feu\033[0m et infligez", damage, "dégâts à ", p.mname)
 				fmt.Println(" ")
-				fmt.Println(p.mname, p.mhp, "PV restants ")
+				fmt.Println(p.mname, p.mhp, "\033[92mPV\033[0m restants ")
 			} else {
 				fmt.Println(" ")
-				fmt.Println("Vous n'avez pas assez de mana !")
+				fmt.Println("Vous n'avez pas assez de \033[94mmana\033[0m !")
 				fmt.Println(" ")
 				p.AttackSpellCrit()
 			}
+<<<<<<< HEAD
 			damage := p.dammage + 5
 			p.mhp -= damage
 			fmt.Println(" ")
 			fmt.Println("Vous utilisez Boule de feu et infligez", damage, "dégâts à ", p.mname)
 			fmt.Println(" ")
 			fmt.Println(p.mname, p.mhp, "PV restants ")
+=======
+>>>>>>> d2e0c684c63fb4d49aa4a686dc09f2ae0f0a6d86
 		} else {
 			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir celle que vous avez !")
 			fmt.Println(" ")
@@ -276,16 +274,20 @@ func (p *Player) AttackSpell() {
 }
 
 func (p *Player) AttackCrit() {
+<<<<<<< HEAD
 	damage := 5
+=======
+	damage := p.dammage
+>>>>>>> d2e0c684c63fb4d49aa4a686dc09f2ae0f0a6d86
 	p.mhp -= damage * 2
 	fmt.Println(" ")
-	fmt.Println("Vous utilisez Attaque critique et infligez", damage*2, "dégâts à ", p.mname)
+	fmt.Println("Vous utilisez \033[93mAttaque critique\033[0m et infligez", damage*2, "dégâts à ", p.mname)
 	fmt.Println(" ")
-	fmt.Println(p.mname, p.mhp, "PV restants ")
+	fmt.Println(p.mname, p.mhp, "\033[92mPV\033[0m restants ")
 }
 
 func (p *Player) AttackSpellCrit() {
-	fmt.Println("1. Coup de poing")
+	fmt.Println("1. \033[33mCoup de poing\033[0m")
 	if p.CheckSpell("Boule de feu") {
 		fmt.Println("2. Boule de feu")
 	}
@@ -293,30 +295,28 @@ func (p *Player) AttackSpellCrit() {
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
-		fmt.Println("Coup de poing")
+		fmt.Println("\033[33mCoup de poing\033[0m")
 		damage := 10
-		p.mhp -= damage*2
+		p.mhp -= damage * 2
 		fmt.Println(" ")
-		fmt.Println("Vous utilisez Coup de poing critique et infligez", damage*2, "dégâts à", p.mname)
+		fmt.Println("Vous utilisez \033[33mCoup de poing critique\033[0m et infligez", damage*2, "dégâts à", p.mname)
 		fmt.Println(" ")
-		fmt.Println(p.mname, p.mhp, "PV restants ")
+		fmt.Println(p.mname, p.mhp, "\033[92mPV\033[0m restants ")
 	case "2":
 		if p.CheckSpell("Boule de feu") {
-			fmt.Println("Boule de feu")
 			if p.mana >= 25 {
 				p.mana -= 25
-
 				damage := 18
 				p.mhp -= damage * 2
 				fmt.Println(" ")
-				fmt.Println(p.name, p.mana, "Mana restants ")
+				fmt.Println(p.name, p.mana, "\033[94mmana\033[0m restants ")
 				fmt.Println(" ")
-				fmt.Println("Vous utilisez Boule de feu critique et infligez", damage*2, "dégâts à ", p.mname)
+				fmt.Println("Vous utilisez \033[91mBoule de feu\033[0m critique et infligez", damage*2, "dégâts à ", p.mname)
 				fmt.Println(" ")
-				fmt.Println(p.mname, p.mhp, "PV restants ")
+				fmt.Println(p.mname, p.mhp, "\033[92mPV\033[0m restants ")
 			} else {
 				fmt.Println(" ")
-				fmt.Println("Vous n'avez pas assez de mana !")
+				fmt.Println("Vous n'avez pas assez de \033[94mmana\033[0m !")
 				fmt.Println(" ")
 				p.AttackSpellCrit()
 			}

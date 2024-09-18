@@ -24,7 +24,8 @@ func (p *Player) Entrainement() {
 		for tour := 1; p.mhp > 0 && p.hp > 0; tour++ {
 			fmt.Println(" ")
 			time.Sleep(500 * time.Millisecond)
-			fmt.Println("Tour :", tour)
+			fmt.Println("\033[4m__________________________\033[0m")
+			fmt.Println("\033[30m\033[107m\033[4m        Tour :", tour,"         \033[0m")
 			time.Sleep(500 * time.Millisecond)
 			playerinit := p.InitiativeP() + 3
 			time.Sleep(200 * time.Millisecond)
@@ -52,14 +53,14 @@ func (p *Player) Entrainement() {
 						fmt.Println("Attaque lourde critique ! Vous subissez 20 points de dégats !")
 						fmt.Println(" ")
 						p.hp -= 4 * p.mdammage
-						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
 						fmt.Println(" ")
 					} else {
 						fmt.Println(" ")
 						fmt.Println("Vous subissez un coup critique de 10 points de dégats !")
 						fmt.Println(" ")
 						p.hp -= 2 * p.mdammage
-						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
 						fmt.Println(" ")
 					}
 				} else {
@@ -68,14 +69,14 @@ func (p *Player) Entrainement() {
 						fmt.Println("Attaque lourde ! Vous subissez 10 points de dégats !")
 						fmt.Println(" ")
 						p.hp -= 2 * p.mdammage
-						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
 						fmt.Println(" ")
 					} else {
 						fmt.Println(" ")
 						fmt.Println("Vous subissez 5 points de dégats !")
 						fmt.Println(" ")
 						p.hp -= p.mdammage
-						fmt.Println(p.name, p.hp, "PV restants ")
+						fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
 						fmt.Println(" ")
 					}
 				}

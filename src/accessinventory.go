@@ -70,7 +70,7 @@ func (p *Player) MenuInventaire() {
 			p.RemoveItem("Casque en acier", 1)
 			p.InventoryDisplay()
 			return
-		case "Robe magique":		
+		case "Robe magique":
 			p.EquipGear("Robe magique", 1, "+25pvmax")
 			p.RemoveItem("Robe magique", 1)
 			p.InventoryDisplay()
@@ -80,11 +80,14 @@ func (p *Player) MenuInventaire() {
 			p.RemoveItem("Bottes en cuir", 1)
 			p.InventoryDisplay()
 			return
+		case "Augmentation d'inventaire":
+			p.UpgradeInventorySlot()
+			p.InventoryDisplay()
 		default:
 			p.InventoryDisplay()
-				return
+			return
 		}
-	}else {
+	} else {
 		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
 		p.InventoryDisplay()
 		return

@@ -251,15 +251,12 @@ func (p *Player) AttackSpell() {
 				fmt.Println(" ")
 				p.AttackSpellCrit()
 			}
-<<<<<<< HEAD
 			damage := p.dammage + 5
 			p.mhp -= damage
 			fmt.Println(" ")
 			fmt.Println("Vous utilisez Boule de feu et infligez", damage, "dégâts à ", p.mname)
 			fmt.Println(" ")
 			fmt.Println(p.mname, p.mhp, "PV restants ")
-=======
->>>>>>> d2e0c684c63fb4d49aa4a686dc09f2ae0f0a6d86
 		} else {
 			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir celle que vous avez !")
 			fmt.Println(" ")
@@ -274,11 +271,7 @@ func (p *Player) AttackSpell() {
 }
 
 func (p *Player) AttackCrit() {
-<<<<<<< HEAD
-	damage := 5
-=======
 	damage := p.dammage
->>>>>>> d2e0c684c63fb4d49aa4a686dc09f2ae0f0a6d86
 	p.mhp -= damage * 2
 	fmt.Println(" ")
 	fmt.Println("Vous utilisez \033[93mAttaque critique\033[0m et infligez", damage*2, "dégâts à ", p.mname)

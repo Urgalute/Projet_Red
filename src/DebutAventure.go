@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 )
+
 func (p *Player) DebutAventure() {
 	fmt.Println("\033[1mVous vous réveillez doucement ...")
 	time.Sleep(500 * time.Millisecond)
@@ -11,7 +12,7 @@ func (p *Player) DebutAventure() {
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Où êtes-vous ? ... ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("*Vous fouillez vos poches, rien à part 100po*")
+	fmt.Println("*Vous fouillez vos poches, rien à part ",p.money,"*")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Vous regardez autour de vous, vous êtes dans une petite grotte")
 	time.Sleep(500 * time.Millisecond)
@@ -71,7 +72,8 @@ func (p *Player) CheminForet() {
 		p.Ruisseau()
 	default:
 		fmt.Println("Suivez les instructions du narrateur !")
-
+		p.CheminForet()
+		return
 	}
 }
 
@@ -114,8 +116,9 @@ func (p *Player) TraversForet() {
 		}
 	default:
 		fmt.Println("  ")
-		fmt.Println("Je vous conseille de suivre les indications du narrateur, quel qu'elle soit ... Sait-on jamais ...")
+		fmt.Println("Suivez les instructions du narrateur !")
 		fmt.Println("  ")
+		p.StartMenu()
 		return
 	}
 	fmt.Println("\033[1mVous marchez maintenant depuis une bonne heure dans cette forêt dense,")
@@ -139,7 +142,10 @@ func (p *Player) TraversForet() {
 	case "2":
 		p.Massure()
 	default:
+		fmt.Println("  ")
 		fmt.Println("Suivez les instructions du narrateur !")
+		fmt.Println("  ")
+		p.StartMenu()
 		return
 	}
 }
@@ -280,8 +286,9 @@ func (p *Player) SuiteForet() {
 
 		default:
 			fmt.Println("  ")
-			fmt.Println("Je vous conseille de suivre les indications du narrateur, quel qu'elles soient ... Sait-on jamais ...")
+			fmt.Println("Suivez les instructions du narrateur !")
 			fmt.Println("  ")
+			p.StartMenu()
 			return
 		}
 	case "2":
@@ -350,8 +357,9 @@ func (p *Player) SuiteForet() {
 				}
 			default:
 				fmt.Println("  ")
-				fmt.Println("Je vous conseille de suivre les indications du narrateur, quel qu'elles soient ... Sait-on jamais ...")
+				fmt.Println("Suivez les instructions du narrateur !")
 				fmt.Println("  ")
+				p.StartMenu()
 				return
 			}
 		case "2":
@@ -621,7 +629,10 @@ func (p *Player) Ruisseau() {
 		p.Donjon()
 		return
 	default:
+		fmt.Println("  ")
 		fmt.Println("Suivez les instructions du narrateur !")
+		fmt.Println("  ")
+		p.StartMenu()
 		return
 	}
 
@@ -745,7 +756,10 @@ func (p *Player) SuiteChemin() {
 		p.Donjon()
 		return
 	default:
+		fmt.Println("  ")
 		fmt.Println("Suivez les instructions du narrateur !")
+		fmt.Println("  ")
+		p.StartMenu()
 		return
 	}
 

@@ -16,7 +16,11 @@ func (p *Player) MainMenu() {
 	fmt.Println("3: 	Marchand")
 	fmt.Println("4: 	Forgeron")
 	fmt.Println("5: 	Equipements")
-	fmt.Println("6: 	Combat")
+	fmt.Println("6: 	Entraînement au combat")
+	fmt.Println("7: 	Auberge")
+	fmt.Println(" ")
+	fmt.Println("8:		Quitter la ville")
+	fmt.Println(" ")
 	fmt.Println("0: 	Quitter")
 	fmt.Print("Votre choix : ")
 	fmt.Scanln(&input)
@@ -53,6 +57,16 @@ func (p *Player) MainMenu() {
 		ClearTerminal()
 		fmt.Println("----------------")
 		p.Entrainement()
+		return
+	case "7":
+		ClearTerminal()
+		fmt.Println("----------------")
+		p.Auberge()
+		return
+	case "8":
+		ClearTerminal()
+		fmt.Println("----------------")
+		p.TransitDonjon()
 		return
 	case "0":
 		ClearTerminal()

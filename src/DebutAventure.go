@@ -573,7 +573,7 @@ func (p *Player) Ruisseau() {
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[93mGarde\033[0m - Bon si t'as de l'argent, tu peux payer le droit d'entrée alors ! Hein minable ?")
 		time.Sleep(500 * time.Millisecond)
-		fmt.Println("\033[94m", p.name, "\033[0m", "- C'est 10 pièces d'or, mais comme je t'aime bien, ce sera 20 pièces d'or pour toi !")
+		fmt.Println("\033[93mGarde\033[0m - C'est 10 pièces d'or, mais comme je t'aime bien, ce sera 20 pièces d'or pour toi !")
 		fmt.Println(" ")
 		fmt.Println("*Il vous regarde en riant*")
 		fmt.Println(" ")
@@ -762,10 +762,6 @@ func (p *Player) SuiteChemin() {
 		p.StartMenu()
 		return
 	}
-
-}
-
-func (p *Player) Donjon() {
 
 }
 

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 )
+
 func (p *Player) DebutAventure() {
 	fmt.Println("\033[1mVous vous réveillez doucement ...")
 	time.Sleep(500 * time.Millisecond)
@@ -614,7 +615,7 @@ func (p *Player) Ruisseau() {
 			fmt.Println("Ne supportant plus ses remarques, vous vous jetez sur lui !")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("Préparez vous au combat !")
-			p.MainMenu()
+			p.CombatGardes()
 			return
 		}
 	case "2":
@@ -752,9 +753,5 @@ func (p *Player) SuiteChemin() {
 }
 
 func (p *Player) Donjon() {
-
-}
-
-func (p *Player) CombatGardes() {
 
 }

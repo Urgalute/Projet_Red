@@ -19,9 +19,13 @@ type Player struct {
 	mname        string
 	mhpmax       int
 	mhp          int
-	mdammage      int
+	mdammage     int
 	mxp          int
 	mlevel       int
+	g1name       string
+	g1hpmax      int
+	g1hp         int
+	g1damage     int
 }
 
 type Inventory struct {

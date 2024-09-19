@@ -11,7 +11,7 @@ import (
 //Création de personnage
 func (p *Player) PersoInit() {
 	fmt.Println("  ")
-	fmt.Println("Bonjour ... Joueur ?? Ou peut être préférez vous que l'on vous appelle autrement ?")
+	fmt.Println("\033[1mBonjour ... Joueur ?? Ou peut être préférez vous que l'on vous appelle autrement ?")
 	reader := bufio.NewReader(os.Stdin)
 	inputnom, _ := reader.ReadString('\n')
 	inputnom = strings.ReplaceAll(inputnom, " ", "")
@@ -38,10 +38,10 @@ func (p *Player) PersoInit() {
 	}
 	prenom[0] -= 32
 	fmt.Println("  ")
-	fmt.Println("Donc, vous vous appelez", string(prenom), ", sympa comme prénom")
+	fmt.Println("\033[1mDonc, vous vous appelez", string(prenom), ", sympa comme prénom")
 	fmt.Println("  ")
 	time.Sleep(1 * time.Second)
-	fmt.Println("Et quelle classe vous inspire le plus,", string(prenom), "?")
+	fmt.Println("Et quelle classe vous inspire le plus,", string(prenom), "?\033[0m")
 	fmt.Println("  ")
 	time.Sleep(1 * time.Second)
 	fmt.Println("1 -  Guerrier : PVmax = 120")
@@ -76,9 +76,9 @@ func (p *Player) PersoInit() {
 	}
 	time.Sleep(1 * time.Second)
 	fmt.Println("  ")
-	fmt.Println("Je pense avoir tout les renseignements qu'il me faut, bon jeu !")
+	fmt.Println("\033[1mJe pense avoir tout les renseignements qu'il me faut, bon jeu !\033[0m")
 	fmt.Println("  ")
 	time.Sleep(1 * time.Second)
 	p.InitPlayer(string(prenom), inputclasse, hpmax)
-	p.MainMenu()
+	p.DebutAventure()
 }

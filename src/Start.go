@@ -6,7 +6,7 @@ import (
 )
 
 func (p *Player) StartMenu() {
-	fmt.Println("                           ")
+	fmt.Println("\033[1m                           ")
 	fmt.Println(`	     _       __     __   ____    _        _____ 
      /\     | |      \ \   / /  / __ \  | |      |_   _|
     /  \    | |       \ \_/ /  | |  | | | |        | |  
@@ -22,8 +22,10 @@ func (p *Player) StartMenu() {
 	fmt.Println("                           ")
 	fmt.Println("    3. Quitter                      ")
 	fmt.Println("                           ")
+	fmt.Println("                           ")
+	fmt.Println("                           ")
 	fmt.Println("    4. Crédits                     ")
-	fmt.Println("                       	    ")
+	fmt.Println("                       	    \033[0m")
 	var input string
 	fmt.Scanln(&input)
 	switch input {

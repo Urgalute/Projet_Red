@@ -2,14 +2,15 @@ package Projet_Red
 
 import (
 	"fmt"
-	"os"
 )
 
 // Menu Principal
 func (p *Player) MainMenu() {
 	var input string
-	fmt.Println("---------------------------------")
-	fmt.Println("--- Menu Principal ---")
+	fmt.Println("==============================")
+	fmt.Println("========= A L Y O L I ========")
+	fmt.Println("==============================")
+	fmt.Println(" ")
 	fmt.Println("1: 	Information personnage")
 	fmt.Println("2: 	Inventaire")
 	fmt.Println("3: 	Marchand")
@@ -55,9 +56,29 @@ func (p *Player) MainMenu() {
 		return
 	case "0":
 		ClearTerminal()
+		var input string
 		fmt.Println("----------------")
-		fmt.Println("Merci d'avoir utilisé notre jeu!")
-		os.Exit(0)
+		fmt.Println(" ")
+		fmt.Println("Êtes vous sûr de vouloir quitter. Il n'y a pas de sauvegarde !")
+		fmt.Println("1.-	Oui")
+		fmt.Println("2.-	Non")
+		fmt.Println(" ")
+		fmt.Scanln(&input)
+		switch input {
+		case "1":
+			fmt.Println("Merci d'avoir joué !")
+			p.StartMenu()
+			return
+		case "2":
+			fmt.Println("On y retourne !")
+			p.MainMenu()
+			return
+		default:
+			fmt.Println("----------------")
+			fmt.Println("Commande inconnue, réessayez.")
+			p.MainMenu()
+			return
+		}
 	default:
 		ClearTerminal()
 		fmt.Println("----------------")

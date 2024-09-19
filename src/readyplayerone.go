@@ -251,6 +251,12 @@ func (p *Player) AttackSpell() {
 				fmt.Println(" ")
 				p.AttackSpellCrit()
 			}
+			damage := p.dammage + 5
+			p.mhp -= damage
+			fmt.Println(" ")
+			fmt.Println("Vous utilisez Boule de feu et infligez", damage, "dégâts à ", p.mname)
+			fmt.Println(" ")
+			fmt.Println(p.mname, p.mhp, "PV restants ")
 		} else {
 			fmt.Println("Vous n'avez pas cette compétence veuillez en choisir celle que vous avez !")
 			fmt.Println(" ")

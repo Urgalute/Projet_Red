@@ -20,7 +20,7 @@ func (p *Player) InventoryDisplayAventure() {
 		fmt.Println("  ")
 		fmt.Println("Retour au menu principal")
 		time.Sleep(1 * time.Second)
-		p.MainMenu()
+		p.MenuAventure()
 		return
 	} else {
 		fmt.Println("Place dans votre inventaire : ", p.CheckQuantityInventory(), "/", p.inventorymax)

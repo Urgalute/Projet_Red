@@ -19,7 +19,7 @@ func (p *Player) MainMenu() {
 	fmt.Println("6: 	Entraînement au combat")
 	fmt.Println("7: 	Auberge")
 	fmt.Println(" ")
-	fmt.Println("8:		Quitter la ville")
+	fmt.Println("8:     Quitter la ville")
 	fmt.Println(" ")
 	fmt.Println("0: 	Quitter")
 	fmt.Print("Votre choix : ")

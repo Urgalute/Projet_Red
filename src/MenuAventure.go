@@ -40,6 +40,7 @@ func (p *Player) MenuAventure() {
 		fmt.Println("Vous récupérez 25% de vos points de vie maximum\033[0m")
 		fmt.Println(" ")
 		p.hp += (p.hpmax/4)
+		fmt.Println(" ")
 	case "5":
 		fmt.Println("\033[1mVous vous remettez en route.\033[0m")
 		fmt.Println(" ")

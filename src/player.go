@@ -4,7 +4,6 @@ import "fmt"
 
 //Initialisation du personnage et d'un monstre
 func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
-	item01 := Inventory{"Potion de santé", 1, "(+50pv)"}
 	*p = Player{
 		name:         nom,
 		class:        classe,
@@ -18,7 +17,7 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
 		xpmax:        10,
 		money:        100,
 		inventorymax: 10,
-		inventory:    []Inventory{item01},
+		inventory:    []Inventory{},
 		skill:        []string{"Coup de poing"},
 		equipement:   []Equipement{},
 		mname:        "Gobelin vicieux",

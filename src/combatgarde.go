@@ -15,7 +15,7 @@ func (p *Player) CombatGardes() {
 		time.Sleep(500 * time.Millisecond)
 		g1init := p.InitiativeG1() + 5
 		time.Sleep(200 * time.Millisecond)
-		playerinit := p.InitiativeP() + 233
+		playerinit := p.InitiativeP() + 3
 
 		fmt.Println(" ")
 		fmt.Println("Initiative de", p.name, ":", playerinit, " !")

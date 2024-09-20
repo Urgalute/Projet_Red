@@ -18,8 +18,11 @@ const (
 )
 
 func (p *Player) Credits() {
+	fmt.Println("\033[30m\033[107m\033[4m============== CREDITS ==============\033[0m")
+	fmt.Println(" ")
+	fmt.Println(" ")
 	credits := `
-============== CREDITS ==============
+	     A L Y O L I
 
      Un jeu exceptionnel
 
@@ -335,8 +338,15 @@ TRAVAIL SUR FICHIERS :
 
 
     Alyoli(c) 2024 Tous droits réservés
+
+	
     `
 	displayCredits(strings.TrimSpace(credits))
+	fmt.Println(" ")
+	fmt.Println(" ")
+	fmt.Println("\033[30m\033[107m\033[4m============== FIN DES CREDITS ==============\033[0m")
+	time.Sleep(3000 * time.Millisecond)
+	p.StartMenu()
 }
 
 func displayCredits(credits string) {
@@ -349,6 +359,10 @@ func displayCredits(credits string) {
 			fmt.Println(Green + line + Reset)
 		case i == 13:
 			fmt.Println(Cyan + line + Reset)
+		case i >= 17 && i <= 126 :
+			fmt.Println(Green+ line + Reset)
+		case i >= 129 && i <= 303 :
+			fmt.Println(Purple+ line + Reset)
 		default:
 			fmt.Println(White + line + Reset)
 		}

@@ -8,7 +8,7 @@ import (
 func (p *Player) Donjon() {
 	fmt.Println(" ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("\033[1m\033[104mVous arrivez devant la grande porte du donjon\033[0m\033[1m. Vous essayez de la pousser,")
+	fmt.Println("\033[1m\033[95mVous arrivez devant la grande porte du donjon\033[0m\033[1m. Vous essayez de la pousser,")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("mais elle est bien fermée à clé. Vous apercevez une serrure en son centre.")
 	time.Sleep(500 * time.Millisecond)
@@ -24,7 +24,7 @@ func (p *Player) Donjon() {
 func (p *Player) EntreeDonjon() {
 	fmt.Println(" ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("\033[1m\033[104mVous arrivez devant la grande porte du donjon\033[0m\033[1m. Vous essayez de la pousser,")
+	fmt.Println("\033[1m\033[94mVous arrivez devant la grande porte du donjon\033[0m\033[1m. Vous essayez de la pousser,")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("mais elle est bien fermée à clé. Vous apercevez une serrure en son centre.")
 	time.Sleep(500 * time.Millisecond)
@@ -67,12 +67,12 @@ func (p *Player) EntreeDonjon() {
 		return
 
 	} else if !p.CheckItem("Clé du Donjon Obscur") {
-		fmt.Println("\033[1mVous n'avez pas la clé, peut être devriez vous aller vous renseigner")
+		fmt.Println("\033[1m\033[91mVous n'avez pas la clé\033[0m\033[1m, peut être devriez vous aller vous renseigner")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("sur le donjon à l'auberge.")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println(" ")
-		fmt.Println("Vous retournez en ville")
+		fmt.Println("Vous retournez en ville\033[0m")
 		fmt.Println(" ")
 		p.MainMenu()
 		return

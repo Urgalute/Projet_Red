@@ -21,11 +21,7 @@ func (p *Player) MainMenu() {
 	fmt.Println(" ")
 	fmt.Println("\033[96m8\033[0m:     Quitter la ville")
 	fmt.Println(" ")
-<<<<<<< HEAD
-	fmt.Println("\033[96m0\033[0m: 	Quitter")
-=======
-	fmt.Println("0:     Quitter le jeu")
->>>>>>> 87f608dc522a2f057ccbf0737e46ff014cc2e93d
+	fmt.Println("\033[96m0\033[0m: 	Quitter le jeu")
 	fmt.Print("Votre choix : ")
 	fmt.Scanln(&input)
 	switch input {

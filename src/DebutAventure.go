@@ -43,9 +43,9 @@ func (p *Player) DebutAventure() {
 }
 
 func (p *Player) CheminForet() {
-	fmt.Println("\033[1mVous suivez le chemin prudemment, qui sait ce qui habite cette forêt.")
+	fmt.Println("\033[1m\033[95mVous suivez le chemin prudemment, qui sait ce qui habite cette forêt.\033[0m")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("Après une heure de marche, et une frayeur à l'apparition d'un sanglier,")
+	fmt.Println("\033[1mAprès une heure de marche, et une frayeur à l'apparition d'un sanglier,")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("vous arrivez dans une clairière, longée par un petit ruisseau.")
 	time.Sleep(500 * time.Millisecond)
@@ -78,7 +78,7 @@ func (p *Player) CheminForet() {
 }
 
 func (p *Player) TraversForet() {
-	fmt.Println("\033[1m\033[104mVous avancez péniblement au travers de la forêt\033[0m\033[1m,")
+	fmt.Println("\033[1m\033[94mVous avancez péniblement au travers de la forêt\033[0m\033[1m,")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("peut être auriez vous dû suivre ce petit chemin qui avait l'air bien")
 	time.Sleep(500 * time.Millisecond)
@@ -155,7 +155,7 @@ func (p *Player) TraversForet() {
 }
 
 func (p *Player) SuiteForet() {
-	fmt.Println("\033[1m\033[104mLa forêt se fait de plus en plus dense\033[0m\033[1m, les arbres commencent à")
+	fmt.Println("\033[1m\033[94mLa forêt se fait de plus en plus dense\033[0m\033[1m, les arbres commencent à")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("obstruer la lumière du soleil. Plus vous progressez, et plus la forêt")
 	time.Sleep(500 * time.Millisecond)
@@ -193,7 +193,7 @@ func (p *Player) SuiteForet() {
 		fmt.Println("\033[94m", p.name, "\033[0m", "\033[1m - Allez, c'est parti !")
 		fmt.Println(" ")
 		time.Sleep(500 * time.Millisecond)
-		fmt.Println("Vous posez un pied sur le pont, la goutte de sueur sur votre front")
+		fmt.Println("\033[94mVous posez un pied sur le pont\033[0m, la goutte de sueur sur votre front")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("se faisant de plus en plus proéminante.\033[0m")
 		time.Sleep(500 * time.Millisecond)
@@ -302,7 +302,7 @@ func (p *Player) SuiteForet() {
 			return
 		}
 	case "2":
-		fmt.Println("\033[1mVous vous mettez en route pour faire le tour, mais plus vous")
+		fmt.Println("\033[1m\033[95mVous vous mettez en route pour faire le tour\033[0m\033[1m, mais plus vous")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("progressez, et plus les hurlements des loups se font insistants.")
 		time.Sleep(500 * time.Millisecond)
@@ -395,7 +395,7 @@ func (p *Player) SuiteForet() {
 }
 
 func (p *Player) Massure() {
-	fmt.Println("\033[1m\033[104mVous approchez doucement de cette massure\033[0m\033[1m, plus vous approchez et moins")
+	fmt.Println("\033[1m\033[95mVous approchez doucement de cette massure\033[0m\033[1m, plus vous approchez et moins")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("l'espoir de trouver quoi que ce soit se fait présent.")
 	time.Sleep(500 * time.Millisecond)
@@ -468,7 +468,7 @@ func (p *Player) Massure() {
 		}
 
 	case "2":
-		fmt.Println("\033[1mVous ouvrez la porte sans ménagement")
+		fmt.Println("\033[1m\033[94mVous ouvrez la porte sans ménagement\033[0m\033[1m")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("Vous vous retrouvez face à un vieil homme, vraiment très âgé.\033[0m")
 		time.Sleep(500 * time.Millisecond)
@@ -533,7 +533,7 @@ func (p *Player) Massure() {
 }
 
 func (p *Player) Ruisseau() {
-	fmt.Println("\033[1m\033[104mVous commencez à longer le ruisseau.\033[0m")
+	fmt.Println("\033[1m\033[95mVous commencez à longer le ruisseau.\033[0m")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("\033[1mTout le monde sait que les villes se construisent autour de points d'eau.")
 	time.Sleep(500 * time.Millisecond)
@@ -566,7 +566,7 @@ func (p *Player) Ruisseau() {
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
-		fmt.Println("\033[1m\033[104mVous suivez le chemin en direction d'ALYOLI\033[0m")
+		fmt.Println("\033[1m\033[94mVous suivez le chemin en direction d'ALYOLI\033[0m")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[1mPlus vous approchez, et plus vous apercevez de belles et grandes maisons au loin.")
 		time.Sleep(500 * time.Millisecond)
@@ -628,7 +628,7 @@ func (p *Player) Ruisseau() {
 			fmt.Println("piquent à tout deux grandement votre interêt. Il ne me reste qu'à vous souhaiter à vous joueur ...\033[0m")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println(" ")
-			fmt.Println("\033[1mBIENVENUE DANS LA VILLE D'ALYOLI !!\033[0m")
+			fmt.Println("\033[1m\033[94mBIENVENUE DANS LA VILLE D'ALYOLI !!\033[0m")
 			fmt.Println(" ")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println(" ")
@@ -657,7 +657,7 @@ func (p *Player) Ruisseau() {
 func (p *Player) SuiteChemin() {
 	time.Sleep(1000 * time.Millisecond)
 	fmt.Println(" ")
-	fmt.Println("\033[1m\033[104mVous suivez le chemin qui commence doucement à s'entourer d'arbres morts\033[0m\033[1m.")
+	fmt.Println("\033[1m\033[94mVous suivez le chemin qui commence doucement à s'entourer d'arbres morts\033[0m\033[1m.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Pas très rassurant, mais après quelques minutes de marche, vous arrivez en vue")
 	time.Sleep(500 * time.Millisecond)
@@ -692,7 +692,7 @@ func (p *Player) SuiteChemin() {
 	fmt.Scanln(&input)
 	switch input {
 	case "2":
-		fmt.Println("\033[1mVous suivez le chemin en direction d'ALYOLI")
+		fmt.Println("\033[1m\033[94mVous suivez le chemin en direction d'ALYOLI\033[0m\033[1m")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("Plus vous approchez, et plus vous apercevez de belles et grandes maisons au loin.")
 		time.Sleep(500 * time.Millisecond)
@@ -717,7 +717,7 @@ func (p *Player) SuiteChemin() {
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[93mGarde\033[0m - C'est 10 pièces d'or, mais comme je t'aime bien, ce sera 20 pièces d'or pour toi !")
 		fmt.Println(" ")
-		fmt.Println("*Il vous regarde en riant*")
+		fmt.Println("\033[1m*Il vous regarde en riant*\033[0m")
 		fmt.Println(" ")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[1mQue souhaitez vous faire ?\033[0m")

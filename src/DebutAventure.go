@@ -12,7 +12,7 @@ func (p *Player) DebutAventure() {
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Où êtes-vous ? ... ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("*Vous fouillez vos poches, rien à part ", p.money, "*")
+	fmt.Println("*Vous fouillez vos poches, rien à part ",p.money, "pièces d'or*")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Vous regardez autour de vous, vous êtes dans une petite grotte")
 	time.Sleep(500 * time.Millisecond)
@@ -786,4 +786,3 @@ func (p *Player) SuiteChemin() {
 	}
 
 }
-

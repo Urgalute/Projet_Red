@@ -15,7 +15,7 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
 		dammage:      5,
 		xp:           0,
 		xpmax:        10,
-		money:        100,
+		money:        150,
 		inventorymax: 10,
 		inventory:    []Inventory{},
 		skill:        []string{"Coup de poing"},

@@ -29,6 +29,7 @@ func (p *Player) Auberge() {
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
+		fmt.Println(" ")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[94m", p.name, "\033[0m", "- Je vais vous prendre votre meilleur bière s'il vous plaît !")
 		time.Sleep(500 * time.Millisecond)
@@ -63,9 +64,9 @@ func (p *Player) Auberge() {
 		return
 	case "2":
 		if !p.CheckItem("Clé du Donjon Obscur") {
+			fmt.Println(" ")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[94m", p.name, "\033[0m", "- Je souhaiterai avoir des informations sur le donjon pas")
-			time.Sleep(500 * time.Millisecond)
 			fmt.Println("loin d'ici s'il vous plaît.")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println(" ")
@@ -74,6 +75,7 @@ func (p *Player) Auberge() {
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[93mServeuse\033[0m - Allez voir l'aubergiste pour ça.")
 			time.Sleep(500 * time.Millisecond)
+			fmt.Println(" ")
 			fmt.Println("\033[1mElle s'éloigne et reprend son travail avec d'autres clients.")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("Vous regardez l'aubergiste qui à l'air extrêmement préoccupé,")
@@ -82,9 +84,10 @@ func (p *Player) Auberge() {
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("vous allez à sa rencontre.")
 			time.Sleep(500 * time.Millisecond)
+			fmt.Println(" ")
 			fmt.Println("\033[94m", p.name, "\033[0m", "- Bonjour, votre serveuse m'a indiquée que vous auriez des renseignements !")
-			time.Sleep(500 * time.Millisecond)
 			fmt.Println("sur le donjon pas loin ?")
+			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[93mAubergiste\033[0m - Oh, oui, c'était mon manoir il y a encore quelques mois ...")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[94m", p.name, "\033[0m", "- Que s'est-il passé ?")
@@ -109,10 +112,14 @@ func (p *Player) Auberge() {
 			fmt.Println("Il a l'air moins préoccupé qu'avant, mais très légérement seulement.\033[0m")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println(" ")
+			fmt.Println("Vous obtenez la \033[93mClé du Donjon Obscur\033[0m !")
+			fmt.Println(" ")
+			time.Sleep(1000 * time.Millisecond)
 			p.AddItem("Clé du Donjon Obscur", 1, "La clé du donjon donnée par l'aubergiste")
 			p.MainMenu()
 		
 		}else {
+			fmt.Println(" ")
 			fmt.Println("\033[93mAubergiste\033[0m - Alors qu'en est-il de mon problème de donjon ?")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[94m", p.name, "\033[0m", "- j'y travaille !")
@@ -121,6 +128,7 @@ func (p *Player) Auberge() {
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[94m", p.name, "\033[0m", "- Pas de problème !")
 			time.Sleep(500 * time.Millisecond)
+			fmt.Println(" ")
 			p.MainMenu()
 		}
 	}

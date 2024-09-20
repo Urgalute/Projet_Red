@@ -13,13 +13,14 @@ func (p *Player) TransitDonjon() {
 	fmt.Println("il retourne. Ou vous pouvez toujours retourner en ville.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println(" ")
-	fmt.Println("     ____________________________________________________________________     ")
+	fmt.Println("     __________________________________________________     ")
 	fmt.Println("<== || \033[34mDirection le donjon |1\033[0m|||\033[35m2| Retourner en ville\033[0m || ==>")
-	fmt.Println("     ====================================================================     ")
+	fmt.Println("     ==================================================     ")
 	var input string
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
+		fmt.Println(" ")
 		fmt.Println("\033[1mVous progressez tranquillement sur le chemin menant au donjon,")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("croisant un deuxième panneau indicateur, vous continuez à suivre")
@@ -36,11 +37,14 @@ func (p *Player) TransitDonjon() {
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("L'ambiance de ce donjon s'annonce festive !\033[0m")
 		time.Sleep(500 * time.Millisecond)
+		fmt.Println(" ")
 		p.EntreeDonjon()
 	case "2":
 		p.MainMenu()
 	default:
+		fmt.Println(" ")
 		fmt.Println("Il n'y a rien du tout à part ces deux chemins et de la forêt")
+		fmt.Println(" ")
 		p.TransitDonjon()
 	}
 }

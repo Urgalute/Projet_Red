@@ -88,11 +88,13 @@ func (p *Player) BlackSmithMenu() {
 			ClearTerminal()
 			fmt.Println("Retour au menu principal")
 			p.MainMenu()
+			return
 		default:
 			ClearTerminal()
 			fmt.Println("Commande inconnue. Veuillez réessayer.")
 		}
 		p.BlackSmithMenu()
+		return
 	} else {
 		fmt.Println("Désolé mais je ne travaille pas gratuitement.. Revenez quand vous aurez plus de pièces !!", "\n", "(Il vous faut \033[103m5 Pièces d'or\033[0m au minimum pour demander au forgeron de vous fabriquer un objet. Vous avez:", "\033[103m", p.money, "\033[0m")
 		fmt.Println("Retour au menu principal")

@@ -106,5 +106,8 @@ func (p *Player) Entrainement() {
 	case "0":
 		p.MainMenu()
 		return
+	default:
+		p.Entrainement()
+		return
 	}
 }

@@ -296,9 +296,9 @@ func (p *Player) AttackCrit() {
 }
 
 func (p *Player) AttackSpellCrit() {
-	fmt.Println("1. \033[33mCoup de poing\033[0m", "\033[94m(15 PM)\033[0m")
+	fmt.Println("\033[96m1.\033[0m \033[33mCoup de poing\033[0m", "\033[94m(15 PM)\033[0m")
 	if p.CheckSpell("Boule de feu") {
-		fmt.Println("2. Boule de feu", "\033[94m(15 PM)\033[0m")
+		fmt.Println("\033[96m2.\033[0m Boule de feu", "\033[94m(15 PM)\033[0m")
 	}
 	var input string
 	fmt.Scanln(&input)

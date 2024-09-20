@@ -6,7 +6,7 @@ import (
 )
 
 func (p *Player) StartMenu() {
-	fmt.Println("\033[1m                           ")
+	fmt.Println("\033[1m \033[96m                         ")
 	fmt.Println(`	     _       __     __   ____    _        _____ 
      /\     | |      \ \   / /  / __ \  | |      |_   _|
     /  \    | |       \ \_/ /  | |  | | | |        | |  
@@ -14,17 +14,18 @@ func (p *Player) StartMenu() {
   / ____ \  | |____     | |    | |__| | | |____   _| |_ 
  /_/    \_\ |______|    |_|     \____/  |______| |_____|
                                                         `)
+	fmt.Println("\033[0m\033[1m")
 	fmt.Println(" ")
 	fmt.Println(" ")
-	fmt.Println("    1. Nouvelle Partie                       ")
+	fmt.Println("    \033[96m1.\033[0m Nouvelle Partie                       ")
 	fmt.Println("                           ")
-	fmt.Println("    2. Options                      ")
+	fmt.Println("    \033[96m2.\033[0m Options                      ")
 	fmt.Println("                           ")
-	fmt.Println("    3. Quitter                      ")
+	fmt.Println("    \033[96m3.\033[0m Quitter                      ")
 	fmt.Println("                           ")
 	fmt.Println("                           ")
 	fmt.Println("                           ")
-	fmt.Println("    4. Crédits                     ")
+	fmt.Println("    \033[96m4.\033[0m Crédits                     ")
 	fmt.Println("                       	    \033[0m")
 	var input string
 	fmt.Scanln(&input)

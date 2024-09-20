@@ -6,14 +6,13 @@ import "fmt"
 func (p *Player) BlackSmithMenu() {
 	fmt.Println("Bienvenue chez le forgeron !", "\n", "Contre une légère commission, ma forge est à votre disposition.")
 	if p.money >= 5 {
-		fmt.Println("Votre or: ", p.money)
-		fmt.Println("Capacité de l'inventaire: ", p.CheckQuantityInventory(), "/", p.inventorymax)
-		fmt.Println("")
+		fmt.Println("Votre or: ","\033[103m", p.money,"\033[0m")
+		fmt.Println("\033[104mCapacité de l'inventaire: \033[0m", p.CheckQuantityInventory(), "/", p.inventorymax)
 		fmt.Println("Voilà ce que je peut vous proposer.")
 		fmt.Println("")
 		fmt.Println("")
 		if p.CheckQtyItem("Plume de corbeau") >= 1 && p.CheckQtyItem("Cuir de sanglier") >= 1 {
-			fmt.Println("1: Casque en acier (+15 PV, 5 Pièces d'or, 1 Plume de corbeau, 1 Cuir de sanglier)")
+			fmt.Println("\033[96m1\033[0m: Casque en acier (+15 PV, 5 Pièces d'or, 1 Plume de corbeau, 1 Cuir de sanglier)")
 			fmt.Println("")
 		} else if p.CheckQtyItem("Plume de corbeau") < 1 || p.CheckQtyItem("Cuir de sanglier") < 1 {
 			fmt.Println("Casque en acier: Il vous manque quelques composants pour le fabriquer:")
@@ -21,7 +20,7 @@ func (p *Player) BlackSmithMenu() {
 			fmt.Println("")
 		}
 		if p.CheckQtyItem("Fourrure de loup") >= 2 && p.CheckQtyItem("Peau de troll") >= 1 {
-			fmt.Println("2: Robe magique (+25 PV, 5 Pièces d'or, 2 Fourrures de loup, 1 Peau de troll)")
+			fmt.Println("\033[96m2\033[0m: Robe magique (+25 PV, 5 Pièces d'or, 2 Fourrures de loup, 1 Peau de troll)")
 			fmt.Println("")
 		} else if p.CheckQtyItem("Fourrure de loup") < 2 || p.CheckQtyItem("Peau de troll") < 1 {
 			fmt.Println("Robe magique: Il vous manque quelques composants pour le fabriquer:")
@@ -37,7 +36,7 @@ func (p *Player) BlackSmithMenu() {
 			fmt.Println("")
 		}
 		var input string
-		fmt.Println("0: Retour")
+		fmt.Println("\033[96m0\033[0m: Retour")
 		fmt.Scanln(&input)
 		switch input {
 		case "1":
@@ -50,7 +49,7 @@ func (p *Player) BlackSmithMenu() {
 					p.RemoveItem("Cuir de sanglier", 1)
 					fmt.Println("Vous avez fabriqué un casque en acier avec succès!")
 				} else {
-					fmt.Println("Votre inventaire est plein, pensez à le vider ou à l'agrandir chez le marchand")
+					fmt.Println("\033[101mVotre inventaire est plein\033[0m, pensez à le vider ou à l'agrandir chez le marchand")
 				}
 			} else {
 				fmt.Println("Bien essayé mais il vous manque quelques composants")
@@ -65,7 +64,7 @@ func (p *Player) BlackSmithMenu() {
 					p.RemoveItem("Peau de troll", 1)
 					fmt.Println("Vous avez fabriqué une Robe magique avec succès!")
 				} else {
-					fmt.Println("Votre inventaire est plein, pensez à le vider ou à l'agrandir chez le marchand")
+					fmt.Println("\033[101mVotre inventaire est plein\033[0m, pensez à le vider ou à l'agrandir chez le marchand")
 				}
 			} else {
 				fmt.Println("Bien essayé mais il vous manque quelques composants")
@@ -80,7 +79,7 @@ func (p *Player) BlackSmithMenu() {
 					p.RemoveItem("Cuir de sanglier", 1)
 					fmt.Println("Vous avez fabriqué des Bottes en cuir avec succès!")
 				} else {
-					fmt.Println("Votre inventaire est plein, pensez à le vider ou à l'agrandir chez le marchand")
+					fmt.Println("\033[101mVotre inventaire est plein\033[0m, pensez à le vider ou à l'agrandir chez le marchand")
 				}
 			} else {
 				fmt.Println("Bien essayé mais il vous manque quelques composants")
@@ -95,7 +94,7 @@ func (p *Player) BlackSmithMenu() {
 		}
 		p.BlackSmithMenu()
 	} else {
-		fmt.Println("Désolé mais je ne travaille pas gratuitement.. Revenez quand vous aurez plus de pièces !!", "\n", "(Il vous faut 5 Pièces d'or au minimum pour demander au forgeron de vous fabriquer un objet. Vous avez:", p.money, ")")
+		fmt.Println("Désolé mais je ne travaille pas gratuitement.. Revenez quand vous aurez plus de pièces !!", "\n", "(Il vous faut \033[103m5 Pièces d'or\033[0m au minimum pour demander au forgeron de vous fabriquer un objet. Vous avez:","\033[103m", p.money,"\033[0m")
 		fmt.Println("Retour au menu principal")
 		p.MainMenu()
 	}

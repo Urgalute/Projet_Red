@@ -44,9 +44,9 @@ func (p *Player) PersoInit() {
 	fmt.Println("Et quelle classe vous inspire le plus,", string(prenom), "?\033[0m")
 	fmt.Println("  ")
 	time.Sleep(1 * time.Second)
-	fmt.Println("1 -  Guerrier : PVmax = 120")
-	fmt.Println("2 -  Voleur : PVmax = 100")
-	fmt.Println("3 -  Mage : PVmax = 80")
+	fmt.Println("\033[96m1\033[0m -  \033[91mGuerrier\033[0m : PVmax = \033[92m120\033[0m")
+	fmt.Println("\033[96m2\033[0m -  \033[93mVoleur\033[0m : PVmax = \033[92m100\033[0m")
+	fmt.Println("\033[96m3\033[0m -  \033[94mMage\033[0m : PVmax = \033[92m80\033[0m")
 	fmt.Println("  ")
 	var inputclasse string
 	var hpmax int
@@ -54,17 +54,17 @@ func (p *Player) PersoInit() {
 	fmt.Println("  ")
 	switch inputclasse {
 	case "1":
-		fmt.Println("La violence à l'état pur.")
+		fmt.Println("\033[1mLa violence à l'état pur.\033[0m")
 		fmt.Println("  ")
 		inputclasse = "Guerrier"
 		hpmax = 120
 	case "2":
-		fmt.Println("Être sournois est une seconde nature pour vous.")
+		fmt.Println("\033[1mÊtre sournois est une seconde nature pour vous.\033[0m")
 		fmt.Println("  ")
 		inputclasse = "Voleur"
 		hpmax = 100
 	case "3":
-		fmt.Println("Fini les tours de passe passe avec des cartes.")
+		fmt.Println("\033[1mFini les tours de passe passe avec des cartes.\033[0m")
 		fmt.Println("  ")
 		inputclasse = "Mage"
 		hpmax = 80

@@ -13,9 +13,9 @@ func (p *Player) TransitDonjon() {
 	fmt.Println("il retourne. Ou vous pouvez toujours retourner en ville.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println(" ")
-	fmt.Println("     ____________________________________________________________________     ")
+	fmt.Println("     __________________________________________________     ")
 	fmt.Println("<== || \033[34mDirection le donjon |1\033[0m|||\033[35m2| Retourner en ville\033[0m || ==>")
-	fmt.Println("     ====================================================================     ")
+	fmt.Println("     ==================================================     ")
 	var input string
 	fmt.Scanln(&input)
 	switch input {

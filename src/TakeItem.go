@@ -140,10 +140,13 @@ func (p *Player) EquipGear(name string, quantity int, description string) bool {
     p.equipement = append(p.equipement, Equipement{name, quantity, description})
     switch name {
     case "Casque en acier":
+		fmt.Println("Vous avez équipé un casque en acier !")
         p.hpmax += 15
     case "Robe magique":
+		fmt.Println("Vous avez équipé une robe magique !")
         p.hpmax += 25
     case "Bottes en cuir":
+		fmt.Println("Vous avez équipé des bottes de cuir !")
         p.hpmax += 10
     default:
         fmt.Println("Aucun effet spécifique pour cet équipement.")

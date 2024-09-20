@@ -237,9 +237,7 @@ func (p *Player) UpgradeInventorySlot() {
 }
 
 // Check si on a assez d'or
-func (p *Player) Moneyy(cost int) bool {
-	if p.money < cost {
-		return false
+
+	func (p *Player) Moneyy(cost int) bool {
+		return p.money >= cost
 	}
-	return true
-}

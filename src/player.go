@@ -2,7 +2,6 @@ package Projet_Red
 
 import "fmt"
 
-
 //Initialisation du personnage et d'un monstre
 func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
 	*p = Player{
@@ -10,8 +9,8 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
 		class:        classe,
 		level:        1,
 		hpmax:        pvmax,
-		hp:           pvmax/2,
-		mana:		  75,
+		hp:           pvmax / 2,
+		mana:         75,
 		manamax:      100,
 		dammage:      5,
 		xp:           0,
@@ -27,6 +26,10 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
 		mdammage:     5,
 		mxp:          5,
 		mlevel:       1,
+		g1name:       "Garde 1",
+		g1hpmax:      200,
+		g1hp:         200,
+		g1damage:     30,
 	}
 }
 
@@ -39,8 +42,8 @@ func (p *Player) Display() {
 	fmt.Println("Vos points de mana: ", p.mana, "/", p.manamax)
 	fmt.Println("Vos attaques :")
 	for _, skill := range p.skill {
-        fmt.Println("-", skill)
-    }
+		fmt.Println("-", skill)
+	}
 }
 
 //Ajout d'exp en fonction du level du monstre et changement de stat en fonction

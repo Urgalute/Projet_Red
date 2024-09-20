@@ -74,20 +74,29 @@ func (p *Player) MenuInventaire() {
 			return
 		case "Casque en acier":
 			ClearTerminal()
-			p.EquipGear("Casque en acier", 1, "+15pvmax")
-			p.RemoveItem("Casque en acier", 1)
+			if p.EquipGear("Casque en acier", 1, "+15pvmax") {
+				fmt.Println("Vous avez déja un équipement sur cet emplacement")
+			} else {
+				p.RemoveItem("Casque en acier", 1)
+			}
 			p.InventoryDisplay()
 			return
 		case "Robe magique":
-			ClearTerminal()		
-			p.EquipGear("Robe magique", 1, "+25pvmax")
-			p.RemoveItem("Robe magique", 1)
+			ClearTerminal()
+			if p.EquipGear("Robe magique", 1, "+25pvmax") {
+				fmt.Println("Vous avez déja un équipement sur cet emplacement")
+			} else {
+				p.RemoveItem("Robe magique", 1)
+			}
 			p.InventoryDisplay()
 			return
 		case "Bottes en cuir":
 			ClearTerminal()
-			p.EquipGear("Bottes en cuir", 1, "+10pvmax")
-			p.RemoveItem("Bottes en cuir", 1)
+			if p.EquipGear("Bottes en cuir", 1, "+10pvmax") {
+				fmt.Println("Vous avez déja un équipement sur cet emplacement")
+			} else {
+				p.RemoveItem("Bottes en cuir", 1)
+			}
 			p.InventoryDisplay()
 			return
 		case "Augmentation d'inventaire":
@@ -97,7 +106,7 @@ func (p *Player) MenuInventaire() {
 			p.InventoryDisplay()
 			return
 		}
-	}else {
+	} else {
 		ClearTerminal()
 		fmt.Println("Cette fois-ci veuillez choisir le bon chiffre !")
 		p.InventoryDisplay()
@@ -117,7 +126,7 @@ func (p *Player) CheckInventory() bool {
 	return false
 }
 
-//Check et renvoie le nombre d'item dans l'inventaire
+// Check et renvoie le nombre d'item dans l'inventaire
 func (p *Player) CheckQuantityInventory() int {
 	count := 0
 	for _, items := range p.inventory {

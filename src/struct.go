@@ -16,12 +16,20 @@ type Player struct {
 	inventory    []Inventory
 	skill        []string
 	equipement   []Equipement
+	monster      []Monster
+
+
+	
 	mname        string
 	mhpmax       int
 	mhp          int
-	mdammage      int
+	mdammage     int
 	mxp          int
 	mlevel       int
+	g1name       string
+	g1hpmax      int
+	g1hp         int
+	g1damage     int
 }
 
 type Inventory struct {
@@ -34,4 +42,13 @@ type Equipement struct {
 	name        string
 	quantity    int
 	description string
+}
+
+type Monster struct {
+	name   string
+	hp     int
+	hpmax  int
+	damage int
+	xp     int
+	level  int
 }

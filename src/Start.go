@@ -42,6 +42,7 @@ func (p *Player) StartMenu() {
 		os.Exit(0)
 	case "4":
 		p.Credits()
+		p.StartMenu()
 		return
 	default:
 		fmt.Println("Les options proposées sont 1, 2, 3 et 4 ...")

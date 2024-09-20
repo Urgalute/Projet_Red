@@ -228,7 +228,7 @@ func (p *Player) Market() {
 // Augmente l'inventaire de 10 objets supplémentaires
 func (p *Player) UpgradeInventorySlot() {
 	if p.inventorymax >= 40 {
-		fmt.Println("Vous ne pouvez plus augmenter votre Inventaire ! ")
+		fmt.Println("\033[101mVous ne pouvez plus augmenter votre Inventaire ! \033[0m")
 	} else {
 		p.inventorymax += 10
 		fmt.Println("Bien joué vous avez augmenté votre Inventaire de 10 places supplémentaires !")

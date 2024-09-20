@@ -8,7 +8,7 @@ import (
 func (p *Player) Donjon() {
 	fmt.Println(" ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("\033[1mVous arrivez devant la grande porte du donjon. Vous essayez de la pousser,")
+	fmt.Println("\033[1m\033[104mVous arrivez devant la grande porte du donjon\033[0m\033[1m. Vous essayez de la pousser,")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("mais elle est bien fermée à clé. Vous apercevez une serrure en son centre.")
 	time.Sleep(500 * time.Millisecond)
@@ -24,7 +24,7 @@ func (p *Player) Donjon() {
 func (p *Player) EntreeDonjon() {
 	fmt.Println(" ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("\033[1mVous arrivez devant la grande porte du donjon. Vous essayez de la pousser,")
+	fmt.Println("\033[1m\033[104mVous arrivez devant la grande porte du donjon\033[0m\033[1m. Vous essayez de la pousser,")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("mais elle est bien fermée à clé. Vous apercevez une serrure en son centre.")
 	time.Sleep(500 * time.Millisecond)

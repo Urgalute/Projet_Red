@@ -49,7 +49,7 @@ func (p *Player) CheminForet() {
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("vous arrivez dans une clairière, longée par un petit ruisseau.")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("Vous pouvez continuer sur le chemin,")
+	fmt.Println("Vous pouvez continuer sur le chemin, et marcher")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("ou bien vous reposer un instant dans ce calme apparent.\033[0m")
 	fmt.Println(" ")
@@ -78,9 +78,11 @@ func (p *Player) CheminForet() {
 }
 
 func (p *Player) TraversForet() {
-	fmt.Println("\033[1mVous avancez péniblement au travers de la forêt,")
+	fmt.Println("\033[1m\033[104mVous avancez péniblement au travers de la forêt\033[0m\033[1m,")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("peut être auriez vous dû suivre ce petit chemin qui avait l'air bien plus pratiquable.")
+	fmt.Println("peut être auriez vous dû suivre ce petit chemin qui avait l'air bien")
+	time.Sleep(500 * time.Millisecond)
+	fmt.Println("plus pratiquable.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Malgré votre marche lente, vous ne remarquez pas un trou conséquent,")
 	time.Sleep(500 * time.Millisecond)
@@ -105,7 +107,9 @@ func (p *Player) TraversForet() {
 			fmt.Println("là où vous posez vos pieds.\033[0m")
 			time.Sleep(500 * time.Millisecond)
 		} else {
-			fmt.Println("\033[1mVous marchez en plein dans le trou, et entendez un craquement au niveau de votre cheville")
+			fmt.Println("\033[1mVous marchez en plein dans le trou, et entendez un craquement ")
+			fmt.Println("au niveau de votre cheville.")
+			time.Sleep(500 * time.Millisecond)
 			fmt.Println("  ")
 			time.Sleep(500 * time.Millisecond)
 			fmt.Println("\033[91mVous perdez 5 PV\033[0m")
@@ -151,7 +155,7 @@ func (p *Player) TraversForet() {
 }
 
 func (p *Player) SuiteForet() {
-	fmt.Println("\033[1mLa forêt se fait de plus en plus dense, les arbres commencent à")
+	fmt.Println("\033[1m\033[104mLa forêt se fait de plus en plus dense\033[0m\033[1m, les arbres commencent à")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("obstruer la lumière du soleil. Plus vous progressez, et plus la forêt")
 	time.Sleep(500 * time.Millisecond)
@@ -168,9 +172,13 @@ func (p *Player) SuiteForet() {
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("se fait de plus en plus court.")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("Après quelques minutes, vous arrivez devant un pont délabrée traversant une petite crevasse.")
+	fmt.Println("Après quelques minutes, vous arrivez devant un pont délabrée traversant ")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("Vous entendez les hurlements des loups plus proche, ils sont bel et bien sur vos traces !")
+	fmt.Println("une petite crevasse.")
+	time.Sleep(500 * time.Millisecond)
+	fmt.Println("Vous entendez les hurlements des loups plus proche,")
+	time.Sleep(500 * time.Millisecond)
+	fmt.Println(" ils sont bel et bien sur vos traces !")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Emprunter le pont serait plus rapide, mais risqué, faire le tour sera plus long, mais sûr.\033[0m")
 	time.Sleep(500 * time.Millisecond)
@@ -254,7 +262,9 @@ func (p *Player) SuiteForet() {
 				time.Sleep(500 * time.Millisecond)
 				fmt.Println("\033[1mVous vous sortez la jambe malgré tout, et continuez votre progression.")
 				time.Sleep(500 * time.Millisecond)
-				fmt.Println("Vous arrivez finalement de l'autre côté sans autre frayeur, mais avec une belle plaie.")
+				fmt.Println("Vous arrivez finalement de l'autre côté sans autre frayeur,")
+				time.Sleep(500 * time.Millisecond)
+				fmt.Println("mais avec une belle plaie.")
 				time.Sleep(500 * time.Millisecond)
 				fmt.Println("Derrière vous, vous apercevez un chemin sinueux qui continue.\033[0m")
 				p.SuiteChemin()
@@ -304,7 +314,9 @@ func (p *Player) SuiteForet() {
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("heureusement vous apercevez un endroit où la crevasse est plus resserée.")
 		time.Sleep(500 * time.Millisecond)
-		fmt.Println("C'est votre seule chance de traverser, si vous attendez plus les loups seront sur vous.")
+		fmt.Println("C'est votre seule chance de traverser,")
+		time.Sleep(500 * time.Millisecond)
+		fmt.Println("si vous attendez plus les loups seront sur vous.")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println(" ")
 		fmt.Println("1.- sauter")
@@ -345,7 +357,9 @@ func (p *Player) SuiteForet() {
 					p.MortDefinitive()
 					return
 				} else {
-					fmt.Println("Vous tentez le saut, mais ne touchez l'autre extrémité que du bout des doigts.")
+					fmt.Println("Vous tentez le saut,")
+					time.Sleep(500 * time.Millisecond)
+					fmt.Println("mais ne touchez l'autre extrémité que du bout des doigts.")
 					time.Sleep(500 * time.Millisecond)
 					fmt.Println("Vous chutez vers ce qui est votre fin.")
 					time.Sleep(500 * time.Millisecond)
@@ -381,9 +395,11 @@ func (p *Player) SuiteForet() {
 }
 
 func (p *Player) Massure() {
-	fmt.Println("\033[1mVous approchez doucement de cette massure, plus vous approchez et moins")
+	fmt.Println("\033[1m\033[104mVous approchez doucement de cette massure\033[0m\033[1m, plus vous approchez et moins")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("l'espoir de trouver quoi que ce soit se fait présent. Vous entendez le bruit de l'eau qui coule derrière la massure")
+	fmt.Println("l'espoir de trouver quoi que ce soit se fait présent.")
+	time.Sleep(500 * time.Millisecond)
+	fmt.Println("Vous entendez le bruit de l'eau qui coule derrière la massure")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Vous arrivez devant la porte, vous pouvez toquer ou essayer d'ouvrir.\033[0m")
 	time.Sleep(500 * time.Millisecond)
@@ -517,15 +533,15 @@ func (p *Player) Massure() {
 }
 
 func (p *Player) Ruisseau() {
-	fmt.Println("\033[1mVous commencez à longer le ruisseau, tout le monde sait que les villes")
+	fmt.Println("\033[1m\033[104mVous commencez à longer le ruisseau.\033[0m")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("se construisent autour de points d'eau. Vous marchez pendant 2h.")
+	fmt.Println("\033[1mTout le monde sait que les villes se construisent autour de points d'eau.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Vous croisez un chemin avec deux panneaux.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("L'un indique Alyoli pointant vers l'ouest.")
 	time.Sleep(500 * time.Millisecond)
-	fmt.Println("L'autrre indique Donjon Obscur pointant vers l'Est.")
+	fmt.Println("L'autre indique Donjon Obscur pointant vers l'Est.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Quel chemin souhaitez-vous emprunter ?")
 	time.Sleep(500 * time.Millisecond)
@@ -550,9 +566,9 @@ func (p *Player) Ruisseau() {
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
-		fmt.Println("\033[1mVous suivez le chemin en direction d'ALYOLI")
+		fmt.Println("\033[1m\033[104mVous suivez le chemin en direction d'ALYOLI\033[0m")
 		time.Sleep(500 * time.Millisecond)
-		fmt.Println("Plus vous approchez, et plus vous apercevez de belles et grandes maisons au loin.")
+		fmt.Println("\033[1mPlus vous approchez, et plus vous apercevez de belles et grandes maisons au loin.")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("Vous arrivez devant la grande porte d'entrée de la ville.")
 		time.Sleep(500 * time.Millisecond)
@@ -641,7 +657,7 @@ func (p *Player) Ruisseau() {
 func (p *Player) SuiteChemin() {
 	time.Sleep(1000 * time.Millisecond)
 	fmt.Println(" ")
-	fmt.Println("\033[1mVous suivez le chemin qui commence doucement à s'entourer d'arbres morts.")
+	fmt.Println("\033[1m\033[104mVous suivez le chemin qui commence doucement à s'entourer d'arbres morts\033[0m\033[1m.")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("Pas très rassurant, mais après quelques minutes de marche, vous arrivez en vue")
 	time.Sleep(500 * time.Millisecond)

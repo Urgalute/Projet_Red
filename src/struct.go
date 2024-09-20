@@ -17,18 +17,16 @@ type Player struct {
 	skill        []string
 	equipement   []Equipement
 
-
-	
-	mname        string
-	mhpmax       int
-	mhp          int
-	mdammage     int
-	mxp          int
-	mlevel       int
-	g1name       string
-	g1hpmax      int
-	g1hp         int
-	g1damage     int
+	mname    string
+	mhpmax   int
+	mhp      int
+	mdammage int
+	mxp      int
+	mlevel   int
+	g1name   string
+	g1hpmax  int
+	g1hp     int
+	g1damage int
 }
 
 type Inventory struct {

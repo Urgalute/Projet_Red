@@ -3,8 +3,8 @@
 ## Pour lancer notre projet
 
 - Dans un terminal taper "git clone https://github.com/Urgalute/Projet_Red.git"
-- Taper "cd Projet_Red"
-- Lancer le programme en tapant "go run ."
+- Tapez "cd Projet_Red"
+- Lancez le programme en tapant "go run ."
 - Amusez-vous !!
 
 ## Informations techniques

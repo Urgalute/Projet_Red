@@ -6,8 +6,8 @@ import "fmt"
 func (p *Player) BlackSmithMenu() {
 	fmt.Println("Bienvenue chez le forgeron !", "\n", "Contre une légère commission, ma forge est à votre disposition.")
 	if p.money >= 5 {
-		fmt.Println("Votre or: ","\033[103m", p.money,"\033[0m")
-		fmt.Println("\033[104mCapacité de l'inventaire: \033[0m", p.CheckQuantityInventory(), "/", p.inventorymax)
+		fmt.Println("Votre or: ", "\033[93m", p.money, "\033[0m")
+		fmt.Println("\033[92mCapacité de l'inventaire: \033[0m", p.CheckQuantityInventory(), "/", p.inventorymax)
 		fmt.Println("Voilà ce que je peut vous proposer.")
 		if p.CheckQtyItem("Plume de corbeau") >= 1 && p.CheckQtyItem("Cuir de sanglier") >= 1 {
 			fmt.Println("\033[96m1\033[0m: Casque en acier (+15 PV, 5 Pièces d'or, 1 Plume de corbeau, 1 Cuir de sanglier)")
@@ -78,12 +78,12 @@ func (p *Player) BlackSmithMenu() {
 			fmt.Println("Retour au menu principal")
 			p.MainMenu()
 		default:
-			    ClearTerminal()
+			ClearTerminal()
 			fmt.Println("Commande inconnue. Veuillez réessayer.")
 		}
 		p.BlackSmithMenu()
 	} else {
-		fmt.Println("Désolé mais je ne travaille pas gratuitement.. Revenez quand vous aurez plus de pièces !!", "\n", "(Il vous faut \033[103m5 Pièces d'or\033[0m au minimum pour demander au forgeron de vous fabriquer un objet. Vous avez:","\033[103m", p.money,"\033[0m")
+		fmt.Println("Désolé mais je ne travaille pas gratuitement.. Revenez quand vous aurez plus de pièces !!", "\n", "(Il vous faut \033[103m5 Pièces d'or\033[0m au minimum pour demander au forgeron de vous fabriquer un objet. Vous avez:", "\033[103m", p.money, "\033[0m")
 		fmt.Println("Retour au menu principal")
 		p.MainMenu()
 	}

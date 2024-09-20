@@ -23,15 +23,15 @@ func (p *Player) InventoryDisplay() {
 		p.MainMenu()
 		return
 	} else {
-		fmt.Println("Place dans votre inventaire : ", p.CheckQuantityInventory(), "/", p.inventorymax)
-		fmt.Println("Vos Pièces d'or: ", p.money)
+		fmt.Println("\033[92mPlace dans votre inventaire :\033[0m ", p.CheckQuantityInventory(), "/", p.inventorymax)
+		fmt.Println("Vos Pièces d'or: ","\033[93m" ,p.money, "\033[93m")
 		fmt.Println("                  ")
 		for i, objet := range p.inventory {
-			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
+			fmt.Println("\033[96m",i+1,"\033[0m", "- 	", objet.name, "x", objet.quantity, "	", objet.description)
 		}
 	}
 	fmt.Println("--------------------------------------------------------")
-	fmt.Println("       Tapez 0 pour revenir au menu principal        ")
+	fmt.Println("       Tapez \033[96m0\033[0m pour revenir au menu principal        ")
 	fmt.Println("________________________________________________________")
 	fmt.Println("--------------------------------------------------------")
 	p.MenuInventaire()

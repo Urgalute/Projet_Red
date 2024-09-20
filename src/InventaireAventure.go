@@ -26,11 +26,11 @@ func (p *Player) InventoryDisplayAventure() {
 		fmt.Println("Place dans votre inventaire : ", p.CheckQuantityInventory(), "/", p.inventorymax)
 		fmt.Println("                  ")
 		for i, objet := range p.inventory {
-			fmt.Println(i+1, "- 	", objet.name, "x", objet.quantity, "	", objet.description)
+			fmt.Println("\033[96m",i+1,"\033[96m", "- 	", objet.name, "x", objet.quantity, "	", objet.description)
 		}
 	}
 	fmt.Println("--------------------------------------------------------")
-	fmt.Println("       Tapez 0 pour revenir au menu principal        ")
+	fmt.Println("       Tapez \033[96m0\033[0m pour revenir au menu principal        ")
 	fmt.Println("________________________________________________________")
 	fmt.Println("--------------------------------------------------------")
 	p.MenuInventaireAventure()

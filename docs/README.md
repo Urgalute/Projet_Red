@@ -20,7 +20,7 @@
 
 **Et un grand merci au mentors pour leur aide et leurs conseils, ainsi que pour ces 3 semaines d'Ymmersion**
 
-- KMEDERREG Kheir-eddine
+- MEDERREG Kheir-eddine
 - RODRIGUES Cyril
 - PHILIPIERT Alan
 

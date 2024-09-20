@@ -1,4 +1,4 @@
-# Projet_Red
+# Projet_Red ALYOLI
 
 ## Pour lancer notre projet
 
@@ -15,10 +15,25 @@
 
 - DUPIN Alexis
 - LE PIVER Lilian
-- Commeau Yoan
+- COMMEAU Yoan
 
-**Et un grand merci au mentors pour leurs aide et leurs conseils, ainsi que pour ces 3 semaine d'Ymmersion**
+**Et un grand merci au mentors pour leur aide et leurs conseils, ainsi que pour ces 3 semaines d'Ymmersion**
 
 - KMEDERREG Kheir-eddine
 - RODRIGUES Cyril
 - PHILIPIERT Alan
+
+## Temps de réalisation du projet
+
+### Date de début
+- Mercredi 11 Septembre 2024
+
+### Date de fin
+- Vendredi 20 Septembre 2024
+
+### ~45h au total 
+
+## Base du thème 
+
+- **Un livre dont vous êtes le héros**
+

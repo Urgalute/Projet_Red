@@ -89,7 +89,7 @@ func (p *Player) TraversForet() {
 	fmt.Println("vous risquez de vous tordre la cheville si vous ne l'évitez pas !")
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("  ")
-	fmt.Println("Lancez le dé (Entrez D) et obtenez un 12 ou plus.")
+	fmt.Println("Lancez le dé (Entrez \033[96mD\033[0m) et obtenez un 12 ou plus.")
 	fmt.Println("  ")
 	var inputD string
 	fmt.Scanln(&inputD)
@@ -198,7 +198,7 @@ func (p *Player) SuiteForet() {
 		fmt.Println("se faisant de plus en plus proéminante.\033[0m")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println(" ")
-		fmt.Println("Lancez le dé (Entrez D), votre résultat influera sur la gravité des conséquences\033[0m")
+		fmt.Println("Lancez le dé (Entrez \033[96mD\033[0m), votre résultat influera sur la gravité des conséquences\033[0m")
 		fmt.Println("  ")
 		var inputD string
 		fmt.Scanln(&inputD)
@@ -327,7 +327,7 @@ func (p *Player) SuiteForet() {
 		switch input {
 		case "1":
 			fmt.Println(" ")
-			fmt.Println("Lancez le dé (Entrez D), faites 14 ou plus")
+			fmt.Println("Lancez le dé (Entrez \033[96mD\033[0m), faites 14 ou plus")
 			fmt.Println(" ")
 			var inputD string
 			fmt.Scanln(&inputD)

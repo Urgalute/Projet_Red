@@ -44,9 +44,9 @@ func (p *Player) PersoInit() {
 	fmt.Println("Et quelle classe vous inspire le plus,", string(prenom), "?\033[0m")
 	fmt.Println("  ")
 	time.Sleep(1 * time.Second)
-	fmt.Println("1 -  \033[91mGuerrier\033[0m : PVmax = \033[92m120\033[0m")
-	fmt.Println("2 -  \033[93mVoleur\033[0m : PVmax = \033[92m100\033[0m")
-	fmt.Println("3 -  \033[94mMage\033[0m : PVmax = \033[92m80\033[0m")
+	fmt.Println("\033[96m1\033[0m -  \033[91mGuerrier\033[0m : PVmax = \033[92m120\033[0m")
+	fmt.Println("\033[96m2\033[0m -  \033[93mVoleur\033[0m : PVmax = \033[92m100\033[0m")
+	fmt.Println("\033[96m3\033[0m -  \033[94mMage\033[0m : PVmax = \033[92m80\033[0m")
 	fmt.Println("  ")
 	var inputclasse string
 	var hpmax int

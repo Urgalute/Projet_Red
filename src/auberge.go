@@ -22,8 +22,8 @@ func (p *Player) Auberge() {
 	time.Sleep(500 * time.Millisecond)
 	fmt.Println("\033[93mServeuse\033[0m - Qu'est ce que je vous sers ?")
 	fmt.Println(" ")
-	fmt.Println("1.- Acheter une bière locale")
-	fmt.Println("2.- Demander des informations sur le donjon")
+	fmt.Println("\033[96m1.\033[0m- Acheter une bière locale")
+	fmt.Println("\033[96m2.\033[0m- Demander des informations sur le donjon")
 	fmt.Println(" ")
 	var input string
 	fmt.Scanln(&input)

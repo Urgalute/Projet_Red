@@ -90,9 +90,9 @@ func (p *Player) CharTurnGarde() {
 	fmt.Println(" ")
 	fmt.Println("A vous d'attaquer !")
 	fmt.Println(" ")
-	fmt.Println("1. Attaquer")
-	fmt.Println("2. Sort")
-	fmt.Println("3. Inventaire")
+	fmt.Println("\033[96m1.\033[0m Attaquer")
+	fmt.Println("\033[96m2.\033[0m Sort")
+	fmt.Println("\033[96m3.\033[0m Inventaire")
 	fmt.Print("Choisissez une option: ")
 	fmt.Scanln(&input)
 
@@ -124,9 +124,9 @@ func (p *Player) CharTurnCritGarde() {
 	var input string
 	fmt.Println("A vous d'attaquer !")
 	fmt.Println(" ")
-	fmt.Println("1. Attaque Critique")
-	fmt.Println("2. Sort Critique")
-	fmt.Println("3. Inventaire")
+	fmt.Println("\033[96m1.\033[0m Attaque Critique")
+	fmt.Println("\033[96m2.\033[0m Sort Critique")
+	fmt.Println("\033[96m3.\033[0m Inventaire")
 	fmt.Print("Choisissez une option: ")
 	fmt.Scanln(&input)
 
@@ -299,9 +299,9 @@ func (p *Player) AttackBasicGarde() {
 }
 
 func (p *Player) AttackSpellGarde() {
-	fmt.Println("1. \033[33mCoup de poing\033[0m")
+	fmt.Println("\033[96m1.\033[0m \033[33mCoup de poing\033[0m")
 	if p.CheckSpell("Boule de feu") {
-		fmt.Println("2. \033[91mBoule de feu\033[0m")
+		fmt.Println("\033[96m2.\033[0m \033[91mBoule de feu\033[0m")
 	}
 	var input string
 	fmt.Scanln(&input)
@@ -354,9 +354,9 @@ func (p *Player) AttackCritGarde() {
 }
 
 func (p *Player) AttackSpellCritGarde() {
-	fmt.Println("1. \033[33mCoup de poing\033[0m")
+	fmt.Println("\033[96m1.\033[0m \033[33mCoup de poing\033[0m")
 	if p.CheckSpell("Boule de feu") {
-		fmt.Println("2. Boule de feu")
+		fmt.Println("\033[96m2.\033[0m Boule de feu")
 	}
 	var input string
 	fmt.Scanln(&input)

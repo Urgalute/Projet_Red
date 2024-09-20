@@ -5,8 +5,8 @@ import "fmt"
 func (p *Player) Mort() {
 	fmt.Println("	Vous êtes mort, souhaitez vous réssuciter ?")
 	fmt.Println("                  ")
-	fmt.Println("1 - 			  Oui !			   	")
-	fmt.Println("2 - 		Non, ça ira, le jeu est nul.	   ")
+	fmt.Println("\033[96m1\033[0m - 			  Oui !			   	")
+	fmt.Println("\033[96m2\033[0m - 		Non, ça ira, le jeu est nul.	   ")
 	fmt.Println("                  ")
 	var input string
 	fmt.Scanln(&input)

@@ -7,11 +7,11 @@ import (
 var killgob int
 var deathgob int
 func (p *Player) Entrainement() {
-	fmt.Println("1.- Informations sur le gobelin d'entraînement ")
-	fmt.Println("2.- Commencer le combat ")
+	fmt.Println("\033[96m1.\033[0m- Informations sur le gobelin d'entraînement ")
+	fmt.Println("\033[96m2.\033[0m- Commencer le combat ")
 	fmt.Println("  ")
 	fmt.Println("  ")
-	fmt.Println("0.- Pour revenir au menu principal")
+	fmt.Println("\033[96m0.\033[0m- Pour revenir au menu principal")
 	var input string
 	fmt.Scanln(&input)
 	switch input {

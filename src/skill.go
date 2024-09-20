@@ -8,8 +8,8 @@ func (p *Player) Spell() {
 	
 	var input string
 	fmt.Println("Voulez-vous apprendre le sort Boule de Feu ?")
-	fmt.Println("1. Oui")
-	fmt.Println("2. Non")
+	fmt.Println("\033[96m1.\033[0m Oui")
+	fmt.Println("\033[96m2.\033[0m Non")
 	fmt.Scanln(&input)
 	switch input {
 	case "1":

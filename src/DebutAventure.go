@@ -765,6 +765,3 @@ func (p *Player) SuiteChemin() {
 
 }
 
-func (p *Player) Donjon() {
-
-}

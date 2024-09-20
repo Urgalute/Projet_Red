@@ -86,7 +86,7 @@ func (p *Player) FightInventory() {
 		time.Sleep(2 * time.Second)
 		fmt.Println("Retour au menu principal")
 		time.Sleep(2 * time.Second)
-		p.CharTurnGarde()
+		p.CharTurn()
 		return
 	} else {
 

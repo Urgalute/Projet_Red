@@ -33,3 +33,4 @@ func (p *Player) Mort() {
 		return
 	}
 }
+

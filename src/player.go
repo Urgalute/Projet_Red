@@ -28,9 +28,9 @@ func (p *Player) InitPlayer(nom string, classe string, pvmax int) {
 		mxp:          5,
 		mlevel:       1,
 		g1name:       "Garde 1",
-		g1hpmax:      60,
-		g1hp:         60,
-		g1damage:     10,
+		g1hpmax:      200,
+		g1hp:         200,
+		g1damage:     30,
 	}
 }
 

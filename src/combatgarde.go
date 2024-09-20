@@ -7,7 +7,7 @@ import (
 
 func (p *Player) CombatGardes() {
 
-	for tour := 1; p.mhp > 0 && p.hp > 0; tour++ {
+	for tour := 1; p.g1hp > 0 && p.hp > 0; tour++ {
 		fmt.Println(" ")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[4m__________________________\033[0m")
@@ -15,24 +15,21 @@ func (p *Player) CombatGardes() {
 		time.Sleep(500 * time.Millisecond)
 		g1init := p.InitiativeG1() + 5
 		time.Sleep(200 * time.Millisecond)
-		g2init := p.InitiativeG2() + 5
-		time.Sleep(200 * time.Millisecond)
-		playerinit := p.InitiativeP() + 3
+		playerinit := p.InitiativeP() + 233
 
 		fmt.Println(" ")
 		fmt.Println("Initiative de", p.name, ":", playerinit, " !")
 		fmt.Println("Initiative du Garde 1 :", g1init, " !")
-		fmt.Println("Initiative du Garde 2 :", g2init, " !")
 		fmt.Println(" ")
 		if playerinit > g1init {
 			if playerinit >= 18 {
-				p.CharTurnCrit()
+				p.CharTurnCritGarde()
 
 			} else {
-				p.CharTurn()
+				p.CharTurnGarde()
 			}
 
-		} else if playerinit < g1init || playerinit < g2init{
+		} else if playerinit < g1init {
 			fmt.Println(" ")
 			fmt.Println("Le Garde 1 attaque !")
 			fmt.Println(" ")
@@ -40,14 +37,14 @@ func (p *Player) CombatGardes() {
 			if g1init >= 18 {
 				if tour%3 == 0 {
 					fmt.Println(" ")
-					fmt.Println("Attaque lourde critique ! Vous subissez 40 points de dégats !")
+					fmt.Println("Attaque lourde critique ! Vous subissez 120 points de dégats !")
 					fmt.Println(" ")
 					p.hp -= 4 * p.g1damage
 					fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
 					fmt.Println(" ")
 				} else {
 					fmt.Println(" ")
-					fmt.Println("Vous subissez un coup critique de 20 points de dégats !")
+					fmt.Println("Vous subissez un coup critique de 60 points de dégats !")
 					fmt.Println(" ")
 					p.hp -= 2 * p.g1damage
 					fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
@@ -56,14 +53,14 @@ func (p *Player) CombatGardes() {
 			} else {
 				if tour%3 == 0 {
 					fmt.Println(" ")
-					fmt.Println("Attaque lourde ! Vous subissez 20 points de dégats !")
+					fmt.Println("Attaque lourde ! Vous subissez 60 points de dégats !")
 					fmt.Println(" ")
 					p.hp -= 2 * p.g1damage
 					fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
 					fmt.Println(" ")
 				} else {
 					fmt.Println(" ")
-					fmt.Println("Vous subissez 10 points de dégats !")
+					fmt.Println("Vous subissez 30 points de dégats !")
 					fmt.Println(" ")
 					p.hp -= p.g1damage
 					fmt.Println(p.name, p.hp, "\033[92mPV\033[0m restants ")
@@ -75,20 +72,18 @@ func (p *Player) CombatGardes() {
 	}
 	if p.g1hp <= 0 {
 		fmt.Println(" ")
-		fmt.Println("Vous avez tué les gardes, on peut désormais vous décerner le titre de Tueur de Garde !")
-		p.g1hp = p.g1hpmax
+		fmt.Println("Vous avez tué le garde !")
 		p.MainMenu()
-		
+
 		return
 
 	} else if p.hp <= 0 {
 		fmt.Println(" ")
-		fmt.Println("Les Gardes vous ont démoli ... Vous avez gagné le titre : le Faible")
+		fmt.Println("Le Garde vous a démoli ... ")
 		p.Mort()
 		return
 	}
 }
-
 
 func (p *Player) CharTurnGarde() {
 	var input string
@@ -106,17 +101,17 @@ func (p *Player) CharTurnGarde() {
 		fmt.Println(" ")
 		fmt.Println("Attaquer")
 		fmt.Println(" ")
-		p.AttackBasic()
+		p.AttackBasicGarde()
 	case "2":
 		fmt.Println(" ")
 		fmt.Println("Sort")
 		fmt.Println(" ")
-		p.AttackSpell()
+		p.AttackSpellGarde()
 	case "3":
 		fmt.Println(" ")
 		fmt.Println("Inventaire")
 		fmt.Println(" ")
-		p.FightInventory()
+		p.FightInventoryGarde()
 	default:
 		fmt.Println(" ")
 		fmt.Println("Choix invalide, veuillez réessayer.")
@@ -140,17 +135,17 @@ func (p *Player) CharTurnCritGarde() {
 		fmt.Println(" ")
 		fmt.Println("Attaque critique")
 		fmt.Println(" ")
-		p.AttackCrit()
+		p.AttackCritGarde()
 	case "2":
 		fmt.Println(" ")
 		fmt.Println("Sort")
 		fmt.Println(" ")
-		p.AttackSpellCrit()
+		p.AttackSpellCritGarde()
 	case "3":
 		fmt.Println(" ")
 		fmt.Println("Inventaire")
 		fmt.Println(" ")
-		p.FightInventoryCrit()
+		p.FightInventoryCritGarde()
 	default:
 		fmt.Println("Choix invalide, veuillez réessayer.")
 		p.CharTurnCritGarde()
@@ -312,7 +307,7 @@ func (p *Player) AttackSpellGarde() {
 	fmt.Scanln(&input)
 	switch input {
 	case "1":
-		damage := 10
+		damage := 30
 		p.g1hp -= damage
 		fmt.Println(" ")
 		fmt.Println("Vous utilisez \033[33mCoup de poing\033[0m et infligez", damage, "dégâts à", p.g1name)
@@ -322,7 +317,7 @@ func (p *Player) AttackSpellGarde() {
 		if p.CheckSpell("Boule de feu") {
 			if p.mana >= 25 {
 				p.mana -= 25
-				damage := 18 
+				damage := 18
 				p.g1hp -= damage
 				fmt.Println(" ")
 				fmt.Println(p.name, p.mana, "\033[94mmana\033[0m restants ")
@@ -404,4 +399,3 @@ func (p *Player) AttackSpellCritGarde() {
 	}
 
 }
-

@@ -10,6 +10,7 @@
 ## Informations techniques
 
 - Ce jeu utilise le langage Golang
+- [Trello](https://trello.com/b/L2GIWD9y/projet-red)
 
 ## Les développeurs
 

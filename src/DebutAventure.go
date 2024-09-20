@@ -553,7 +553,7 @@ func (p *Player) Ruisseau() {
 		fmt.Println(" ")
 		fmt.Println("\033[93mGarde\033[0m - Halte là ! Que venez vous faire ici pouilleux ?")
 		time.Sleep(500 * time.Millisecond)
-		fmt.Println("\033[94m", p.name, "\033[0m", "- Bonjour ... Je cherchais la ville pouir me restaurer et m'équiper.")
+		fmt.Println("\033[94m", p.name, "\033[0m", "- Bonjour ... Je cherchais la ville pour me restaurer et m'équiper.")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[93mGarde\033[0m - Et avec quel argent minable ? ")
 		time.Sleep(500 * time.Millisecond)

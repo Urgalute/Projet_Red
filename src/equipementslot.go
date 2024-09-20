@@ -2,6 +2,8 @@ package Projet_Red
 
 import "fmt"
 
+
+//Affichage de l'équipement
 func (p *Player) GearSlot() {
 	casqueEquipe := p.CheckGear("Casque en acier")
 	robeEquipe := p.CheckGear("Robe magique")

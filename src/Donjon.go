@@ -34,11 +34,11 @@ func (p *Player) EntreeDonjon() {
 		fmt.Println("\033[1mVous avez la clé donnée par l'aubergiste. Vous ouvrez la porte en la poussant,")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("elle grince extrêmement fort, et s'ouvre difficilement. Vous pénétrez le donjon,")
-		time.Sleep(500 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 		fmt.Println(" ")
 		fmt.Println(" ")
 		fmt.Println("Et c'est ici que s'arrête votre aventure pour cette petite introduction.")
-		time.Sleep(500 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 		fmt.Println(" ")
 		fmt.Println(" ")
 		fmt.Println("Merci beaucoup d'avoir joué, nous espérons que cette petite aventure vous a")
@@ -49,7 +49,7 @@ func (p *Player) EntreeDonjon() {
 		time.Sleep(1000 * time.Millisecond)
 		fmt.Println(" ")
 		time.Sleep(1000 * time.Millisecond)
-		fmt.Println("Le mot des développeurs :")
+		fmt.Println("\033[4mLe mot des développeurs :\033[0m")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println(" ")
 		time.Sleep(1000 * time.Millisecond)
@@ -71,6 +71,7 @@ func (p *Player) EntreeDonjon() {
 		return
 
 	} else if !p.CheckItem("Clé du Donjon Obscur") {
+		fmt.Println(" ")
 		fmt.Println("\033[1m\033[91mVous n'avez pas la clé\033[0m\033[1m, peut être devriez vous aller vous renseigner")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("sur le donjon à l'auberge.")
@@ -78,6 +79,7 @@ func (p *Player) EntreeDonjon() {
 		fmt.Println(" ")
 		fmt.Println("Vous retournez en ville\033[0m")
 		fmt.Println(" ")
+		time.Sleep(2000 * time.Millisecond)
 		p.MainMenu()
 		return
 

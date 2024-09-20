@@ -137,15 +137,15 @@ func (p *Player) Credits() {
 
 
 	MISSION 4 : EXPÉRIENCE
-
+	Yoan
 
 
 	MISSION 5.1 : COMBAT MAGIQUE
-
+	Lilian
 
 
 	MISSION 5.2 : RESSOURCE DE MANA
-
+	Lilian
 
 
 TRAVAIL SUR FICHIERS :
@@ -266,6 +266,51 @@ TRAVAIL SUR FICHIERS :
 
 
 
+	auberge.go
+	Alexis
+
+
+
+	combatgarde.go
+	Lilian
+
+	Avec le soutien de
+	Yoan
+
+
+
+	DebutAventure.go
+	Alexis
+
+	Avec la participation de 
+	Lilian, Yoan
+
+
+	Donjon.go
+	Alexis
+
+
+
+	InventaireAventure.go
+	Alexis
+
+
+
+	MenuAventure.go
+	Alexis
+
+
+
+	mortDef.go
+	Alexis
+
+
+
+	transitdonjon.go
+	Alexis
+
+
+
 	Création du git
 	Yoan
 
@@ -307,6 +352,6 @@ func displayCredits(credits string) {
 		default:
 			fmt.Println(White + line + Reset)
 		}
-		time.Sleep(190 * time.Millisecond)
+		time.Sleep(750 * time.Millisecond)
 	}
 }

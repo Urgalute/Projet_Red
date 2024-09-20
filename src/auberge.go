@@ -41,6 +41,7 @@ func (p *Player) Auberge() {
 		fmt.Println(" ")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("Serveuse - Merci, bonne dégustation")
+		fmt.Println(" ")
 		time.Sleep(500 * time.Millisecond)
 		fmt.Println("\033[1mElle s'éloigne et reprend son travail avec d'autres clients.")
 		time.Sleep(500 * time.Millisecond)

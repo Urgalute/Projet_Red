@@ -36,5 +36,3 @@
 ## Base du thème 
 
 - **Un livre dont vous êtes le héros**
-
-![[Plan_de_base.png]]

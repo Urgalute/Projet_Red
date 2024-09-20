@@ -245,6 +245,7 @@ func (p *Player) AttackSpell() {
 			p.mana -= 15
 			damage := 10
 			p.mhp -= damage
+			fmt.Println(p.name, p.mana, "\033[94mmana\033[0m restants ")
 			fmt.Println(" ")
 			fmt.Println("Vous utilisez \033[33mCoup de poing\033[0m et infligez", damage, "dégâts à", p.mname)
 			fmt.Println(" ")
@@ -309,6 +310,7 @@ func (p *Player) AttackSpellCrit() {
 			p.mana -= 15
 			damage := 10
 			p.mhp -= damage * 2
+			fmt.Println(p.name, p.mana, "\033[94mmana\033[0m restants ")
 			fmt.Println(" ")
 			fmt.Println("Vous utilisez \033[33mCoup de poing critique\033[0m et infligez", damage*2, "dégâts à", p.mname)
 			fmt.Println(" ")

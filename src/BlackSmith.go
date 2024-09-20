@@ -8,21 +8,33 @@ func (p *Player) BlackSmithMenu() {
 	if p.money >= 5 {
 		fmt.Println("Votre or: ", p.money)
 		fmt.Println("Capacité de l'inventaire: ", p.CheckQuantityInventory(), "/", p.inventorymax)
+		fmt.Println("")
 		fmt.Println("Voilà ce que je peut vous proposer.")
+		fmt.Println("")
+		fmt.Println("")
 		if p.CheckQtyItem("Plume de corbeau") >= 1 && p.CheckQtyItem("Cuir de sanglier") >= 1 {
 			fmt.Println("1: Casque en acier (+15 PV, 5 Pièces d'or, 1 Plume de corbeau, 1 Cuir de sanglier)")
+			fmt.Println("")
 		} else if p.CheckQtyItem("Plume de corbeau") < 1 || p.CheckQtyItem("Cuir de sanglier") < 1 {
-			fmt.Println("Casque en acier: Il vous manque quelques composants pour le fabriquer: Plume de corbeau:", p.CheckQtyItem("Plume de corbeau"), "/ 1, Cuir de sanglier", p.CheckQtyItem("Cuir de sanglier"), "/ 1")
+			fmt.Println("Casque en acier: Il vous manque quelques composants pour le fabriquer:")
+			fmt.Println("Plume de corbeau:", p.CheckQtyItem("Plume de corbeau"), "/ 1, Cuir de sanglier", p.CheckQtyItem("Cuir de sanglier"), "/ 1")
+			fmt.Println("")
 		}
 		if p.CheckQtyItem("Fourrure de loup") >= 2 && p.CheckQtyItem("Peau de troll") >= 1 {
 			fmt.Println("2: Robe magique (+25 PV, 5 Pièces d'or, 2 Fourrures de loup, 1 Peau de troll)")
+			fmt.Println("")
 		} else if p.CheckQtyItem("Fourrure de loup") < 2 || p.CheckQtyItem("Peau de troll") < 1 {
-			fmt.Println("Robe magique: Il vous manque quelques composants pour le fabriquer: Fourrure de loup: ", p.CheckQtyItem("Fourrure de loup"), "/ 2, Peau de troll:", p.CheckQtyItem("Peau de troll"), "/ 1")
+			fmt.Println("Robe magique: Il vous manque quelques composants pour le fabriquer:")
+			fmt.Println("Fourrure de loup: ", p.CheckQtyItem("Fourrure de loup"), "/ 2, Peau de troll:", p.CheckQtyItem("Peau de troll"), "/ 1")
+			fmt.Println("")
 		}
 		if p.CheckQtyItem("Fourrure de loup") >= 1 && p.CheckQtyItem("Cuir de sanglier") >= 1 {
 			fmt.Println("3: Bottes en cuir (+15 PV, 5 pièces d'or, 1 Fourrure de loup, 1 Cuir de sanglier)")
+			fmt.Println("")
 		} else if p.CheckQtyItem("Fourrure de loup") < 1 || p.CheckQtyItem("Cuir de sanglier") < 1 {
-			fmt.Println("Bottes en cuir: Il vous manque quelques composants pour le fabriquer: Fourrure de loup: ", p.CheckQtyItem("Fourrure de loup"), "/ 1, Cuir de sanglier: ", p.CheckQtyItem("Cuir de sangier"), "/ 1")
+			fmt.Println("Bottes en cuir: Il vous manque quelques composants pour le fabriquer:")
+			fmt.Println("Fourrure de loup: ", p.CheckQtyItem("Fourrure de loup"), "/ 1, Cuir de sanglier: ", p.CheckQtyItem("Cuir de sangier"), "/ 1")
+			fmt.Println("")
 		}
 		var input string
 		fmt.Println("0: Retour")
@@ -78,7 +90,7 @@ func (p *Player) BlackSmithMenu() {
 			fmt.Println("Retour au menu principal")
 			p.MainMenu()
 		default:
-			    ClearTerminal()
+			ClearTerminal()
 			fmt.Println("Commande inconnue. Veuillez réessayer.")
 		}
 		p.BlackSmithMenu()
